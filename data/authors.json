@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "maren-holt",
+    "name": "Maren Holt",
+    "genre": "Cozy mystery",
+    "tagline": "Small-town secrets, strong tea, and one very nosy librarian.",
+    "color": "#b5533c",
+    "bio": [
+      "Maren Holt writes cozy mysteries set in a fictional fishing village on the Cornish coast. Before writing full time she spent fifteen years as a school librarian, which explains a lot about her detectives.",
+      "She lives with two cats and an unreasonable number of teapots."
+    ],
+    "links": { "website": "https://example.com/maren", "amazon": "https://www.amazon.com/author/example" },
+    "books": [
+      { "title": "The Lighthouse Ledger", "series": "Porthaven Mysteries, Book 1", "year": 2023, "description": "When the village lighthouse keeper vanishes, librarian Edie Marsh finds a ledger that lists every secret in Porthaven.", "amazon": "https://www.amazon.com/dp/EXAMPLE0001", "formats": ["Kindle", "Paperback"] },
+      { "title": "A Body in the Tea Room", "series": "Porthaven Mysteries, Book 2", "year": 2024, "description": "A wedding, a missing cake, and one guest who will not be leaving. Edie is on the case again.", "amazon": "https://www.amazon.com/dp/EXAMPLE0002", "formats": ["Kindle", "Paperback"] },
+      { "title": "Low Tide at Midnight", "series": "Porthaven Mysteries, Book 3", "year": 2025, "description": "The tide goes out and takes the village's oldest secret with it. Then it brings something back.", "amazon": "https://www.amazon.com/dp/EXAMPLE0003", "formats": ["Kindle", "Paperback", "Hardcover"] }
+    ]
+  },
+  {
+    "slug": "dev-anand",
+    "name": "Dev Anand",
+    "genre": "Science fiction",
+    "tagline": "Quiet, human stories about the people who keep starships running.",
+    "color": "#2f5d7c",
+    "bio": [
+      "Dev Anand is a former marine engineer turned science fiction writer. His novels follow ordinary crews doing difficult work far from home.",
+      "He writes on early mornings, before the day job, and posts a free short story to his newsletter every month."
+    ],
+    "links": { "website": "https://example.com/dev" },
+    "books": [
+      { "title": "Ballast", "series": "", "year": 2024, "description": "A freight hauler, a failing reactor, and a passenger who is not on the manifest.", "amazon": "https://www.amazon.com/dp/EXAMPLE0004", "formats": ["Kindle", "Paperback"] },
+      { "title": "The Long Watch", "series": "", "year": 2025, "description": "Eleven years into a twelve year voyage, the night crew wakes to find someone has changed the course.", "amazon": "https://www.amazon.com/dp/EXAMPLE0005", "formats": ["Kindle", "Paperback"] }
+    ]
+  },
+  {
+    "slug": "iris-okafor",
+    "name": "Iris Okafor",
+    "genre": "Children's picture books",
+    "tagline": "Bedtime stories with big hearts and bigger animals.",
+    "color": "#5b7d3a",
+    "bio": [
+      "Iris Okafor writes and illustrates picture books for ages 3 to 7. Her stories are about kindness, curiosity and the occasional grumpy hippo.",
+      "She is a primary school teacher in Manchester and tests every book on her own class first."
+    ],
+    "links": { "website": "https://example.com/iris" },
+    "books": [
+      { "title": "Hugo the Hippo Says No", "series": "Hugo Books", "year": 2024, "description": "Hugo will not share, will not wash and will not go to bed. Until tonight.", "amazon": "https://www.amazon.com/dp/EXAMPLE0006", "formats": ["Paperback", "Hardcover"] }
+    ]
+  }
+]
