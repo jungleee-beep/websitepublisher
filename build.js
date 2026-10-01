@@ -41,9 +41,9 @@ function page({ title, desc, depth, nav, body }) {
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="banner-wrap"><a class="banner-link" href="${root}"><img class="banner" src="${root}images/banner.jpg" width="1600" height="608" alt="${esc(site.name)}: ${esc(site.tagline)}"></a></div>
 <header class="site-header">
   <div class="wrap bar">
-    <a class="logo" href="${root}">${esc(site.name)}</a>
     <nav aria-label="Main">
       ${links.map(([h, l]) => {
         const a = `<a href="${root}${h}"${nav === h ? ' aria-current="page"' : ""}>${l}</a>`;
@@ -109,7 +109,6 @@ write("index.html", page({
   depth: 0,
   nav: "",
   body: `<section class="hero">
-  <div class="banner-wrap"><img class="banner" src="images/banner.jpg" width="1600" height="608" alt="Greybridge Press: a stone bridge guarded by two lions. Independent publishing. Distinctive voices."></div>
   <div class="wrap hero-text">
     <h1 class="sr-only">${esc(site.name)}: ${esc(site.tagline)}</h1>
     <p class="kicker">${esc(site.subtitle)}</p>
