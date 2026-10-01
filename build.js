@@ -45,7 +45,12 @@ function page({ title, desc, depth, nav, body }) {
   <div class="wrap bar">
     <a class="logo" href="${root}">${esc(site.name)}</a>
     <nav aria-label="Main">
-      ${links.map(([h, l]) => `<a href="${root}${h}"${nav === h ? ' aria-current="page"' : ""}>${l}</a>`).join("\n      ")}
+      ${links.map(([h, l]) => {
+        const a = `<a href="${root}${h}"${nav === h ? ' aria-current="page"' : ""}>${l}</a>`;
+        if (h !== "authors/") return a;
+        const sub = authors.map((x) => `<a href="${root}authors/${x.slug}/">${esc(x.name)}</a>`).join("");
+        return `<div class="has-menu">${a}<div class="menu">${sub}</div></div>`;
+      }).join("\n      ")}
     </nav>
   </div>
 </header>

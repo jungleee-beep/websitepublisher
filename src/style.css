@@ -53,3 +53,9 @@ nav a:hover,nav a[aria-current]{color:var(--accent)}
 @media(min-width:800px){.book-list{grid-template-columns:1fr 1fr}}
 .kicker{font:600 1rem Arial,sans-serif;letter-spacing:.04em;color:var(--accent);margin:0 0 1em}
 .banner-wrap{background:#faf7f0;margin-bottom:28px}
+.has-menu{position:relative}
+.menu{display:none;position:absolute;top:100%;left:-12px;min-width:190px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px;z-index:5;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.menu a{display:block;padding:8px 12px;border-radius:4px;white-space:nowrap}
+.menu a:hover{background:var(--band)}
+.has-menu:hover .menu,.has-menu:focus-within .menu{display:block}
+@media(max-width:700px){.menu{display:none!important}}
