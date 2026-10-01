@@ -35,7 +35,7 @@ function page({ title, desc, depth, nav, body }) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
-<meta name="description" content="${esc(desc || site.tagline)}">
+<meta name="description" content="${esc(desc || site.tagline + " " + site.subtitle)}">
 <link rel="stylesheet" href="${root}style.css">
 </head>
 <body>
@@ -53,7 +53,7 @@ ${body}
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>${esc(site.name)}</strong> - ${esc(site.tagline)}</p>
+    <p><strong>${esc(site.name)}</strong> - ${esc(site.tagline)} ${esc(site.subtitle)}</p>
     <p class="small">Books are sold by Amazon. Links on this site go to each book's Amazon page.</p>
   </div>
 </footer>
@@ -103,8 +103,9 @@ write("index.html", page({
   nav: "",
   body: `<section class="hero">
   <div class="wrap">
-    <h1>Good books deserve a good start.</h1>
-    <p class="lead">${esc(site.tagline)} We handle the editing, cover design, formatting and launch, and you keep creative control.</p>
+    <h1>${esc(site.tagline)}</h1>
+    <p class="kicker">${esc(site.subtitle)}</p>
+    <p class="lead">We help authors publish and keep publishing on Amazon KDP. We handle the editing, cover design, formatting and launch, and you keep creative control.</p>
     <p><a class="btn" href="for-authors/">Publish with us</a> <a class="btn ghost" href="books/">Browse our books</a></p>
   </div>
 </section>

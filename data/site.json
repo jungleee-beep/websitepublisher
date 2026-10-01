@@ -1,6 +1,7 @@
 {
   "name": "Greybridge Press",
-  "tagline": "An independent press that helps authors publish, and keep publishing, on Amazon KDP.",
+  "tagline": "Independent publishing. Distinctive voices.",
   "email": "hello@example.com",
-  "submissionsOpen": true
+  "submissionsOpen": true,
+  "subtitle": "Fiction • Non-fiction • Ideas worth reading"
 }
