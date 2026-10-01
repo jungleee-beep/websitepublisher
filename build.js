@@ -36,6 +36,7 @@ function page({ title, desc, depth, nav, body }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc || site.tagline + " " + site.subtitle)}">
+<link rel="icon" type="image/png" href="${root}images/favicon.png">
 <link rel="stylesheet" href="${root}style.css">
 </head>
 <body>
@@ -53,6 +54,7 @@ ${body}
 </main>
 <footer class="site-footer">
   <div class="wrap">
+    <img class="foot-logo" src="${root}images/logo.jpg" width="120" height="120" alt="${esc(site.name)} logo">
     <p><strong>${esc(site.name)}</strong> - ${esc(site.tagline)} ${esc(site.subtitle)}</p>
     <p class="small">Books are sold by Amazon. Links on this site go to each book's Amazon page.</p>
   </div>
@@ -102,8 +104,9 @@ write("index.html", page({
   depth: 0,
   nav: "",
   body: `<section class="hero">
-  <div class="wrap">
-    <h1>${esc(site.tagline)}</h1>
+  <div class="banner-wrap"><img class="banner" src="images/banner.jpg" width="1600" height="608" alt="Greybridge Press: a stone bridge guarded by two lions. Independent publishing. Distinctive voices."></div>
+  <div class="wrap hero-text">
+    <h1 class="sr-only">${esc(site.name)}: ${esc(site.tagline)}</h1>
     <p class="kicker">${esc(site.subtitle)}</p>
     <p class="lead">We help authors publish and keep publishing on Amazon KDP. We handle the editing, cover design, formatting and launch, and you keep creative control.</p>
     <p><a class="btn" href="for-authors/">Publish with us</a> <a class="btn ghost" href="books/">Browse our books</a></p>
@@ -232,4 +235,5 @@ write("contact/index.html", page({
 }));
 
 fs.copyFileSync("src/style.css", path.join(OUT, "style.css"));
+fs.cpSync("src/images", path.join(OUT, "images"), { recursive: true });
 console.log(`Built ${authors.length} authors and ${allBooks.length} books into ${OUT}/`);

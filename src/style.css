@@ -17,7 +17,11 @@ a{color:var(--accent)}
 nav{display:flex;flex-wrap:wrap;gap:6px 20px}
 nav a{text-decoration:none;color:var(--muted);font-size:.95rem}
 nav a:hover,nav a[aria-current]{color:var(--accent)}
-.hero{background:var(--band);padding:64px 0 56px;border-bottom:1px solid var(--line)}
+.hero{background:var(--bg);padding:0 0 40px;border-bottom:1px solid var(--line);text-align:center}
+.banner{display:block;width:100%;max-width:1200px;height:auto;margin:0 auto}
+.hero-text .lead{margin-left:auto;margin-right:auto}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.foot-logo{display:block;border-radius:6px;margin-bottom:12px}
 .lead{font-size:1.2rem;color:var(--muted);max-width:640px}
 .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:600;font-size:.95rem;margin:4px 8px 4px 0}
 .btn:hover{filter:brightness(.92)}
@@ -48,3 +52,4 @@ nav a:hover,nav a[aria-current]{color:var(--accent)}
 @media(max-width:520px){.book{grid-template-columns:96px 1fr;gap:14px}}
 @media(min-width:800px){.book-list{grid-template-columns:1fr 1fr}}
 .kicker{font:600 1rem Arial,sans-serif;letter-spacing:.04em;color:var(--accent);margin:0 0 1em}
+.banner-wrap{background:#faf7f0;margin-bottom:28px}
