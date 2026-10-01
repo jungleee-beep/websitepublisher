@@ -1,4 +1,4 @@
-# Lantern & Ink Press website
+# Greybridge Press website
 
 Static website for an indie publisher supporting authors on Amazon KDP. No dependencies, just Node.
 
