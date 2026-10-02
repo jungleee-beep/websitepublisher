@@ -19,3 +19,7 @@ Output goes to `docs/`. Deploy that folder anywhere (GitHub Pages: set source to
 
 - Replace the sample authors, `hello@example.com` and the `EXAMPLE000x` Amazon links.
 - Covers are colored placeholders. Add real covers later if wanted.
+
+## Custom domain
+
+The site is served at `www.greybridgepress.com` through GitHub Pages. The domain is set in `src/CNAME`, which the build copies to `docs/CNAME` (the build wipes `docs/`, so do not edit that copy). To change the domain, edit `src/CNAME` and rebuild.
