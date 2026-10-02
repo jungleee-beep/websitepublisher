@@ -18,7 +18,7 @@ nav{display:flex;flex-wrap:nowrap;align-items:center;gap:0 24px}
 nav a{text-decoration:none;color:var(--muted);font-size:.95rem;line-height:1.4;white-space:nowrap}
 nav a:hover,nav a[aria-current]{color:var(--accent)}
 .hero{background:var(--bg);padding:36px 0 40px;border-bottom:1px solid var(--line);text-align:center}
-.banner{display:block;width:100%;max-width:1200px;height:auto;margin:0 auto}
+.banner{-webkit-mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent);display:block;width:100%;max-width:760px;height:auto;margin:0 auto}
 .hero-text .lead{margin-left:auto;margin-right:auto}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .foot-logo{display:block;border-radius:6px;margin-bottom:12px}
