@@ -1,16 +1,26 @@
 [
   {
-    "slug": "adam-yusuf",
-    "name": "Adam Yusuf",
-    "color": "#b5533c",
+    "slug": "yusuf-hasan",
+    "name": "Yusuf Hasan",
+    "color": "#6b5b3e",
     "tagline": "",
     "bio": [],
     "links": {},
     "books": [
       {
-        "title": "The First Year",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/TheFirstYear"
+        "title": "Any Other Business",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/AnyOtherBusiness"
+      },
+      {
+        "title": "The Empty Cab",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/THEEMPTYCAB"
+      },
+      {
+        "title": "The Fare",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/THEFARE"
       }
     ]
   },
@@ -95,66 +105,6 @@
     ]
   },
   {
-    "slug": "dr-saiyed-ali-al-razavi",
-    "name": "Dr. Saiyed Ali Al-Razavi",
-    "color": "#5b7d3a",
-    "tagline": "",
-    "bio": [],
-    "links": {},
-    "books": [
-      {
-        "title": "The Field of Karbala",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/FieldsofKarbala"
-      },
-      {
-        "title": "Daughters of Revelation",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/DaughtersOfRevelatio"
-      },
-      {
-        "title": "Raising Shia Children in the West",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/RaisingShiaChildren"
-      },
-      {
-        "title": "Understanding the Twelve Imams",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/TwelveImams"
-      },
-      {
-        "title": "The Shia Muslim Handbook",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/ShiaMuslimHandbook"
-      },
-      {
-        "title": "The Next Marja",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/Marja"
-      },
-      {
-        "title": "The Shia Islam You've Heard About",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/ShiaIslamHeardAbout"
-      },
-      {
-        "title": "Understanding the Shia",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/UnderstandingtheShia"
-      },
-      {
-        "title": "Tears of the Ummah",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/TearsoftheUmmah"
-      },
-      {
-        "title": "Wispers to the Divine",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/WhisperstotheDivine"
-      }
-    ]
-  },
-  {
     "slug": "dr-syed-ali-akbar-rizvi",
     "name": "Dr. Syed Ali Akbar Rizvi",
     "color": "#7a4e8c",
@@ -195,52 +145,47 @@
     ]
   },
   {
-    "slug": "eleanor-hart",
-    "name": "Eleanor Hart",
-    "color": "#a07a1c",
+    "slug": "sage-norden-phd",
+    "name": "Sage Norden, PhD",
+    "color": "#4f5d75",
     "tagline": "",
     "bio": [],
     "links": {},
     "books": [
       {
-        "title": "The Ordinary Infinite",
-        "category": "Fiction",
-        "amazon": "https://mybook.to/ORDINARYINFINITE"
-      },
-      {
-        "title": "All the Distance Between",
-        "category": "Fiction",
-        "amazon": "https://mybook.to/DistanceBetween"
-      },
-      {
-        "title": "Weight of Light",
-        "category": "Fiction",
-        "amazon": "https://mybook.to/WeightofLight"
-      },
-      {
-        "title": "Almost",
-        "category": "Fiction",
-        "amazon": "https://mybook.to/AlmostNovel"
-      },
-      {
-        "title": "Estranged by Choice",
+        "title": "The Jobs We Blamed on Machines",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/EstrangedbyChoice"
-      }
-    ]
-  },
-  {
-    "slug": "james-whitfield",
-    "name": "James Whitfield",
-    "color": "#3d7a74",
-    "tagline": "",
-    "bio": [],
-    "links": {},
-    "books": [
+        "amazon": "https://mybook.to/JobsweBlamed"
+      },
       {
-        "title": "Still Standing: Keep Your Job",
+        "title": "The Ally We Never Question",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/StillStandingAI"
+        "amazon": "https://mybook.to/TheAlly"
+      },
+      {
+        "title": "The Governments We Unmade",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/GovernmentsWeUnmade"
+      },
+      {
+        "title": "The Dictators We Love",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/DictatorsWeLove"
+      },
+      {
+        "title": "The Country That Stopped Learning",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/COUNTRYTHATSTOPPED"
+      },
+      {
+        "title": "Owned",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/SurveillanceEconomy"
+      },
+      {
+        "title": "The Comfort Tax",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/ComfortTax"
       }
     ]
   },
@@ -320,72 +265,127 @@
     ]
   },
   {
-    "slug": "sage-norden-phd",
-    "name": "Sage Norden, PhD",
-    "color": "#4f5d75",
+    "slug": "james-whitfield",
+    "name": "James Whitfield",
+    "color": "#3d7a74",
     "tagline": "",
     "bio": [],
     "links": {},
     "books": [
       {
-        "title": "The Jobs We Blamed on Machines",
+        "title": "Still Standing: Keep Your Job",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/JobsweBlamed"
-      },
-      {
-        "title": "The Ally We Never Question",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/TheAlly"
-      },
-      {
-        "title": "The Governments We Unmade",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/GovernmentsWeUnmade"
-      },
-      {
-        "title": "The Dictators We Love",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/DictatorsWeLove"
-      },
-      {
-        "title": "The Country That Stopped Learning",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/COUNTRYTHATSTOPPED"
-      },
-      {
-        "title": "Owned",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/SurveillanceEconomy"
-      },
-      {
-        "title": "The Comfort Tax",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/ComfortTax"
+        "amazon": "https://mybook.to/StillStandingAI"
       }
     ]
   },
   {
-    "slug": "yusuf-hasan",
-    "name": "Yusuf Hasan",
-    "color": "#6b5b3e",
+    "slug": "eleanor-hart",
+    "name": "Eleanor Hart",
+    "color": "#a07a1c",
     "tagline": "",
     "bio": [],
     "links": {},
     "books": [
       {
-        "title": "Any Other Business",
+        "title": "The Ordinary Infinite",
         "category": "Fiction",
-        "amazon": "https://mybook.to/AnyOtherBusiness"
+        "amazon": "https://mybook.to/ORDINARYINFINITE"
       },
       {
-        "title": "The Empty Cab",
+        "title": "All the Distance Between",
         "category": "Fiction",
-        "amazon": "https://mybook.to/THEEMPTYCAB"
+        "amazon": "https://mybook.to/DistanceBetween"
       },
       {
-        "title": "The Fare",
+        "title": "Weight of Light",
         "category": "Fiction",
-        "amazon": "https://mybook.to/THEFARE"
+        "amazon": "https://mybook.to/WeightofLight"
+      },
+      {
+        "title": "Almost",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/AlmostNovel"
+      },
+      {
+        "title": "Estranged by Choice",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/EstrangedbyChoice"
+      }
+    ]
+  },
+  {
+    "slug": "adam-yusuf",
+    "name": "Adam Yusuf",
+    "color": "#b5533c",
+    "tagline": "",
+    "bio": [],
+    "links": {},
+    "books": [
+      {
+        "title": "The First Year",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/TheFirstYear"
+      }
+    ]
+  },
+  {
+    "slug": "dr-saiyed-ali-al-razavi",
+    "name": "Dr. Saiyed Ali Al-Razavi",
+    "color": "#5b7d3a",
+    "tagline": "",
+    "bio": [],
+    "links": {},
+    "books": [
+      {
+        "title": "The Field of Karbala",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/FieldsofKarbala"
+      },
+      {
+        "title": "Daughters of Revelation",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/DaughtersOfRevelatio"
+      },
+      {
+        "title": "Raising Shia Children in the West",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/RaisingShiaChildren"
+      },
+      {
+        "title": "Understanding the Twelve Imams",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/TwelveImams"
+      },
+      {
+        "title": "The Shia Muslim Handbook",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/ShiaMuslimHandbook"
+      },
+      {
+        "title": "The Next Marja",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/Marja"
+      },
+      {
+        "title": "The Shia Islam You've Heard About",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/ShiaIslamHeardAbout"
+      },
+      {
+        "title": "Understanding the Shia",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/UnderstandingtheShia"
+      },
+      {
+        "title": "Tears of the Ummah",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/TearsoftheUmmah"
+      },
+      {
+        "title": "Wispers to the Divine",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/WhisperstotheDivine"
       }
     ]
   }

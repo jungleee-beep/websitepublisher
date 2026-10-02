@@ -3,6 +3,7 @@
 Needs openpyxl (pip install openpyxl). Columns: S. No., Pen Name, Category, Title, Link.
 Rows with no title (section headings, blanks) are skipped.
 Bios and taglines are not in the spreadsheet; any already in authors.json are kept.
+Authors are shown in reverse alphabetical order (see PUSH_TO_END below).
 Run from the repo root:  python3 scripts/import_books.py
 """
 import json, os, re
@@ -35,6 +36,14 @@ for row in openpyxl.load_workbook(SRC).active.iter_rows(min_row=2, values_only=T
         }
         authors.append(by_name[pen])
     by_name[pen]["books"].append({"title": title, "category": (cat or "").strip(), "amazon": link.strip()})
+
+# Display order: reverse alphabetical by name (ignoring "Dr."), except authors listed
+# in PUSH_TO_END, which go last so similar-genre authors are not next to each other.
+PUSH_TO_END = ["dr-saiyed-ali-al-razavi"]
+def sort_key(a):
+    return re.sub(r"^dr\.?\s+", "", a["name"], flags=re.I).lower()
+authors.sort(key=sort_key, reverse=True)
+authors.sort(key=lambda a: a["slug"] in PUSH_TO_END)  # stable: keeps the order above
 
 json.dump(authors, open(DST, "w"), indent=2, ensure_ascii=False)
 open(DST, "a").write("\n")
