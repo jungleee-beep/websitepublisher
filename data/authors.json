@@ -10,17 +10,21 @@
       {
         "title": "Any Other Business",
         "category": "Fiction",
-        "amazon": "https://mybook.to/AnyOtherBusiness"
+        "amazon": "https://mybook.to/AnyOtherBusiness",
+        "description": "A novel about the small rules that get written down, and the ones that matter more but never are."
       },
       {
         "title": "The Empty Cab",
         "category": "Fiction",
-        "amazon": "https://mybook.to/THEEMPTYCAB"
+        "amazon": "https://mybook.to/THEEMPTYCAB",
+        "description": "The real lesson begins after the last fare. The sequel to The Fare.",
+        "series": "Sequel to The Fare"
       },
       {
         "title": "The Fare",
         "category": "Fiction",
-        "amazon": "https://mybook.to/THEFARE"
+        "amazon": "https://mybook.to/THEFARE",
+        "description": "A life learned in the back seat of a London cab, carrying strangers between where they are and where they need to be."
       }
     ]
   },
@@ -35,72 +39,96 @@
       {
         "title": "Before You Go",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/Beforeyougo"
+        "amazon": "https://mybook.to/Beforeyougo",
+        "description": "The complete Muslim guide to preparing for death: your will, your affairs and your soul."
       },
       {
         "title": "Who Runs the Mosque?",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/WhoRunsTheMosque"
+        "amazon": "https://mybook.to/WhoRunsTheMosque",
+        "description": "The questions nobody asks out loud about money, power and governance in Britain's Muslim institutions, and the answers we all need."
       },
       {
         "title": "The Hive That Forgot How to Build",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/TheHiveMuslim"
+        "amazon": "https://mybook.to/TheHiveMuslim",
+        "description": "Why Muslim societies lost the habits that built a civilisation, and how they can be recovered."
       },
       {
         "title": "The Man They Could Not Stop",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/ProphetMuhammad"
+        "amazon": "https://mybook.to/ProphetMuhammad",
+        "description": "The untold story of Prophet Muhammad (PBUH), told through the eyes of his greatest enemies."
       },
       {
         "title": "Still Your Heart",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/StillYourHeart"
+        "amazon": "https://mybook.to/StillYourHeart",
+        "description": "Finding peace through the remembrance of Allah.",
+        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 1 of 10"
       },
       {
         "title": "Come Back",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/ComeBacktoAllah"
+        "amazon": "https://mybook.to/ComeBacktoAllah",
+        "description": "A gentle guide to returning to Allah.",
+        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 4 of 10"
       },
       {
         "title": "Trust the Plan",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/TrustThePlan"
+        "amazon": "https://mybook.to/TrustThePlan",
+        "description": "Tawakkul and the art of letting go.",
+        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 9 of 10"
       },
       {
         "title": "Raise Your Hands",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/RaiseYourHands"
+        "amazon": "https://mybook.to/RaiseYourHands",
+        "description": "Unlocking the transformative power of du'a.",
+        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 3 of 10"
       },
       {
         "title": "Pack Light",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/PackLight"
+        "amazon": "https://mybook.to/PackLight",
+        "description": "Preparing your soul for the hereafter.",
+        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 7 of 10"
       },
       {
         "title": "Count Your Blessings",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/CountYourBlessings"
+        "amazon": "https://mybook.to/CountYourBlessings",
+        "description": "Gratitude as a path to a fuller life.",
+        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 5 of 10"
       },
       {
         "title": "Wait With Grace",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/WaitwithGrace"
+        "amazon": "https://mybook.to/WaitwithGrace",
+        "description": "The art of sabr in a world of instant everything.",
+        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 2 of 10"
       },
       {
         "title": "Polish the Mirror",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/PolishTheMirror"
+        "amazon": "https://mybook.to/PolishTheMirror",
+        "description": "A practical guide to purifying the heart.",
+        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 6 of 10"
       },
       {
         "title": "Enough",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/EnoughGripofDunya"
+        "amazon": "https://mybook.to/EnoughGripofDunya",
+        "description": "Releasing the grip of dunya and finding true contentment.",
+        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 8 of 10"
       },
       {
         "title": "Before You Sleep",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/BeforeYouSleep"
+        "amazon": "https://mybook.to/BeforeYouSleep",
+        "description": "A night-time companion for the Muslim soul.",
+        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 10 of 10"
       }
     ]
   },
@@ -115,32 +143,39 @@
       {
         "title": "The Light of Divine Wisdom",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/NahjulBalagha"
+        "amazon": "https://mybook.to/NahjulBalagha",
+        "description": "A journey through Nahjul Balagha, the sermons, letters and sayings of Imam Ali (AS)."
       },
       {
         "title": "Conversations with Allah the Al-Samīʿ",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/ConversationsAllah"
+        "amazon": "https://mybook.to/ConversationsAllah",
+        "description": "365 days of question, answer and reflection."
       },
       {
         "title": "Shared Light",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/SharedLight"
+        "amazon": "https://mybook.to/SharedLight",
+        "description": "Explores the prophets who appear in both the Bible and the Qur'an."
       },
       {
         "title": "The 5 Intoxicants",
         "category": "Fiction",
-        "amazon": "https://mybook.to/5INTOXICANTS"
+        "amazon": "https://mybook.to/5INTOXICANTS",
+        "description": "The hidden forces that make us forget what truly matters."
       },
       {
         "title": "The Lost and Found",
         "category": "Fiction",
-        "amazon": "https://mybook.to/TheLostandFound"
+        "amazon": "https://mybook.to/TheLostandFound",
+        "description": "A story of what we lose, what we keep and what still finds its way back."
       },
       {
         "title": "Ninety Days More",
         "category": "Fiction",
-        "amazon": "https://mybook.to/90days"
+        "amazon": "https://mybook.to/90days",
+        "description": "Some things deserve another ninety days. The sequel to The Lost and Found.",
+        "series": "Sequel to The Lost and Found"
       }
     ]
   },
@@ -155,37 +190,44 @@
       {
         "title": "The Jobs We Blamed on Machines",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/JobsweBlamed"
+        "amazon": "https://mybook.to/JobsweBlamed",
+        "description": "How AI became the excuse for cuts companies already wanted. The story behind the layoffs."
       },
       {
         "title": "The Ally We Never Question",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/TheAlly"
+        "amazon": "https://mybook.to/TheAlly",
+        "description": "Examines seventy-eight years of the alliance between the United States and Israel, and why it runs without conditions."
       },
       {
         "title": "The Governments We Unmade",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/GovernmentsWeUnmade"
+        "amazon": "https://mybook.to/GovernmentsWeUnmade",
+        "description": "Coups, covert operations and broken nations: how America turned regime change into foreign policy."
       },
       {
         "title": "The Dictators We Love",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/DictatorsWeLove"
+        "amazon": "https://mybook.to/DictatorsWeLove",
+        "description": "How America preaches democracy and protects tyrants."
       },
       {
         "title": "The Country That Stopped Learning",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/COUNTRYTHATSTOPPED"
+        "amazon": "https://mybook.to/COUNTRYTHATSTOPPED",
+        "description": "Why Britain's problems have already been solved somewhere else."
       },
       {
         "title": "Owned",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/SurveillanceEconomy"
+        "amazon": "https://mybook.to/SurveillanceEconomy",
+        "description": "Inside the surveillance economy that turned you into a product."
       },
       {
         "title": "The Comfort Tax",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/ComfortTax"
+        "amazon": "https://mybook.to/ComfortTax",
+        "description": "Why telling the truth became expensive, and who ended up paying."
       }
     ]
   },
@@ -200,67 +242,80 @@
       {
         "title": "The Island of Second Chances",
         "category": "Fiction",
-        "amazon": "https://mybook.to/IslandofSecondChances"
+        "amazon": "https://mybook.to/IslandofSecondChances",
+        "description": "A novel of fresh starts."
       },
       {
         "title": "The Last Train Before Morning",
         "category": "Fiction",
-        "amazon": "https://mybook.to/LastTrainBefore"
+        "amazon": "https://mybook.to/LastTrainBefore",
+        "description": "A novel about a final journey as the night gives way to morning."
       },
       {
         "title": "The Ferryman",
         "category": "Fiction",
-        "amazon": "https://mybook.to/Ferryman"
+        "amazon": "https://mybook.to/Ferryman",
+        "description": "A novel about a ferryman who never crossed."
       },
       {
         "title": "The Gardener of Forgotten Dreams",
         "category": "Fiction",
-        "amazon": "https://mybook.to/TheGardenerDreams"
+        "amazon": "https://mybook.to/TheGardenerDreams",
+        "description": "A novel about forgotten dreams and the gardener who tends them."
       },
       {
         "title": "The Shop That Sold Lost Things",
         "category": "Fiction",
-        "amazon": "https://mybook.to/LostThings"
+        "amazon": "https://mybook.to/LostThings",
+        "description": "What we recover may require us to release something else."
       },
       {
         "title": "The Library of Unwritten Lives",
         "category": "Fiction",
-        "amazon": "https://mybook.to/UnwrittenLives"
+        "amazon": "https://mybook.to/UnwrittenLives",
+        "description": "A novel about the lives that were never written down."
       },
       {
         "title": "The Man Who Collected Tomorrows",
         "category": "Fiction",
-        "amazon": "https://mybook.to/CollectedTomorrows"
+        "amazon": "https://mybook.to/CollectedTomorrows",
+        "description": "A novel about a man who collected tomorrows."
       },
       {
         "title": "The Man Who Gave Away His Name",
         "category": "Fiction",
-        "amazon": "https://mybook.to/gaveawayname"
+        "amazon": "https://mybook.to/gaveawayname",
+        "description": "A novel about a man who gave away his name."
       },
       {
         "title": "The House With Seven Doors",
         "category": "Fiction",
-        "amazon": "https://mybook.to/sevendoors"
+        "amazon": "https://mybook.to/sevendoors",
+        "description": "A novel built around a house with seven doors."
       },
       {
         "title": "The Castle at the End of the Road",
         "category": "Fiction",
-        "amazon": "https://mybook.to/Castleendofroad"
+        "amazon": "https://mybook.to/Castleendofroad",
+        "description": "Some journeys lead you home."
       },
       {
         "title": "The Garden Across the Street",
         "category": "Fiction",
-        "amazon": "https://mybook.to/gardenacross"
+        "amazon": "https://mybook.to/gardenacross",
+        "description": "A novel about the garden across the street."
       },
       {
         "title": "The Clockmaker Who Stopped Time",
         "category": "Fiction",
-        "amazon": "https://mybook.to/clockmaker"
+        "amazon": "https://mybook.to/clockmaker",
+        "description": "A novel about a clockmaker who stopped time."
       },
       {
         "title": "The Uncollected",
         "category": "Fiction",
-        "amazon": "https://mybook.to/Uncollected"
+        "amazon": "https://mybook.to/Uncollected",
+        "description": "A novel of a little alteration shop on a Scottish loch."
       }
     ]
   },
@@ -275,7 +330,8 @@
       {
         "title": "Still Standing: Keep Your Job",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/StillStandingAI"
+        "amazon": "https://mybook.to/StillStandingAI",
+        "description": "Keep your job and your nerve as AI changes the way we work. A calm, practical guide for the experienced professional."
       }
     ]
   },
@@ -290,27 +346,35 @@
       {
         "title": "The Ordinary Infinite",
         "category": "Fiction",
-        "amazon": "https://mybook.to/ORDINARYINFINITE"
+        "amazon": "https://mybook.to/ORDINARYINFINITE",
+        "description": "We seek the stars, we find ourselves.",
+        "series": "The Meridian Sequence, Book 3"
       },
       {
         "title": "All the Distance Between",
         "category": "Fiction",
-        "amazon": "https://mybook.to/DistanceBetween"
+        "amazon": "https://mybook.to/DistanceBetween",
+        "description": "Some discoveries change everything. Some truths change us.",
+        "series": "The Meridian Sequence, Book 2"
       },
       {
         "title": "Weight of Light",
         "category": "Fiction",
-        "amazon": "https://mybook.to/WeightofLight"
+        "amazon": "https://mybook.to/WeightofLight",
+        "description": "Some journeys take you farther. Others take you home.",
+        "series": "The Meridian Sequence, Book 1"
       },
       {
         "title": "Almost",
         "category": "Fiction",
-        "amazon": "https://mybook.to/AlmostNovel"
+        "amazon": "https://mybook.to/AlmostNovel",
+        "description": "Some lessons are not in the plan. They are in the spaces in between."
       },
       {
         "title": "Estranged by Choice",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/EstrangedbyChoice"
+        "amazon": "https://mybook.to/EstrangedbyChoice",
+        "description": "An adult child's honest account of cutting off parents, and why it was right."
       }
     ]
   },
@@ -325,7 +389,8 @@
       {
         "title": "The First Year",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/TheFirstYear"
+        "amazon": "https://mybook.to/TheFirstYear",
+        "description": "An honest guide to life after the shahada, for new Muslims and everyone who loves one."
       }
     ]
   },
@@ -340,52 +405,62 @@
       {
         "title": "The Field of Karbala",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/FieldsofKarbala"
+        "amazon": "https://mybook.to/FieldsofKarbala",
+        "description": "What happened, why it happened, and why it still matters."
       },
       {
         "title": "Daughters of Revelation",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/DaughtersOfRevelatio"
+        "amazon": "https://mybook.to/DaughtersOfRevelatio",
+        "description": "The women of the Ahl al-Bayt: Fatima, Zaynab, Umm Kulthum, Sukayna, Fatima Masuma and Narjis."
       },
       {
         "title": "Raising Shia Children in the West",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/RaisingShiaChildren"
+        "amazon": "https://mybook.to/RaisingShiaChildren",
+        "description": "A parent's guide to faith, family and identity, from nursery to university."
       },
       {
         "title": "Understanding the Twelve Imams",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/TwelveImams"
+        "amazon": "https://mybook.to/TwelveImams",
+        "description": "One mission, twelve Imams: 250 years of visible guidance, and the Imam who remains."
       },
       {
         "title": "The Shia Muslim Handbook",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/ShiaMuslimHandbook"
+        "amazon": "https://mybook.to/ShiaMuslimHandbook",
+        "description": "A contemporary guide to Twelver Shia beliefs, worship, history and daily life."
       },
       {
         "title": "The Next Marja",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/Marja"
+        "amazon": "https://mybook.to/Marja",
+        "description": "Inside the coming leadership crisis of the Shia world."
       },
       {
         "title": "The Shia Islam You've Heard About",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/ShiaIslamHeardAbout"
+        "amazon": "https://mybook.to/ShiaIslamHeardAbout",
+        "description": "Correcting the record, inside and out."
       },
       {
         "title": "Understanding the Shia",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/UnderstandingtheShia"
+        "amazon": "https://mybook.to/UnderstandingtheShia",
+        "description": "Who they are, what they believe, and why it matters."
       },
       {
         "title": "Tears of the Ummah",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/TearsoftheUmmah"
+        "amazon": "https://mybook.to/TearsoftheUmmah",
+        "description": "A history of Shia azadari, from Karbala to the modern world."
       },
       {
         "title": "Wispers to the Divine",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/WhisperstotheDivine"
+        "amazon": "https://mybook.to/WhisperstotheDivine",
+        "description": "A complete guide to the popular Shia supplications."
       }
     ]
   }
