@@ -272,4 +272,6 @@ write("contact/index.html", page({
 fs.copyFileSync("src/style.css", path.join(OUT, "style.css"));
 fs.cpSync("src/images", path.join(OUT, "images"), { recursive: true });
 if (fs.existsSync("src/covers")) fs.cpSync("src/covers", path.join(OUT, "covers"), { recursive: true });
+// GitHub Pages custom domain: the CNAME file must live in the published folder
+if (fs.existsSync("src/CNAME")) fs.copyFileSync("src/CNAME", path.join(OUT, "CNAME"));
 console.log(`Built ${authors.length} authors and ${allBooks.length} books into ${OUT}/`);
