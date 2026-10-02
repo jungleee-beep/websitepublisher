@@ -61,3 +61,11 @@ nav a:hover,nav a[aria-current]{color:var(--accent)}
 .has-menu:hover .menu,.has-menu:focus-within .menu{display:block}
 @media(max-width:700px){.menu{display:none!important}}
 @media(max-width:520px){nav{gap:0 14px}nav a{font-size:.82rem}}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.filters button{font:600 .9rem Arial,sans-serif;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff}
+.book[hidden]{display:none}
+.cat-card:hover{border-color:var(--accent)}
+.cat-card p{margin:0;color:var(--muted)}
+.cover-title{overflow-wrap:anywhere;hyphens:auto}
+.cover{overflow:hidden}

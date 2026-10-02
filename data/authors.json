@@ -1,50 +1,392 @@
 [
   {
-    "slug": "maren-holt",
-    "name": "Maren Holt",
-    "genre": "Cozy mystery",
-    "tagline": "Small-town secrets, strong tea, and one very nosy librarian.",
+    "slug": "adam-yusuf",
+    "name": "Adam Yusuf",
     "color": "#b5533c",
-    "bio": [
-      "Maren Holt writes cozy mysteries set in a fictional fishing village on the Cornish coast. Before writing full time she spent fifteen years as a school librarian, which explains a lot about her detectives.",
-      "She lives with two cats and an unreasonable number of teapots."
-    ],
-    "links": { "website": "https://example.com/maren", "amazon": "https://www.amazon.com/author/example" },
+    "tagline": "",
+    "bio": [],
+    "links": {},
     "books": [
-      { "title": "The Lighthouse Ledger", "series": "Porthaven Mysteries, Book 1", "year": 2023, "description": "When the village lighthouse keeper vanishes, librarian Edie Marsh finds a ledger that lists every secret in Porthaven.", "amazon": "https://www.amazon.com/dp/EXAMPLE0001", "formats": ["Kindle", "Paperback"] },
-      { "title": "A Body in the Tea Room", "series": "Porthaven Mysteries, Book 2", "year": 2024, "description": "A wedding, a missing cake, and one guest who will not be leaving. Edie is on the case again.", "amazon": "https://www.amazon.com/dp/EXAMPLE0002", "formats": ["Kindle", "Paperback"] },
-      { "title": "Low Tide at Midnight", "series": "Porthaven Mysteries, Book 3", "year": 2025, "description": "The tide goes out and takes the village's oldest secret with it. Then it brings something back.", "amazon": "https://www.amazon.com/dp/EXAMPLE0003", "formats": ["Kindle", "Paperback", "Hardcover"] }
+      {
+        "title": "The First Year",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/TheFirstYear"
+      }
     ]
   },
   {
-    "slug": "dev-anand",
-    "name": "Dev Anand",
-    "genre": "Science fiction",
-    "tagline": "Quiet, human stories about the people who keep starships running.",
+    "slug": "dr-yusuf-al-qalb",
+    "name": "Dr. Yusuf Al-Qalb",
     "color": "#2f5d7c",
-    "bio": [
-      "Dev Anand is a former marine engineer turned science fiction writer. His novels follow ordinary crews doing difficult work far from home.",
-      "He writes on early mornings, before the day job, and posts a free short story to his newsletter every month."
-    ],
-    "links": { "website": "https://example.com/dev" },
+    "tagline": "",
+    "bio": [],
+    "links": {},
     "books": [
-      { "title": "Ballast", "series": "", "year": 2024, "description": "A freight hauler, a failing reactor, and a passenger who is not on the manifest.", "amazon": "https://www.amazon.com/dp/EXAMPLE0004", "formats": ["Kindle", "Paperback"] },
-      { "title": "The Long Watch", "series": "", "year": 2025, "description": "Eleven years into a twelve year voyage, the night crew wakes to find someone has changed the course.", "amazon": "https://www.amazon.com/dp/EXAMPLE0005", "formats": ["Kindle", "Paperback"] }
+      {
+        "title": "Before You Go",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/Beforeyougo"
+      },
+      {
+        "title": "Who Runs the Mosque?",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/WhoRunsTheMosque"
+      },
+      {
+        "title": "The Hive That Forgot How to Build",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/TheHiveMuslim"
+      },
+      {
+        "title": "The Man They Could Not Stop",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/ProphetMuhammad"
+      },
+      {
+        "title": "Still Your Heart",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/StillYourHeart"
+      },
+      {
+        "title": "Come Back",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/ComeBacktoAllah"
+      },
+      {
+        "title": "Trust the Plan",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/TrustThePlan"
+      },
+      {
+        "title": "Raise Your Hands",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/RaiseYourHands"
+      },
+      {
+        "title": "Pack Light",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/PackLight"
+      },
+      {
+        "title": "Count Your Blessings",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/CountYourBlessings"
+      },
+      {
+        "title": "Wait With Grace",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/WaitwithGrace"
+      },
+      {
+        "title": "Polish the Mirror",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/PolishTheMirror"
+      },
+      {
+        "title": "Enough",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/EnoughGripofDunya"
+      },
+      {
+        "title": "Before You Sleep",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/BeforeYouSleep"
+      }
     ]
   },
   {
-    "slug": "iris-okafor",
-    "name": "Iris Okafor",
-    "genre": "Children's picture books",
-    "tagline": "Bedtime stories with big hearts and bigger animals.",
+    "slug": "dr-saiyed-ali-al-razavi",
+    "name": "Dr. Saiyed Ali Al-Razavi",
     "color": "#5b7d3a",
-    "bio": [
-      "Iris Okafor writes and illustrates picture books for ages 3 to 7. Her stories are about kindness, curiosity and the occasional grumpy hippo.",
-      "She is a primary school teacher in Manchester and tests every book on her own class first."
-    ],
-    "links": { "website": "https://example.com/iris" },
+    "tagline": "",
+    "bio": [],
+    "links": {},
     "books": [
-      { "title": "Hugo the Hippo Says No", "series": "Hugo Books", "year": 2024, "description": "Hugo will not share, will not wash and will not go to bed. Until tonight.", "amazon": "https://www.amazon.com/dp/EXAMPLE0006", "formats": ["Paperback", "Hardcover"] }
+      {
+        "title": "The Field of Karbala",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/FieldsofKarbala"
+      },
+      {
+        "title": "Daughters of Revelation",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/DaughtersOfRevelatio"
+      },
+      {
+        "title": "Raising Shia Children in the West",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/RaisingShiaChildren"
+      },
+      {
+        "title": "Understanding the Twelve Imams",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/TwelveImams"
+      },
+      {
+        "title": "The Shia Muslim Handbook",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/ShiaMuslimHandbook"
+      },
+      {
+        "title": "The Next Marja",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/Marja"
+      },
+      {
+        "title": "The Shia Islam You've Heard About",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/ShiaIslamHeardAbout"
+      },
+      {
+        "title": "Understanding the Shia",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/UnderstandingtheShia"
+      },
+      {
+        "title": "Tears of the Ummah",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/TearsoftheUmmah"
+      },
+      {
+        "title": "Wispers to the Divine",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/WhisperstotheDivine"
+      }
+    ]
+  },
+  {
+    "slug": "dr-syed-ali-akbar-rizvi",
+    "name": "Dr. Syed Ali Akbar Rizvi",
+    "color": "#7a4e8c",
+    "tagline": "",
+    "bio": [],
+    "links": {},
+    "books": [
+      {
+        "title": "The Light of Divine Wisdom",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/NahjulBalagha"
+      },
+      {
+        "title": "Conversations with Allah the Al-Samīʿ",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/ConversationsAllah"
+      },
+      {
+        "title": "Shared Light",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/SharedLight"
+      },
+      {
+        "title": "The 5 Intoxicants",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/5INTOXICANTS"
+      },
+      {
+        "title": "The Lost and Found",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/TheLostandFound"
+      },
+      {
+        "title": "Ninety Days More",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/90days"
+      }
+    ]
+  },
+  {
+    "slug": "eleanor-hart",
+    "name": "Eleanor Hart",
+    "color": "#a07a1c",
+    "tagline": "",
+    "bio": [],
+    "links": {},
+    "books": [
+      {
+        "title": "The Ordinary Infinite",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/ORDINARYINFINITE"
+      },
+      {
+        "title": "All the Distance Between",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/DistanceBetween"
+      },
+      {
+        "title": "Weight of Light",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/WeightofLight"
+      },
+      {
+        "title": "Almost",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/AlmostNovel"
+      },
+      {
+        "title": "Estranged by Choice",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/EstrangedbyChoice"
+      }
+    ]
+  },
+  {
+    "slug": "james-whitfield",
+    "name": "James Whitfield",
+    "color": "#3d7a74",
+    "tagline": "",
+    "bio": [],
+    "links": {},
+    "books": [
+      {
+        "title": "Still Standing: Keep Your Job",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/StillStandingAI"
+      }
+    ]
+  },
+  {
+    "slug": "julian-vale",
+    "name": "Julian Vale",
+    "color": "#8c3b55",
+    "tagline": "",
+    "bio": [],
+    "links": {},
+    "books": [
+      {
+        "title": "The Island of Second Chances",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/IslandofSecondChances"
+      },
+      {
+        "title": "The Last Train Before Morning",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/LastTrainBefore"
+      },
+      {
+        "title": "The Ferryman",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/Ferryman"
+      },
+      {
+        "title": "The Gardener of Forgotten Dreams",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/TheGardenerDreams"
+      },
+      {
+        "title": "The Shop That Sold Lost Things",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/LostThings"
+      },
+      {
+        "title": "The Library of Unwritten Lives",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/UnwrittenLives"
+      },
+      {
+        "title": "The Man Who Collected Tomorrows",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/CollectedTomorrows"
+      },
+      {
+        "title": "The Man Who Gave Away His Name",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/gaveawayname"
+      },
+      {
+        "title": "The House With Seven Doors",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/sevendoors"
+      },
+      {
+        "title": "The Castle at the End of the Road",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/Castleendofroad"
+      },
+      {
+        "title": "The Garden Across the Street",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/gardenacross"
+      },
+      {
+        "title": "The Clockmaker Who Stopped Time",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/clockmaker"
+      },
+      {
+        "title": "The Uncollected",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/Uncollected"
+      }
+    ]
+  },
+  {
+    "slug": "sage-norden-phd",
+    "name": "Sage Norden, PhD",
+    "color": "#4f5d75",
+    "tagline": "",
+    "bio": [],
+    "links": {},
+    "books": [
+      {
+        "title": "The Jobs We Blamed on Machines",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/JobsweBlamed"
+      },
+      {
+        "title": "The Ally We Never Question",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/TheAlly"
+      },
+      {
+        "title": "The Governments We Unmade",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/GovernmentsWeUnmade"
+      },
+      {
+        "title": "The Dictators We Love",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/DictatorsWeLove"
+      },
+      {
+        "title": "The Country That Stopped Learning",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/COUNTRYTHATSTOPPED"
+      },
+      {
+        "title": "Owned",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/SurveillanceEconomy"
+      },
+      {
+        "title": "The Comfort Tax",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/ComfortTax"
+      }
+    ]
+  },
+  {
+    "slug": "yusuf-hasan",
+    "name": "Yusuf Hasan",
+    "color": "#6b5b3e",
+    "tagline": "",
+    "bio": [],
+    "links": {},
+    "books": [
+      {
+        "title": "Any Other Business",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/AnyOtherBusiness"
+      },
+      {
+        "title": "The Empty Cab",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/THEEMPTYCAB"
+      },
+      {
+        "title": "The Fare",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/THEFARE"
+      }
     ]
   }
 ]
