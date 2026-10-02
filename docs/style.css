@@ -69,3 +69,4 @@ nav a:hover,nav a[aria-current]{color:var(--accent)}
 .cat-card p{margin:0;color:var(--muted)}
 .cover-title{overflow-wrap:anywhere;hyphens:auto}
 .cover{overflow:hidden}
+.cover-img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:4px 8px 8px 4px;box-shadow:3px 3px 10px rgba(0,0,0,.25)}

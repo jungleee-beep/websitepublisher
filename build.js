@@ -80,7 +80,11 @@ ${body}
 `;
 }
 
+const coverFile = (book) => `covers/${book.slug}.jpg`;
 function cover(book, root) {
+  if (fs.existsSync(path.join("src", coverFile(book)))) {
+    return `<img class="cover-img" src="${root}${coverFile(book)}" width="130" height="195" loading="lazy" alt="Cover of ${esc(book.title)} by ${esc(book.author.name)}">`;
+  }
   return `<div class="cover" style="--c:${book.author.color}" role="img" aria-label="Cover placeholder for ${esc(book.title)}">
   <span class="cover-title">${esc(book.title)}</span>
   <span class="cover-author">${esc(book.author.name)}</span>
@@ -90,7 +94,7 @@ function cover(book, root) {
 function bookCard(book, depth, showAuthor) {
   const root = "../".repeat(depth);
   return `<article class="book" data-cat="${catSlug(book.category)}">
-  ${cover(book)}
+  ${cover(book, root)}
   <div class="book-info">
     <h3>${esc(book.title)}</h3>
     ${book.series ? `<p class="series">${esc(book.series)}</p>` : ""}
@@ -267,4 +271,5 @@ write("contact/index.html", page({
 
 fs.copyFileSync("src/style.css", path.join(OUT, "style.css"));
 fs.cpSync("src/images", path.join(OUT, "images"), { recursive: true });
+if (fs.existsSync("src/covers")) fs.cpSync("src/covers", path.join(OUT, "covers"), { recursive: true });
 console.log(`Built ${authors.length} authors and ${allBooks.length} books into ${OUT}/`);
