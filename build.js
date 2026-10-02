@@ -80,7 +80,7 @@ ${body}
 `;
 }
 
-const coverFile = (book) => `covers/${book.slug}.jpg`;
+const coverFile = (book) => `covers/${slugify(book.title)}.jpg`;
 function cover(book, root) {
   if (fs.existsSync(path.join("src", coverFile(book)))) {
     return `<img class="cover-img" src="${root}${coverFile(book)}" width="130" height="195" loading="lazy" alt="Cover of ${esc(book.title)} by ${esc(book.author.name)}">`;
