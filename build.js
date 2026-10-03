@@ -9,6 +9,8 @@ const OUT = "docs";
 fs.rmSync(OUT, { recursive: true, force: true }); // drop pages for removed authors
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+// HTML-entity encode so the address is not sitting in the page source as plain text
+const entities = (t) => [...t].map((c) => `&#${c.charCodeAt(0)};`).join("");
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 const allBooks = authors
@@ -161,7 +163,10 @@ write("authors/index.html", page({
 // Author pages
 for (const a of authors) {
   const links = Object.entries(a.links || {})
-    .map(([k, v]) => `<a href="${esc(v)}" rel="noopener" target="_blank">${k === "amazon" ? "Amazon author page" : "Website"}</a>`)
+    .map(([k, v]) => {
+      if (k === "email") return `<a href="${entities("mailto:" + v)}">${entities(v)}</a>`;
+      return `<a href="${esc(v)}" rel="noopener" target="_blank">${k === "amazon" ? "Amazon author page" : "Website"}</a>`;
+    })
     .join(" &middot; ");
   write(`authors/${a.slug}/index.html`, page({
     title: `${a.name} - ${site.name}`,
