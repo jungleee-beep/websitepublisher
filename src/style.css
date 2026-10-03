@@ -36,7 +36,8 @@ nav a:hover,nav a[aria-current]{color:var(--accent)}
 .cover-title{font-weight:700;font-size:.95rem;line-height:1.2}
 .cover-author{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
 .author-grid,.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
-.author-card,.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:4px}
+.author-card{background:var(--card);border:1px solid var(--line);border-radius:10px;color:var(--ink);display:flex;flex-direction:column;text-decoration:none}
 .author-card:hover{border-color:var(--c)}
 .avatar{width:56px;height:56px;border-radius:50%;background:var(--c);color:#fff;display:grid;place-items:center;font:700 1.2rem Arial,sans-serif;margin-bottom:6px}
 .avatar.big{width:96px;height:96px;font-size:2rem;flex:none}
@@ -70,8 +71,11 @@ nav a:hover,nav a[aria-current]{color:var(--accent)}
 .cover-title{overflow-wrap:anywhere;hyphens:auto}
 .cover{overflow:hidden}
 .cover-img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:4px 8px 8px 4px;box-shadow:3px 3px 10px rgba(0,0,0,.25)}
-.author-card{position:relative}
-.author-name a{color:inherit;text-decoration:none}
-.author-name a::after{content:"";position:absolute;inset:0;border-radius:10px}
-.author-name a:focus-visible::after{outline:3px solid var(--accent);outline-offset:2px}
-.author-email{position:relative;z-index:1;font-size:.9rem;overflow-wrap:anywhere;width:fit-content;margin-bottom:2px}
+.card-part{display:flex;flex-direction:column;gap:4px;padding:20px;color:inherit;text-decoration:none;flex:1}
+.card-top{padding-bottom:4px;flex:none}
+.card-bottom{padding-top:4px}
+.card-mid{display:flex;align-items:stretch}
+.card-fill{flex:1;min-width:20px}
+.author-email{font-size:.9rem;overflow-wrap:anywhere;max-width:100%}
+a.author-card:focus-visible,.card-part:focus-visible{outline:3px solid var(--accent);outline-offset:-3px;border-radius:10px}
+.card-fill-l{flex:none;width:20px;min-width:0}

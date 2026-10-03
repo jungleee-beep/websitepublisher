@@ -108,18 +108,26 @@ function bookCard(book, depth, showAuthor) {
 </article>`;
 }
 
-function authorCard(a, depth, showEmail = false) {
+function authorCard(a, depth, showEmail = true) {
   const root = "../".repeat(depth);
+  const href = `${root}authors/${a.slug}/`;
   const email = showEmail && a.links && a.links.email;
-  // The whole card is clickable through the name link (stretched with CSS), so the
-  // email can be its own link without nesting anchors.
+  const top = `<span class="avatar" aria-hidden="true">${esc(initials(a.name))}</span>
+    <span class="author-name">${esc(a.name)}</span>`;
+  const bottom = `<span class="author-genre">${esc(genreOf(a))}</span>
+    ${a.tagline ? `<span class="author-tag">${esc(a.tagline)}</span>` : ""}
+    <span class="author-count">${nBooks(a.books.length)}</span>`;
+  // Anchors cannot nest, so with an email the card is two plain links to the same page
+  // (above and below the email). Every part of the card except the email opens the author.
+  if (!email) {
+    return `<a class="author-card" href="${href}" style="--c:${a.color}">
+  <span class="card-part">${top}${bottom}</span>
+</a>`;
+  }
   return `<div class="author-card" style="--c:${a.color}">
-  <span class="avatar" aria-hidden="true">${esc(initials(a.name))}</span>
-  <span class="author-name"><a href="${root}authors/${a.slug}/">${esc(a.name)}</a></span>
-  ${email ? `<a class="author-email" href="${entities("mailto:" + email)}">${entities(email)}</a>` : ""}
-  <span class="author-genre">${esc(genreOf(a))}</span>
-  ${a.tagline ? `<span class="author-tag">${esc(a.tagline)}</span>` : ""}
-  <span class="author-count">${nBooks(a.books.length)}</span>
+  <a class="card-part card-top" href="${href}">${top}</a>
+  <div class="card-mid"><a class="card-fill card-fill-l" href="${href}" tabindex="-1" aria-hidden="true"></a><a class="author-email" href="${entities("mailto:" + email)}">${entities(email)}</a><a class="card-fill" href="${href}" tabindex="-1" aria-hidden="true"></a></div>
+  <a class="card-part card-bottom" href="${href}" tabindex="-1" aria-hidden="true">${bottom}</a>
 </div>`;
 }
 
@@ -160,7 +168,7 @@ write("authors/index.html", page({
   body: `<div class="wrap section">
   <h1>Our authors</h1>
   <p class="lead">Every author here publishes through Amazon KDP with our support. Click through to see their books.</p>
-  <div class="author-grid">${authors.map((a) => authorCard(a, 1, true)).join("\n")}</div>
+  <div class="author-grid">${authors.map((a) => authorCard(a, 1)).join("\n")}</div>
 </div>`,
 }));
 
