@@ -40,6 +40,30 @@ for row in openpyxl.load_workbook(SRC).active.iter_rows(min_row=2, values_only=T
         authors.append(by_name[pen])
     by_name[pen]["books"].append({"title": title, "category": (cat or "").strip(), "amazon": link.strip(), **extra.get(title, {})})
 
+# Within each author, series books are listed in reading order. A series sits where its
+# first book appeared in the spreadsheet. Uses the "series" text from descriptions.json:
+# "<Series>, Booklet N of M" / "<Series>, Book N", or "Sequel to <Title>" (placed right after it).
+def series_key(book):
+    ser = book.get("series", "")
+    m = re.match(r"Sequel to (.+)$", ser)
+    if m:
+        return m.group(1), 2
+    m = re.match(r"(.+?), (?:Booklet|Book) (\d+)", ser)
+    return (m.group(1), int(m.group(2))) if m else (None, 0)
+
+for a in authors:
+    keys = [series_key(b) for b in a["books"]]
+    firsts = {}
+    for i, b in enumerate(a["books"]):
+        group = keys[i][0] or b["title"]
+        firsts.setdefault(group, i)
+    # a sequel's base book (no series text) joins its sequel's group as book 1
+    for i, b in enumerate(a["books"]):
+        if keys[i][0] is None and any(k[0] == b["title"] for k in keys):
+            keys[i] = (b["title"], 1)
+    order = sorted(range(len(a["books"])), key=lambda i: (firsts[keys[i][0] or a["books"][i]["title"]], keys[i][1], i))
+    a["books"] = [a["books"][i] for i in order]
+
 # Display order: reverse alphabetical by name (ignoring "Dr."), except authors listed
 # in PUSH_TO_END, which go last so similar-genre authors are not next to each other.
 PUSH_TO_END = ["dr-saiyed-ali-al-razavi"]

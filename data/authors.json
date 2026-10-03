@@ -16,17 +16,17 @@
         "description": "A novel about the small rules that get written down, and the ones that matter more but never are."
       },
       {
+        "title": "The Fare",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/THEFARE",
+        "description": "A life learned in the back seat of a London cab, carrying strangers between where they are and where they need to be."
+      },
+      {
         "title": "The Empty Cab",
         "category": "Fiction",
         "amazon": "https://mybook.to/THEEMPTYCAB",
         "description": "The real lesson begins after the last fare. The sequel to The Fare.",
         "series": "Sequel to The Fare"
-      },
-      {
-        "title": "The Fare",
-        "category": "Fiction",
-        "amazon": "https://mybook.to/THEFARE",
-        "description": "A life learned in the back seat of a London cab, carrying strangers between where they are and where they need to be."
       }
     ]
   },
@@ -72,18 +72,11 @@
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 1 of 10"
       },
       {
-        "title": "Come Back",
+        "title": "Wait With Grace",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/ComeBacktoAllah",
-        "description": "A gentle guide to returning to Allah.",
-        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 4 of 10"
-      },
-      {
-        "title": "Trust the Plan",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/TrustThePlan",
-        "description": "Tawakkul and the art of letting go.",
-        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 9 of 10"
+        "amazon": "https://mybook.to/WaitwithGrace",
+        "description": "The art of sabr in a world of instant everything.",
+        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 2 of 10"
       },
       {
         "title": "Raise Your Hands",
@@ -93,11 +86,11 @@
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 3 of 10"
       },
       {
-        "title": "Pack Light",
+        "title": "Come Back",
         "category": "Non-fiction",
-        "amazon": "https://mybook.to/PackLight",
-        "description": "Preparing your soul for the hereafter.",
-        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 7 of 10"
+        "amazon": "https://mybook.to/ComeBacktoAllah",
+        "description": "A gentle guide to returning to Allah.",
+        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 4 of 10"
       },
       {
         "title": "Count Your Blessings",
@@ -107,13 +100,6 @@
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 5 of 10"
       },
       {
-        "title": "Wait With Grace",
-        "category": "Non-fiction",
-        "amazon": "https://mybook.to/WaitwithGrace",
-        "description": "The art of sabr in a world of instant everything.",
-        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 2 of 10"
-      },
-      {
         "title": "Polish the Mirror",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/PolishTheMirror",
@@ -121,11 +107,25 @@
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 6 of 10"
       },
       {
+        "title": "Pack Light",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/PackLight",
+        "description": "Preparing your soul for the hereafter.",
+        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 7 of 10"
+      },
+      {
         "title": "Enough",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/EnoughGripofDunya",
         "description": "Releasing the grip of dunya and finding true contentment.",
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 8 of 10"
+      },
+      {
+        "title": "Trust the Plan",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/TrustThePlan",
+        "description": "Tawakkul and the art of letting go.",
+        "series": "Returning to Allah, Islamic Spiritual Series, Booklet 9 of 10"
       },
       {
         "title": "Before You Sleep",
@@ -358,11 +358,11 @@
     "links": {},
     "books": [
       {
-        "title": "The Ordinary Infinite",
+        "title": "Weight of Light",
         "category": "Fiction",
-        "amazon": "https://mybook.to/ORDINARYINFINITE",
-        "description": "We seek the stars, we find ourselves.",
-        "series": "The Meridian Sequence, Book 3"
+        "amazon": "https://mybook.to/WeightofLight",
+        "description": "Some journeys take you farther. Others take you home.",
+        "series": "The Meridian Sequence, Book 1"
       },
       {
         "title": "All the Distance Between",
@@ -372,11 +372,11 @@
         "series": "The Meridian Sequence, Book 2"
       },
       {
-        "title": "Weight of Light",
+        "title": "The Ordinary Infinite",
         "category": "Fiction",
-        "amazon": "https://mybook.to/WeightofLight",
-        "description": "Some journeys take you farther. Others take you home.",
-        "series": "The Meridian Sequence, Book 1"
+        "amazon": "https://mybook.to/ORDINARYINFINITE",
+        "description": "We seek the stars, we find ourselves.",
+        "series": "The Meridian Sequence, Book 3"
       },
       {
         "title": "Almost",
