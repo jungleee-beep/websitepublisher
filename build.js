@@ -108,15 +108,19 @@ function bookCard(book, depth, showAuthor) {
 </article>`;
 }
 
-function authorCard(a, depth) {
+function authorCard(a, depth, showEmail = false) {
   const root = "../".repeat(depth);
-  return `<a class="author-card" href="${root}authors/${a.slug}/" style="--c:${a.color}">
+  const email = showEmail && a.links && a.links.email;
+  // The whole card is clickable through the name link (stretched with CSS), so the
+  // email can be its own link without nesting anchors.
+  return `<div class="author-card" style="--c:${a.color}">
   <span class="avatar" aria-hidden="true">${esc(initials(a.name))}</span>
-  <span class="author-name">${esc(a.name)}</span>
+  <span class="author-name"><a href="${root}authors/${a.slug}/">${esc(a.name)}</a></span>
+  ${email ? `<a class="author-email" href="${entities("mailto:" + email)}">${entities(email)}</a>` : ""}
   <span class="author-genre">${esc(genreOf(a))}</span>
   ${a.tagline ? `<span class="author-tag">${esc(a.tagline)}</span>` : ""}
   <span class="author-count">${nBooks(a.books.length)}</span>
-</a>`;
+</div>`;
 }
 
 // Home
@@ -156,7 +160,7 @@ write("authors/index.html", page({
   body: `<div class="wrap section">
   <h1>Our authors</h1>
   <p class="lead">Every author here publishes through Amazon KDP with our support. Click through to see their books.</p>
-  <div class="author-grid">${authors.map((a) => authorCard(a, 1)).join("\n")}</div>
+  <div class="author-grid">${authors.map((a) => authorCard(a, 1, true)).join("\n")}</div>
 </div>`,
 }));
 

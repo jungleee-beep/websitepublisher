@@ -70,3 +70,8 @@ nav a:hover,nav a[aria-current]{color:var(--accent)}
 .cover-title{overflow-wrap:anywhere;hyphens:auto}
 .cover{overflow:hidden}
 .cover-img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:4px 8px 8px 4px;box-shadow:3px 3px 10px rgba(0,0,0,.25)}
+.author-card{position:relative}
+.author-name a{color:inherit;text-decoration:none}
+.author-name a::after{content:"";position:absolute;inset:0;border-radius:10px}
+.author-name a:focus-visible::after{outline:3px solid var(--accent);outline-offset:2px}
+.author-email{position:relative;z-index:1;font-size:.9rem;overflow-wrap:anywhere;width:fit-content;margin-bottom:2px}
