@@ -17,7 +17,6 @@ Output goes to `docs/`. Deploy that folder anywhere (GitHub Pages: set source to
 
 ## Before launch
 
-- Replace the sample authors, `hello@example.com` and the `EXAMPLE000x` Amazon links.
 - Covers are colored placeholders. Add real covers later if wanted.
 
 ## Custom domain
