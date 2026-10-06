@@ -5,7 +5,7 @@
     "color": "#6b5b3e",
     "tagline": "",
     "bio": [
-      "Yusuf Hasan is the author of three novels. The Fare and its sequel, The Empty Cab, follow a life learned in the back seat of a London cab. He is also the author of Any Other Business."
+      "Yusuf Hasan is the author of four novels. The Fare and its sequel, The Empty Cab, follow a life learned in the back seat of a London cab. He is also the author of Any Other Business and Paid in Full."
     ],
     "links": {
       "email": "yusufhasanwrites@gmail.com"
@@ -29,6 +29,12 @@
         "amazon": "https://mybook.to/THEEMPTYCAB",
         "description": "The real lesson begins after the last fare. The sequel to The Fare.",
         "series": "Sequel to The Fare"
+      },
+      {
+        "title": "Paid in Full",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/PaidinFull",
+        "description": "A novel about kindness, stubbornness and a fifty-year-old debt."
       }
     ]
   },
@@ -38,7 +44,7 @@
     "color": "#2f5d7c",
     "tagline": "",
     "bio": [
-      "Dr. Yusuf Al-Qalb writes Islamic non-fiction. His 14 books include the ten-booklet Returning to Allah series, covering du'a, sabr, gratitude and more, as well as Before You Go, a guide to preparing for death, and The Man They Could Not Stop, on the life of Prophet Muhammad (PBUH)."
+      "Dr. Yusuf Al-Qalb writes Islamic non-fiction. His 15 books include the ten-booklet Returning to Allah series, covering du'a, sabr, gratitude and more, as well as Before You Go, a guide to preparing for death, The Man They Could Not Stop, on the life of Prophet Muhammad (PBUH), and The Daily Heart, a year of daily reflections and journaling."
     ],
     "links": {
       "email": "dryusufqalb@gmail.com"
@@ -137,6 +143,12 @@
         "amazon": "https://mybook.to/BeforeYouSleep",
         "description": "A night-time companion for the Muslim soul.",
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 10 of 10"
+      },
+      {
+        "title": "The Daily Heart",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/dailyheart",
+        "description": "365 days of wisdom, reflection and journaling for the Muslim heart."
       }
     ]
   },
