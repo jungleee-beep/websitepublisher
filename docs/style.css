@@ -79,3 +79,5 @@ nav a:hover,nav a[aria-current]{color:var(--accent)}
 .author-email{font-size:.9rem;overflow-wrap:anywhere;max-width:100%}
 a.author-card:focus-visible,.card-part:focus-visible{outline:3px solid var(--accent);outline-offset:-3px;border-radius:10px}
 .card-fill-l{flex:none;width:20px;min-width:0}
+.contact{font-size:1.2rem;margin:1.1em 0}
+.contact a{font-weight:600}
