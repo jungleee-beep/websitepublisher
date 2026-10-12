@@ -174,12 +174,12 @@ write("authors/index.html", page({
 
 // Author pages
 for (const a of authors) {
+  const email = a.links && a.links.email;
   const links = Object.entries(a.links || {})
-    .map(([k, v]) => {
-      if (k === "email") return `<a href="${entities("mailto:" + v)}">${entities(v)}</a>`;
-      return `<a href="${esc(v)}" rel="noopener" target="_blank">${k === "amazon" ? "Amazon author page" : "Website"}</a>`;
-    })
+    .filter(([k]) => k !== "email")
+    .map(([k, v]) => `<a href="${esc(v)}" rel="noopener" target="_blank">${k === "amazon" ? "Amazon author page" : "Website"}</a>`)
     .join(" &middot; ");
+  const contact = email ? `<p class="contact">Contact the Author: <a href="${entities("mailto:" + email)}">${entities(email)}</a></p>` : "";
   write(`authors/${a.slug}/index.html`, page({
     title: `${a.name} - ${site.name}`,
     desc: `${a.name}: ${a.tagline || nBooks(a.books.length) + " published by " + site.name}`,
@@ -195,7 +195,7 @@ for (const a of authors) {
       ${a.tagline ? `<p class="lead">${esc(a.tagline)}</p>` : ""}
     </div>
   </div>
-  ${a.bio.length || links ? `<div class="bio">${a.bio.map((p) => `<p>${esc(p)}</p>`).join("")}${links ? `<p class="small">${links}</p>` : ""}</div>` : ""}
+  ${a.bio.length || links || contact ? `<div class="bio">${a.bio.map((p) => `<p>${esc(p)}</p>`).join("")}${contact}${links ? `<p class="small">${links}</p>` : ""}</div>` : ""}
   <h2>Books by ${esc(a.name)}</h2>
   <div class="book-list">${a.books.map((b) => bookCard({ ...b, author: a }, 2, false)).join("\n")}</div>
 </div>`,
