@@ -265,7 +265,7 @@
     "color": "#8c3b55",
     "tagline": "",
     "bio": [
-      "Julian Vale is the author of 13 novels, including The Island of Second Chances, The Last Train Before Morning, The Ferryman Who Never Crossed and The Uncollected."
+      "Julian Vale is the author of 14 novels, including The Island of Second Chances, The Last Train Before Morning, The Ferryman Who Never Crossed and The Other Chair."
     ],
     "links": {},
     "books": [
@@ -346,6 +346,12 @@
         "category": "Fiction",
         "amazon": "https://mybook.to/Uncollected",
         "description": "A novel of a little alteration shop on a Scottish loch."
+      },
+      {
+        "title": "The Other Chair",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/TheOtherChair",
+        "description": "A novel about the other chair."
       }
     ]
   },
