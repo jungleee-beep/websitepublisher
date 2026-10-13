@@ -37,6 +37,12 @@
         "category": "Fiction",
         "amazon": "https://mybook.to/PaidinFull",
         "description": "A novel about kindness, stubbornness and a fifty-year-old debt."
+      },
+      {
+        "title": "Sorry, We're Open",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/SorryOpen",
+        "description": "One shop. Three estranged siblings. A year they'll never forget."
       }
     ]
   },
