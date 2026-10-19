@@ -11,6 +11,19 @@ fs.rmSync(OUT, { recursive: true, force: true }); // drop pages for removed auth
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 // HTML-entity encode so the address is not sitting in the page source as plain text
 const entities = (t) => [...t].map((c) => `&#${c.charCodeAt(0)};`).join("");
+// Mailchimp signup form (the publisher's list). Plain HTML posting to Mailchimp, no scripts,
+// so nothing loads from third parties until a visitor submits. The hidden b_... field is
+// Mailchimp's bot trap and must stay empty.
+const NEWSLETTER = `<form class="newsletter" action="https://greybridgepress.us10.list-manage.com/subscribe/post?u=5976044de63cd6e5ff47f95a5&amp;id=3e82efc963&amp;f_id=000fc2e1f0" method="post" name="mc-embedded-subscribe-form" target="_blank" rel="noopener">
+    <h2>Subscribe to our Newsletter</h2>
+    <label for="mce-EMAIL">Email Address <span class="req" aria-hidden="true">*</span></label>
+    <div class="nl-row">
+      <input type="email" name="EMAIL" id="mce-EMAIL" required autocomplete="email" placeholder="Your email address">
+      <button type="submit" name="subscribe">Subscribe</button>
+    </div>
+    <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_5976044de63cd6e5ff47f95a5_3e82efc963" tabindex="-1" value=""></div>
+    <p class="small">You can unsubscribe at any time.</p>
+  </form>`;
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 const allBooks = authors
@@ -195,7 +208,7 @@ for (const a of authors) {
       ${a.tagline ? `<p class="lead">${esc(a.tagline)}</p>` : ""}
     </div>
   </div>
-  ${a.bio.length || links || contact ? `<div class="bio">${a.bio.map((p) => `<p>${esc(p)}</p>`).join("")}${contact}${links ? `<p class="small">${links}</p>` : ""}</div>` : ""}
+  <div class="bio">${a.bio.map((p) => `<p>${esc(p)}</p>`).join("")}${contact}${NEWSLETTER}${links ? `<p class="small">${links}</p>` : ""}</div>
   <h2>Books by ${esc(a.name)}</h2>
   <div class="book-list">${a.books.map((b) => bookCard({ ...b, author: a }, 2, false)).join("\n")}</div>
 </div>`,
