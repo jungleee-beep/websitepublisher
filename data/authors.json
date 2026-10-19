@@ -425,6 +425,43 @@
     ]
   },
   {
+    "slug": "dev-malhotra",
+    "name": "Dev Malhotra",
+    "color": "#c07a2a",
+    "tagline": "",
+    "bio": [
+      "Dev Malhotra is the author of The Trouble with Us, on what South Asians and the British get right, wrong and completely misunderstand about each other."
+    ],
+    "links": {},
+    "books": [
+      {
+        "title": "The Trouble with Us",
+        "category": "Non-fiction",
+        "amazon": "https://mybook.to/troublewithus",
+        "description": "What South Asians and the British get right, wrong and completely misunderstand about each other."
+      }
+    ]
+  },
+  {
+    "slug": "anna-wray",
+    "name": "Anna Wray",
+    "color": "#5a4fa0",
+    "tagline": "",
+    "bio": [
+      "Anna Wray is the author of The Patient Who Never Lied, Book One in the Dr Claire Shaw series."
+    ],
+    "links": {},
+    "books": [
+      {
+        "title": "The Patient Who Never Lied",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/NeverLied",
+        "description": "A Dr Claire Shaw novel.",
+        "series": "Dr Claire Shaw series, Book 1"
+      }
+    ]
+  },
+  {
     "slug": "adam-yusuf",
     "name": "Adam Yusuf",
     "color": "#b5533c",

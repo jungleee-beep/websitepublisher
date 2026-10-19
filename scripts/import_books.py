@@ -12,7 +12,7 @@ import openpyxl
 
 SRC, DST = "data/Final_Book_List.xlsx", "data/authors.json"
 DESC = "data/descriptions.json"  # title -> {"description": ..., "series": ...}, edit freely
-COLORS = ["#b5533c", "#2f5d7c", "#5b7d3a", "#7a4e8c", "#a07a1c", "#3d7a74", "#8c3b55", "#4f5d75", "#6b5b3e"]
+COLORS = ["#b5533c", "#2f5d7c", "#5b7d3a", "#7a4e8c", "#a07a1c", "#3d7a74", "#8c3b55", "#4f5d75", "#6b5b3e", "#c07a2a", "#5a4fa0"]
 
 def slugify(s):
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
