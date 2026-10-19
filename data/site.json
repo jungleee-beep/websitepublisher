@@ -3,5 +3,8 @@
   "tagline": "Independent publishing. Distinctive voices.",
   "email": "greybridgepress@gmail.com",
   "submissionsOpen": true,
-  "subtitle": "Fiction • Non-fiction • Ideas worth reading"
+  "subtitle": "Fiction • Non-fiction • Ideas worth reading",
+  "newsletterAuthors": [
+    "yusuf-hasan"
+  ]
 }

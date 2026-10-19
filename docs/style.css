@@ -81,3 +81,12 @@ a.author-card:focus-visible,.card-part:focus-visible{outline:3px solid var(--acc
 .card-fill-l{flex:none;width:20px;min-width:0}
 .contact{font-size:1.2rem;margin:1.1em 0}
 .contact a{font-weight:600}
+.newsletter{position:relative;max-width:600px;margin:1.4em 0;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.newsletter h2{font-size:1.2rem;margin:0 0 .6em}
+.newsletter label{display:block;font:600 .9rem Arial,sans-serif;margin-bottom:6px}
+.newsletter .req{color:var(--accent)}
+.nl-row{display:flex;gap:10px;flex-wrap:wrap}
+.nl-row input{flex:1 1 220px;min-width:0;padding:10px 12px;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.nl-row button{padding:10px 20px;font:600 .95rem Arial,sans-serif;border:0;border-radius:6px;background:var(--accent);color:#fff;cursor:pointer}
+.nl-row button:hover{filter:brightness(.92)}
+.newsletter .small{margin:.7em 0 0}
