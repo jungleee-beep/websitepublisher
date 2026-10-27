@@ -90,3 +90,6 @@ a.author-card:focus-visible,.card-part:focus-visible{outline:3px solid var(--acc
 .nl-row button{padding:10px 20px;font:600 .95rem Arial,sans-serif;border:0;border-radius:6px;background:var(--accent);color:#fff;cursor:pointer}
 .nl-row button:hover{filter:brightness(.92)}
 .newsletter .small{margin:.7em 0 0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+#submissions{scroll-margin-top:16px}

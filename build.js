@@ -248,7 +248,11 @@ write("for-authors/index.html", page({
   depth: 1,
   nav: "for-authors/",
   body: `<div class="wrap section">
-  <h1>Publish on KDP, with a team behind you</h1>
+  <p class="kicker">${esc(site.subtitle)}</p>
+  <h1>Publish with us</h1>
+  <p class="lead">We help authors publish and keep publishing on Amazon KDP. We handle the editing, cover design, formatting and launch, and you keep creative control.</p>
+  <p><a class="btn" href="#submissions">Submit your book</a></p>
+  <h2>Publish on KDP, with a team behind you</h2>
   <p class="lead">You keep your rights and your KDP account. We do the work that makes a book look and sell like it came from a big house.</p>
   <div class="cards">${services.map(([t, d]) => `<div class="card"><h3>${t}</h3><p>${d}</p></div>`).join("")}</div>
   <h2>How it works</h2>
@@ -258,7 +262,7 @@ write("for-authors/index.html", page({
     <li><strong>We build it together.</strong> Edit, cover, formatting, and a launch plan.</li>
     <li><strong>You publish.</strong> The book goes live under your KDP account and appears on your page here.</li>
   </ol>
-  <h2>Submissions</h2>
+  <h2 id="submissions">Submissions</h2>
   <p>${site.submissionsOpen ? "We are currently open to new authors." : "We are not open to submissions right now."} Email us at <a href="mailto:${esc(site.email)}?subject=Submission">${esc(site.email)}</a> with your genre, a short pitch and a sample chapter.</p>
 </div>`,
 }));
