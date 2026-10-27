@@ -448,7 +448,7 @@
     "color": "#5a4fa0",
     "tagline": "",
     "bio": [
-      "Anna Wray is the author of The Patient Who Never Lied, Book One in the Dr Claire Shaw series."
+      "Anna Wray is the author of the Dr Claire Shaw novels: The Patient Who Never Lied (Book One), The Good Husband (Book Two) and What the Patient Knew (Book Three)."
     ],
     "links": {},
     "books": [
@@ -458,6 +458,20 @@
         "amazon": "https://mybook.to/NeverLied",
         "description": "A Dr Claire Shaw novel.",
         "series": "Dr Claire Shaw series, Book 1"
+      },
+      {
+        "title": "The Good Husband",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/GoodHusband",
+        "description": "A Dr Claire Shaw novel.",
+        "series": "Dr Claire Shaw series, Book 2"
+      },
+      {
+        "title": "What the Patient Knew",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/PatientKnew",
+        "description": "A Dr Claire Shaw novel.",
+        "series": "Dr Claire Shaw series, Book 3"
       }
     ]
   },
