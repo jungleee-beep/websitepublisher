@@ -212,5 +212,13 @@
   "The Patient Who Never Lied": {
     "description": "A Dr Claire Shaw novel.",
     "series": "Dr Claire Shaw series, Book 1"
+  },
+  "The Good Husband": {
+    "description": "A Dr Claire Shaw novel.",
+    "series": "Dr Claire Shaw series, Book 2"
+  },
+  "What the Patient Knew": {
+    "description": "A Dr Claire Shaw novel.",
+    "series": "Dr Claire Shaw series, Book 3"
   }
 }
