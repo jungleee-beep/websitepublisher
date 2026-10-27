@@ -50,8 +50,8 @@ function write(rel, html) {
 function page({ title, desc, depth, nav, body }) {
   const root = depth === 0 ? "./" : "../".repeat(depth);
   const links = [
+    ["", "Books"],
     ["authors/", "Authors"],
-    ["books/", "Books"],
     ["for-authors/", "For authors"],
     ["about/", "About"],
     ["contact/", "Contact"],
@@ -145,33 +145,7 @@ function authorCard(a, depth, showEmail = true) {
 </div>`;
 }
 
-// Home
 const cats = ["Fiction", "Non-fiction"].map((c) => [c, allBooks.filter((b) => b.category === c).length]);
-write("index.html", page({
-  title: `${site.name} - Indie publisher for KDP authors`,
-  depth: 0,
-  nav: "",
-  body: `<section class="hero">
-  <div class="wrap hero-text">
-    <h1 class="sr-only">${esc(site.name)}: ${esc(site.tagline)}</h1>
-    <p class="kicker">${esc(site.subtitle)}</p>
-    <p class="lead">We help authors publish and keep publishing on Amazon KDP. We handle the editing, cover design, formatting and launch, and you keep creative control.</p>
-    <p><a class="btn" href="for-authors/">Publish with us</a> <a class="btn ghost" href="books/">Browse our books</a></p>
-  </div>
-</section>
-<section class="wrap section">
-  <h2>Browse our books</h2>
-  <div class="cards">${cats.map(([c, n]) => `<a class="card cat-card" href="books/#${catSlug(c)}"><h3>${c}</h3><p>${nBooks(n)} from ${new Set(allBooks.filter((b) => b.category === c).map((b) => b.author.slug)).size} authors</p></a>`).join("")}</div>
-  <p><a href="books/">See all ${allBooks.length} books &rarr;</a></p>
-</section>
-<section class="band">
-  <div class="wrap section">
-    <h2>Our authors</h2>
-    <div class="author-grid">${authors.map((a) => authorCard(a, 0)).join("\n")}</div>
-    <p><a href="authors/">Meet everyone &rarr;</a></p>
-  </div>
-</section>`,
-}));
 
 // Authors index
 write("authors/index.html", page({
@@ -216,19 +190,19 @@ for (const a of authors) {
   }));
 }
 
-// Books index
-write("books/index.html", page({
-  title: `Books - ${site.name}`,
-  desc: "All books published by " + site.name,
-  depth: 1,
-  nav: "books/",
+// Landing page: the books catalogue (also the first tab in the nav)
+write("index.html", page({
+  title: `${site.name} - Books`,
+  desc: `${site.tagline} ${site.subtitle}`,
+  depth: 0,
+  nav: "",
   body: `<div class="wrap section">
-  <h1>All books</h1>
+  <h1>Our books</h1>
   <div class="filters" role="group" aria-label="Filter by category">
     <button type="button" data-f="all" aria-pressed="true">All (${allBooks.length})</button>
     ${cats.map(([c, n]) => `<button type="button" data-f="${catSlug(c)}" aria-pressed="false">${c} (${n})</button>`).join("\n    ")}
   </div>
-  <div class="book-list">${allBooks.map((b) => bookCard(b, 1, true)).join("\n")}</div>
+  <div class="book-list">${allBooks.map((b) => bookCard(b, 0, true)).join("\n")}</div>
 </div>
 <script>
 (function () {
@@ -243,6 +217,21 @@ write("books/index.html", page({
 })();
 </script>`,
 }));
+
+// The old /books/ address now forwards to the landing page, keeping any #fiction filter
+write("books/index.html", `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(site.name)} - Books</title>
+<link rel="canonical" href="../">
+<meta http-equiv="refresh" content="0; url=../">
+<script>location.replace("../" + location.hash);</script>
+</head>
+<body><p><a href="../">Our books are on the home page.</a></p></body>
+</html>
+`);
 
 // For authors
 const services = [
