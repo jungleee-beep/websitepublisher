@@ -17,32 +17,32 @@
         "title": "Any Other Business",
         "category": "Fiction",
         "amazon": "https://mybook.to/AnyOtherBusiness",
-        "description": "A novel about the small rules that get written down, and the ones that matter more but never are."
+        "description": "A character-driven contemporary novel attentive to ordinary lives and their unexpected complications. It explores how the business of daily survival intersects with relationships and personal ambition."
       },
       {
         "title": "The Fare",
         "category": "Fiction",
         "amazon": "https://mybook.to/THEFARE",
-        "description": "A life learned in the back seat of a London cab, carrying strangers between where they are and where they need to be."
+        "description": "A warm, affecting novel about the lessons learned from the back seat of a taxi. Through encounters with passengers, it explores empathy, human connection and the unexpected wisdom of ordinary journeys."
       },
       {
         "title": "The Empty Cab",
         "category": "Fiction",
         "amazon": "https://mybook.to/THEEMPTYCAB",
-        "description": "The real lesson begins after the last fare. The sequel to The Fare.",
+        "description": "A poignant companion to The Fare that returns to the world of taxi journeys and the lives encountered along the way. It considers absence, memory and the stories that stay with us after a ride ends.",
         "series": "Sequel to The Fare"
       },
       {
         "title": "Paid in Full",
         "category": "Fiction",
         "amazon": "https://mybook.to/PaidinFull",
-        "description": "A novel about kindness, stubbornness and a fifty-year-old debt."
+        "description": "A contemporary novel exploring what people owe, what they sacrifice and what it means to settle a debt. Its questions reach beyond money to responsibility, loyalty and personal redemption."
       },
       {
         "title": "Sorry, We're Open",
         "category": "Fiction",
         "amazon": "https://mybook.to/SorryOpen",
-        "description": "One shop. Three estranged siblings. A year they'll never forget."
+        "description": "A warm British family comedy set around a Newcastle corner shop. Amid the demands of customers, family and daily survival, it celebrates resilience, community and the absurdity of everyday life."
       }
     ]
   },
@@ -62,101 +62,101 @@
         "title": "Before You Go",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/Beforeyougo",
-        "description": "The complete Muslim guide to preparing for death: your will, your affairs and your soul."
+        "description": "A reflective invitation to consider life, mortality and the legacy we leave behind. Drawing on Islamic values, it encourages readers to prepare the heart as thoughtfully as they plan their days."
       },
       {
         "title": "Who Runs the Mosque?",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/WhoRunsTheMosque",
-        "description": "The questions nobody asks out loud about money, power and governance in Britain's Muslim institutions, and the answers we all need."
+        "description": "An accessible look at leadership, responsibility and community life within the mosque. It raises important questions about governance, inclusion and the difference between serving an institution and serving its people."
       },
       {
         "title": "The Hive That Forgot How to Build",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/TheHiveMuslim",
-        "description": "Why Muslim societies lost the habits that built a civilisation, and how they can be recovered."
+        "description": "Using the image of a hive, this book considers what happens when a community loses sight of cooperation and shared purpose. A call to rebuild collective responsibility through faith, service and practical action."
       },
       {
         "title": "The Man They Could Not Stop",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/ProphetMuhammad",
-        "description": "The untold story of Prophet Muhammad (PBUH), told through the eyes of his greatest enemies."
+        "description": "An engaging exploration of the life, resilience and extraordinary influence of Prophet Muhammad. It reflects on how his message endured opposition and continues to shape lives and communities."
       },
       {
         "title": "Still Your Heart",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/StillYourHeart",
-        "description": "Finding peace through the remembrance of Allah.",
+        "description": "A gentle Islamic guide to finding calm amid worry, distraction and uncertainty. It invites readers to recover inner steadiness through remembrance, reflection and trust in Allah.",
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 1 of 10"
       },
       {
         "title": "Wait With Grace",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/WaitwithGrace",
-        "description": "The art of sabr in a world of instant everything.",
+        "description": "A thoughtful Islamic perspective on delays, disappointment and unanswered prayers. It offers encouragement for cultivating patience without surrendering hope or meaningful action.",
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 2 of 10"
       },
       {
         "title": "Raise Your Hands",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/RaiseYourHands",
-        "description": "Unlocking the transformative power of du'a.",
+        "description": "An accessible meditation on du’a, the intimate act of turning to Allah in prayer. It explores sincerity, hope and the strength found in asking, waiting and trusting.",
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 3 of 10"
       },
       {
         "title": "Come Back",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/ComeBacktoAllah",
-        "description": "A gentle guide to returning to Allah.",
+        "description": "A compassionate invitation to reconnect with Allah, regardless of how distant faith may feel. Centred on hope and repentance, it explores the possibility of beginning again.",
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 4 of 10"
       },
       {
         "title": "Count Your Blessings",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/CountYourBlessings",
-        "description": "Gratitude as a path to a fuller life.",
+        "description": "A practical, uplifting exploration of gratitude as an everyday spiritual discipline. It encourages readers to notice ordinary gifts and respond with humility, contentment and generosity.",
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 5 of 10"
       },
       {
         "title": "Polish the Mirror",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/PolishTheMirror",
-        "description": "A practical guide to purifying the heart.",
+        "description": "An invitation to examine and refine the inner self through Islamic reflection. It explores sincerity, character and the daily work of clearing away habits that cloud the heart.",
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 6 of 10"
       },
       {
         "title": "Pack Light",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/PackLight",
-        "description": "Preparing your soul for the hereafter.",
+        "description": "A reflective guide to loosening attachment to what weighs down the heart. Through an Islamic lens, it considers simplicity, priorities and preparing for what matters beyond this life.",
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 7 of 10"
       },
       {
         "title": "Enough",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/EnoughGripofDunya",
-        "description": "Releasing the grip of dunya and finding true contentment.",
+        "description": "A searching reflection on the grip of dunya, the distractions and desires of worldly life. It asks what true sufficiency looks like when measured against faith and lasting purpose.",
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 8 of 10"
       },
       {
         "title": "Trust the Plan",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/TrustThePlan",
-        "description": "Tawakkul and the art of letting go.",
+        "description": "A faith-centred reflection on uncertainty, patience and divine wisdom. It encourages readers to act with purpose while accepting that not every outcome is theirs to control.",
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 9 of 10"
       },
       {
         "title": "Before You Sleep",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/BeforeYouSleep",
-        "description": "A night-time companion for the Muslim soul.",
+        "description": "A quiet, contemplative companion for the close of each day. It encourages reflection, gratitude, repentance and a more intentional relationship with Allah.",
         "series": "Returning to Allah, Islamic Spiritual Series, Booklet 10 of 10"
       },
       {
         "title": "The Daily Heart",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/dailyheart",
-        "description": "365 days of wisdom, reflection and journaling for the Muslim heart."
+        "description": "A year-long collection of daily prompts and spiritual reflections for Muslim readers. Each entry creates space to pause, write and strengthen the connection between belief and daily practice."
       }
     ]
   },
@@ -176,37 +176,37 @@
         "title": "The Light of Divine Wisdom",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/NahjulBalagha",
-        "description": "A journey through Nahjul Balagha, the sermons, letters and sayings of Imam Ali (AS)."
+        "description": "An exploration of enduring ethical and spiritual insights associated with Nahj al-Balagha. It invites readers to reflect on wisdom, character, justice and the responsibilities of human life."
       },
       {
         "title": "Conversations with Allah the Al-Samīʿ",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/ConversationsAllah",
-        "description": "365 days of question, answer and reflection."
+        "description": "A contemplative journey into speaking to Allah with honesty, vulnerability and hope. Grounded in the divine name Al-Samīʿ, the All-Hearing, it reflects on the comfort of being heard."
       },
       {
         "title": "Shared Light",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/SharedLight",
-        "description": "Explores the prophets who appear in both the Bible and the Qur'an."
+        "description": "A reflective work about the values and spiritual insights that connect people across apparent differences. It encourages dialogue, empathy and the recognition of common humanity."
       },
       {
         "title": "The 5 Intoxicants",
         "category": "Fiction",
         "amazon": "https://mybook.to/5INTOXICANTS",
-        "description": "The hidden forces that make us forget what truly matters."
+        "description": "A thought-provoking work of fiction examining the forces that captivate human desires and distort choices. Through its central idea of five intoxicants, it explores temptation, freedom and self-knowledge."
       },
       {
         "title": "The Lost and Found",
         "category": "Fiction",
         "amazon": "https://mybook.to/TheLostandFound",
-        "description": "A story of what we lose, what we keep and what still finds its way back."
+        "description": "A reflective novel about loss, identity and the unexpected ways people find their way back to themselves. Its emotional centre is the possibility that what is missing may lead to something new."
       },
       {
         "title": "Ninety Days More",
         "category": "Fiction",
         "amazon": "https://mybook.to/90days",
-        "description": "Some things deserve another ninety days. The sequel to The Lost and Found.",
+        "description": "A novel confronting the meaning of time when its limits become impossible to ignore. It explores what relationships, regrets and unfinished hopes reveal about a life worth living.",
         "series": "Sequel to The Lost and Found"
       }
     ]
@@ -225,43 +225,43 @@
         "title": "The Jobs We Blamed on Machines",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/JobsweBlamed",
-        "description": "How AI became the excuse for cuts companies already wanted. The story behind the layoffs."
+        "description": "A provocative examination of automation and the changing world of work. It questions whether machines alone are responsible for lost jobs, or whether human choices play the greater role."
       },
       {
         "title": "The Ally We Never Question",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/TheAlly",
-        "description": "Examines seventy-eight years of the alliance between the United States and Israel, and why it runs without conditions."
+        "description": "An examination of political alliances and the assumptions that sustain them. It asks what governments and citizens overlook when strategic partnerships escape meaningful scrutiny."
       },
       {
         "title": "The Governments We Unmade",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/GovernmentsWeUnmade",
-        "description": "Coups, covert operations and broken nations: how America turned regime change into foreign policy."
+        "description": "A critical look at the consequences of foreign intervention and political upheaval. It considers what follows when outside powers help dismantle governments but cannot control what comes next."
       },
       {
         "title": "The Dictators We Love",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/DictatorsWeLove",
-        "description": "How America preaches democracy and protects tyrants."
+        "description": "A challenging exploration of why powerful nations sometimes embrace authoritarian leaders. It exposes the tension between proclaimed democratic values and strategic convenience."
       },
       {
         "title": "The Country That Stopped Learning",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/COUNTRYTHATSTOPPED",
-        "description": "Why Britain's problems have already been solved somewhere else."
+        "description": "An argument about the costs of institutional stagnation and resistance to evidence. It explores what happens when a society loses its ability to question, adapt and learn."
       },
       {
         "title": "Owned",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/SurveillanceEconomy",
-        "description": "Inside the surveillance economy that turned you into a product."
+        "description": "A critique of the surveillance economy and the trade-offs hidden in digital convenience. It examines data, power and the gradual erosion of personal autonomy."
       },
       {
         "title": "The Comfort Tax",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/ComfortTax",
-        "description": "Why telling the truth became expensive, and who ended up paying."
+        "description": "A thought-provoking analysis of what modern convenience really costs. It looks beyond price tags to ask how comfort reshapes autonomy, expectations and public life."
       }
     ]
   },
@@ -279,85 +279,85 @@
         "title": "The Island of Second Chances",
         "category": "Fiction",
         "amazon": "https://mybook.to/IslandofSecondChances",
-        "description": "A novel of fresh starts."
+        "description": "A philosophical novel set around the tantalising possibility of beginning again. It asks whether a new chance can change a life without changing the person who lives it."
       },
       {
         "title": "The Last Train Before Morning",
         "category": "Fiction",
         "amazon": "https://mybook.to/LastTrainBefore",
-        "description": "A novel about a final journey as the night gives way to morning."
+        "description": "A mysterious, reflective journey in which travel becomes a way of confronting unfinished choices. It explores regret, possibility and the destinations people never expected to reach."
       },
       {
         "title": "The Ferryman",
         "category": "Fiction",
         "amazon": "https://mybook.to/Ferryman",
-        "description": "A novel about a ferryman who never crossed."
+        "description": "A metaphysical tale built around passage, transition and the questions people carry across thresholds. It considers what must be faced before anyone can truly move on."
       },
       {
         "title": "The Gardener of Forgotten Dreams",
         "category": "Fiction",
         "amazon": "https://mybook.to/TheGardenerDreams",
-        "description": "A novel about forgotten dreams and the gardener who tends them."
+        "description": "A lyrical fantasy about neglected ambitions and the dreams people set aside. It imagines what might happen when forgotten possibilities are given the chance to grow again."
       },
       {
         "title": "The Shop That Sold Lost Things",
         "category": "Fiction",
         "amazon": "https://mybook.to/LostThings",
-        "description": "What we recover may require us to release something else."
+        "description": "A whimsical, philosophical novel centred on the emotional value of things people lose. It explores memory, longing and the unexpected cost of getting something back."
       },
       {
         "title": "The Library of Unwritten Lives",
         "category": "Fiction",
         "amazon": "https://mybook.to/UnwrittenLives",
-        "description": "A novel about the lives that were never written down."
+        "description": "A speculative novel about stories never lived and the choices that create them. It invites readers to consider the alternate selves that remain just beyond reach."
       },
       {
         "title": "The Man Who Collected Tomorrows",
         "category": "Fiction",
         "amazon": "https://mybook.to/CollectedTomorrows",
-        "description": "A novel about a man who collected tomorrows."
+        "description": "An imaginative story about the allure of possible futures. It explores the tension between wanting to know what comes next and learning to live in the present."
       },
       {
         "title": "The Man Who Gave Away His Name",
         "category": "Fiction",
         "amazon": "https://mybook.to/gaveawayname",
-        "description": "A novel about a man who gave away his name."
+        "description": "A philosophical tale about identity, belonging and what remains when the labels defining us disappear. It questions how much of a person can be surrendered without losing the self."
       },
       {
         "title": "The House With Seven Doors",
         "category": "Fiction",
         "amazon": "https://mybook.to/sevendoors",
-        "description": "A novel built around a house with seven doors."
+        "description": "A metaphysical novel using the mystery of seven doors to explore different possibilities and decisions. Each threshold suggests a new way of thinking about the life we choose."
       },
       {
         "title": "The Castle at the End of the Road",
         "category": "Fiction",
         "amazon": "https://mybook.to/Castleendofroad",
-        "description": "Some journeys lead you home."
+        "description": "A standalone literary novel with an atmosphere of mystery and philosophical inquiry. It follows the pull of an enigmatic destination and the personal questions raised along the way."
       },
       {
         "title": "The Garden Across the Street",
         "category": "Fiction",
         "amazon": "https://mybook.to/gardenacross",
-        "description": "A novel about the garden across the street."
+        "description": "A quietly resonant standalone novel about the lives we observe and the stories we assume. It finds emotional meaning in proximity, memory and unexpected connection."
       },
       {
         "title": "The Clockmaker Who Stopped Time",
         "category": "Fiction",
         "amazon": "https://mybook.to/clockmaker",
-        "description": "A novel about a clockmaker who stopped time."
+        "description": "A thought-provoking fantasy about time, control and the desire to hold on to fleeting moments. It asks whether stopping change would preserve life or diminish it."
       },
       {
         "title": "The Uncollected",
         "category": "Fiction",
         "amazon": "https://mybook.to/Uncollected",
-        "description": "A novel of a little alteration shop on a Scottish loch."
+        "description": "When Tess inherits her grandmother Edie’s Scottish alterations shop, a long-buried mystery emerges from the seams of a wedding dress. A moving literary novel about family secrets, memory and what we carry forward."
       },
       {
         "title": "The Other Chair",
         "category": "Fiction",
         "amazon": "https://mybook.to/TheOtherChair",
-        "description": "A novel about the other chair."
+        "description": "An introspective literary novel that uses the presence, or absence, of another person to explore connection and identity. A story interested in the silences that shape a life."
       }
     ]
   },
@@ -375,7 +375,7 @@
         "title": "Still Standing: Keep Your Job",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/StillStandingAI",
-        "description": "Keep your job and your nerve as AI changes the way we work. A calm, practical guide for the experienced professional."
+        "description": "A pragmatic guide to adapting at work as artificial intelligence transforms employment. It focuses on resilience, relevant skills and protecting professional value amid technological change."
       }
     ]
   },
@@ -393,34 +393,34 @@
         "title": "Weight of Light",
         "category": "Fiction",
         "amazon": "https://mybook.to/WeightofLight",
-        "description": "Some journeys take you farther. Others take you home.",
+        "description": "A literary exploration of grief, hope and the paradoxes of human connection. Its central tension lies in how even moments of beauty can carry emotional weight.",
         "series": "The Meridian Sequence, Book 1"
       },
       {
         "title": "All the Distance Between",
         "category": "Fiction",
         "amazon": "https://mybook.to/DistanceBetween",
-        "description": "Some discoveries change everything. Some truths change us.",
+        "description": "An emotionally observant novel about separation and the ties that endure across it. It considers what distance does to memory, relationships and the things left unsaid.",
         "series": "The Meridian Sequence, Book 2"
       },
       {
         "title": "The Ordinary Infinite",
         "category": "Fiction",
         "amazon": "https://mybook.to/ORDINARYINFINITE",
-        "description": "We seek the stars, we find ourselves.",
+        "description": "A literary novel that finds extraordinary significance in seemingly ordinary experience. It explores the intersections of time, intimacy and the hidden depth of everyday life.",
         "series": "The Meridian Sequence, Book 3"
       },
       {
         "title": "Almost",
         "category": "Fiction",
         "amazon": "https://mybook.to/AlmostNovel",
-        "description": "Some lessons are not in the plan. They are in the spaces in between."
+        "description": "A tender novel about near misses, unrealised possibilities and the lives that might have been. It reflects on the lasting influence of choices made and choices deferred."
       },
       {
         "title": "Estranged by Choice",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/EstrangedbyChoice",
-        "description": "An adult child's honest account of cutting off parents, and why it was right."
+        "description": "A nuanced nonfiction exploration of intentional family estrangement and the difficult decisions behind it. It considers boundaries, guilt, healing and the complexity of rebuilding a life on one’s own terms."
       }
     ]
   },
@@ -438,7 +438,7 @@
         "title": "The Trouble with Us",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/troublewithus",
-        "description": "What South Asians and the British get right, wrong and completely misunderstand about each other."
+        "description": "A candid, humorous look at what British and South Asian cultures get right, wrong and spectacularly misunderstand about one another. From family and hospitality to identity and social expectations, it finds insight in the friction."
       }
     ]
   },
@@ -456,21 +456,21 @@
         "title": "The Patient Who Never Lied",
         "category": "Fiction",
         "amazon": "https://mybook.to/NeverLied",
-        "description": "A Dr Claire Shaw novel.",
+        "description": "The opening psychological mystery in the Dr Claire Shaw series, where clinical observation meets hidden truths. Set against the atmosphere of West Yorkshire, it explores how appearances can mislead even a perceptive professional.",
         "series": "Dr Claire Shaw series, Book 1"
       },
       {
         "title": "The Good Husband",
         "category": "Fiction",
         "amazon": "https://mybook.to/GoodHusband",
-        "description": "A Dr Claire Shaw novel.",
+        "description": "A Dr Claire Shaw psychological mystery examining the unsettling gap between a respectable public image and private reality. The novel probes trust, relationships and the stories people choose to believe.",
         "series": "Dr Claire Shaw series, Book 2"
       },
       {
         "title": "What the Patient Knew",
         "category": "Fiction",
         "amazon": "https://mybook.to/PatientKnew",
-        "description": "A Dr Claire Shaw novel.",
+        "description": "In this Dr Claire Shaw mystery, knowledge can be as dangerous as concealment. A psychologically driven story about secrets, perception and the consequences of what a patient reveals.",
         "series": "Dr Claire Shaw series, Book 3"
       }
     ]
@@ -489,7 +489,7 @@
         "title": "The First Year",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/TheFirstYear",
-        "description": "An honest guide to life after the shahada, for new Muslims and everyone who loves one."
+        "description": "A practical, reassuring companion to the first year of Muslim life and spiritual growth. It explores the habits, questions and everyday decisions that help faith become a lasting part of life."
       }
     ]
   },
@@ -509,61 +509,61 @@
         "title": "The Field of Karbala",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/FieldsofKarbala",
-        "description": "What happened, why it happened, and why it still matters."
+        "description": "A reflection on Karbala as a defining event of sacrifice, conscience and resistance to injustice. It considers the enduring moral and spiritual meanings of Imam Husayn’s stand."
       },
       {
         "title": "Daughters of Revelation",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/DaughtersOfRevelatio",
-        "description": "The women of the Ahl al-Bayt: Fatima, Zaynab, Umm Kulthum, Sukayna, Fatima Masuma and Narjis."
+        "description": "An exploration of the women whose courage, knowledge and devotion illuminate Islamic history. It brings their significance into focus and considers the lessons their lives offer today."
       },
       {
         "title": "Raising Shia Children in the West",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/RaisingShiaChildren",
-        "description": "A parent's guide to faith, family and identity, from nursery to university."
+        "description": "A practical guide to nurturing Shia identity and values while raising children in Western societies. It addresses the balance between belonging, confidence, faith education and everyday family life."
       },
       {
         "title": "Understanding the Twelve Imams",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/TwelveImams",
-        "description": "One mission, twelve Imams: 250 years of visible guidance, and the Imam who remains."
+        "description": "An approachable introduction to the Twelve Imams in Shia Islam and their religious significance. It explores their place in a tradition of spiritual leadership, scholarship and moral example."
       },
       {
         "title": "The Shia Muslim Handbook",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/ShiaMuslimHandbook",
-        "description": "A contemporary guide to Twelver Shia beliefs, worship, history and daily life."
+        "description": "A reader-friendly introduction to the beliefs, practices and everyday questions of Shia Muslim life. Designed to make foundational concepts accessible without losing their spiritual depth."
       },
       {
         "title": "The Next Marja",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/Marja",
-        "description": "Inside the coming leadership crisis of the Shia world."
+        "description": "A timely examination of religious authority and leadership within contemporary Shia Islam. It considers how scholarship, trust and the needs of changing communities shape discussions of marja‘iyya."
       },
       {
         "title": "The Shia Islam You've Heard About",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/ShiaIslamHeardAbout",
-        "description": "Correcting the record, inside and out."
+        "description": "A thoughtful response to common assumptions and misconceptions about Shia Islam. It aims to replace slogans and second-hand impressions with context, nuance and understanding."
       },
       {
         "title": "Understanding the Shia",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/UnderstandingtheShia",
-        "description": "Who they are, what they believe, and why it matters."
+        "description": "A clear introduction to Shia history, beliefs and religious identity for curious readers. It offers context for both shared Islamic foundations and distinctive traditions."
       },
       {
         "title": "Tears of the Ummah",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/TearsoftheUmmah",
-        "description": "A history of Shia azadari, from Karbala to the modern world."
+        "description": "A reflective look at sorrow, solidarity and the moral responsibilities of the Muslim community. It explores how grief can become compassion, remembrance and commitment to justice."
       },
       {
         "title": "Whispers to the Divine",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/WhisperstotheDivine",
-        "description": "A complete guide to the popular Shia supplications."
+        "description": "An intimate collection of reflections on prayer, longing and closeness to Allah. It draws readers toward the quieter, more personal dimensions of spiritual life."
       }
     ]
   }
