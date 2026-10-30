@@ -25,6 +25,11 @@ const NEWSLETTER = `<form class="newsletter" action="https://greybridgepress.us1
     <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_5976044de63cd6e5ff47f95a5_3e82efc963" tabindex="-1" value=""></div>
     <p class="small">You can unsubscribe at any time.</p>
   </form>`;
+const abs = (p = "") => `${site.url}/${p}`;
+// JSON-LD block; "<" is escaped so book text can never close the script tag
+const jsonld = (graph) => `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c")}</script>`;
+const orgNode = () => ({ "@type": "Organization", "@id": abs("#publisher"), name: site.name, url: abs(), logo: abs("images/logo.jpg"), description: site.tagline, email: site.email });
+const crumbs = (items) => ({ "@type": "BreadcrumbList", itemListElement: items.map(([name, url], i) => ({ "@type": "ListItem", position: i + 1, name, item: url })) });
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 const allBooks = authors
@@ -47,8 +52,10 @@ function write(rel, html) {
   fs.writeFileSync(file, html);
 }
 
-function page({ title, desc, depth, nav, body }) {
-  const root = depth === 0 ? "./" : "../".repeat(depth);
+function page({ title, desc, depth, nav, body, path: pagePath = "", ld, noindex = false, root: rootOverride }) {
+  const root = rootOverride || (depth === 0 ? "./" : "../".repeat(depth));
+  const description = desc || site.tagline + " " + site.subtitle;
+  const url = abs(pagePath);
   const links = [
     ["", "Books"],
     ["authors/", "Authors"],
@@ -57,15 +64,28 @@ function page({ title, desc, depth, nav, body }) {
     ["contact/", "Contact"],
   ];
   return `<!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
-<meta name="description" content="${esc(desc || site.tagline + " " + site.subtitle)}">
+<meta name="description" content="${esc(description)}">
+${noindex ? '<meta name="robots" content="noindex">\n' : `<link rel="canonical" href="${url}">\n`}<meta property="og:type" content="website">
+<meta property="og:site_name" content="${esc(site.name)}">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(description)}">
+<meta property="og:url" content="${url}">
+<meta property="og:image" content="${abs("images/og.jpg")}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${esc(site.name)}: ${esc(site.tagline)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(title)}">
+<meta name="twitter:description" content="${esc(description)}">
+<meta name="twitter:image" content="${abs("images/og.jpg")}">
 <link rel="icon" type="image/png" href="${root}images/favicon.png">
 <link rel="stylesheet" href="${root}style.css">
-</head>
+${ld ? jsonld(ld) + "\n" : ""}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="banner-wrap"><a class="banner-link" href="${root}"><img class="banner" src="${root}images/banner.jpg" width="1600" height="608" alt="${esc(site.name)}: ${esc(site.tagline)}"></a></div>
@@ -109,7 +129,7 @@ function cover(book, root) {
 
 function bookCard(book, depth, showAuthor) {
   const root = "../".repeat(depth);
-  return `<article class="book" data-cat="${catSlug(book.category)}">
+  return `<article class="book" id="${slugify(book.title)}" data-cat="${catSlug(book.category)}">
   ${cover(book, root)}
   <div class="book-info">
     <h3>${esc(book.title)}</h3>
@@ -117,7 +137,7 @@ function bookCard(book, depth, showAuthor) {
     ${showAuthor ? `<p class="by">by <a href="${root}authors/${book.author.slug}/">${esc(book.author.name)}</a></p>` : ""}
     ${book.description ? `<p>${esc(book.description)}</p>` : ""}
     <p class="meta">${[book.category, book.year, (book.formats || []).join(", ")].filter(Boolean).map(esc).join(" &middot; ")}</p>
-    <a class="btn" href="${esc(book.amazon)}" rel="noopener" target="_blank">Buy on Amazon</a>
+    <a class="btn" href="${esc(book.amazon)}" rel="sponsored noopener" target="_blank">Buy on Amazon</a>
   </div>
 </article>`;
 }
@@ -149,6 +169,8 @@ const cats = ["Fiction", "Non-fiction"].map((c) => [c, allBooks.filter((b) => b.
 
 // Authors index
 write("authors/index.html", page({
+  path: "authors/",
+  ld: [orgNode(), crumbs([["Home", abs()], ["Authors", abs("authors/")]])],
   title: `Authors - ${site.name}`,
   desc: "Meet the authors published by " + site.name,
   depth: 1,
@@ -168,7 +190,18 @@ for (const a of authors) {
     .map(([k, v]) => `<a href="${esc(v)}" rel="noopener" target="_blank">${k === "amazon" ? "Amazon author page" : "Website"}</a>`)
     .join(" &middot; ");
   const contact = email ? `<p class="contact">Contact the Author: <a href="${entities("mailto:" + email)}">${entities(email)}</a></p>` : "";
+  const aUrl = abs(`authors/${a.slug}/`);
+  const sameAs = Object.entries(a.links || {}).filter(([k]) => k !== "email").map(([, v]) => v);
+  const personNode = { "@type": "Person", "@id": `${aUrl}#author`, name: a.name, url: aUrl, description: a.bio.join(" ") || undefined, ...(sameAs.length ? { sameAs } : {}) };
+  const bookNodes = a.books.map((b) => ({
+    "@type": "Book", "@id": `${aUrl}#${slugify(b.title)}`, name: b.title, url: `${aUrl}#${slugify(b.title)}`,
+    author: { "@id": `${aUrl}#author` }, publisher: { "@id": abs("#publisher") }, inLanguage: "en-GB",
+    genre: b.category || undefined, description: b.description || undefined, sameAs: [b.amazon],
+    image: fs.existsSync(path.join("src", "covers", `${slugify(b.title)}.jpg`)) ? abs(`covers/${slugify(b.title)}.jpg`) : undefined,
+  }));
   write(`authors/${a.slug}/index.html`, page({
+    path: `authors/${a.slug}/`,
+    ld: [orgNode(), personNode, ...bookNodes, crumbs([["Home", abs()], ["Authors", abs("authors/")], [a.name, aUrl]])],
     title: `${a.name} - ${site.name}`,
     desc: `${a.name}: ${a.tagline || nBooks(a.books.length) + " published by " + site.name}`,
     depth: 2,
@@ -191,13 +224,16 @@ for (const a of authors) {
 }
 
 // Landing page: the books catalogue (also the first tab in the nav)
+const landingHeading = "Independent publisher of fiction and non-fiction by new authors";
 write("index.html", page({
-  title: `${site.name} - Books`,
-  desc: `${site.tagline} ${site.subtitle}`,
+  title: `${site.name} | Independent Publisher of Fiction and Non-Fiction`,
+  desc: `${site.name} is an independent publisher of fiction and non-fiction by new authors. Browse ${allBooks.length} books by ${authors.length} authors, then buy on Amazon.`,
   depth: 0,
   nav: "",
+  path: "",
+  ld: [orgNode(), { "@type": "WebSite", "@id": abs("#website"), url: abs(), name: site.name, inLanguage: "en-GB", publisher: { "@id": abs("#publisher") } }],
   body: `<div class="wrap section">
-  <h1>Our books</h1>
+  <h1 class="home-title">${landingHeading}</h1>
   <div class="filters" role="group" aria-label="Filter by category">
     <button type="button" data-f="all" aria-pressed="true">All (${allBooks.length})</button>
     ${cats.map(([c, n]) => `<button type="button" data-f="${catSlug(c)}" aria-pressed="false">${c} (${n})</button>`).join("\n    ")}
@@ -225,7 +261,8 @@ write("books/index.html", `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(site.name)} - Books</title>
-<link rel="canonical" href="../">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="${abs()}">
 <meta http-equiv="refresh" content="0; url=../">
 <script>location.replace("../" + location.hash);</script>
 </head>
@@ -244,7 +281,9 @@ const services = [
 ];
 write("for-authors/index.html", page({
   title: `For authors - ${site.name}`,
-  desc: "How we help authors publish on Amazon KDP.",
+  desc: "How we help authors publish on Amazon KDP: editing, cover design, formatting, launch support and a team behind you.",
+  path: "for-authors/",
+  ld: [orgNode(), crumbs([["Home", abs()], ["For authors", abs("for-authors/")]])],
   depth: 1,
   nav: "for-authors/",
   body: `<div class="wrap section">
@@ -270,6 +309,9 @@ write("for-authors/index.html", page({
 // About
 write("about/index.html", page({
   title: `About - ${site.name}`,
+  desc: "About Greybridge Press, a small independent press that helps authors publish on Amazon KDP and keep creative control.",
+  path: "about/",
+  ld: [orgNode(), crumbs([["Home", abs()], ["About", abs("about/")]])],
   depth: 1,
   nav: "about/",
   body: `<div class="wrap section narrow">
@@ -284,6 +326,9 @@ write("about/index.html", page({
 // Contact
 write("contact/index.html", page({
   title: `Contact - ${site.name}`,
+  desc: "Contact Greybridge Press with questions, author submissions or press enquiries.",
+  path: "contact/",
+  ld: [orgNode(), crumbs([["Home", abs()], ["Contact", abs("contact/")]])],
   depth: 1,
   nav: "contact/",
   body: `<div class="wrap section narrow">
@@ -292,6 +337,30 @@ write("contact/index.html", page({
   <p><a class="btn" href="mailto:${esc(site.email)}">${esc(site.email)}</a></p>
 </div>`,
 }));
+
+// GitHub Pages serves 404.html for any address that does not exist. Root-absolute links so it works at any depth.
+write("404.html", page({
+  title: `Page not found - ${site.name}`,
+  desc: "This page could not be found.",
+  depth: 0,
+  root: "/",
+  nav: "none",
+  noindex: true,
+  body: `<div class="wrap section narrow">
+  <h1>Page not found</h1>
+  <p class="lead">Sorry, we could not find that page. It may have moved, or the address may have a typo.</p>
+  <p><a class="btn" href="/">Browse our books</a> <a class="btn ghost" href="/authors/">Meet our authors</a></p>
+</div>`,
+}));
+
+// Sitemap and robots.txt (the redirect page /books/ and the 404 page are left out on purpose)
+const sitePaths = ["", "authors/", ...authors.map((a) => `authors/${a.slug}/`), "for-authors/", "about/", "contact/"];
+fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitePaths.map((p) => `  <url><loc>${abs(p)}</loc></url>`).join("\n")}
+</urlset>
+`);
+fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${abs("sitemap.xml")}\n`);
 
 fs.copyFileSync("src/style.css", path.join(OUT, "style.css"));
 fs.cpSync("src/images", path.join(OUT, "images"), { recursive: true });

@@ -93,3 +93,4 @@ a.author-card:focus-visible,.card-part:focus-visible{outline:3px solid var(--acc
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 #submissions{scroll-margin-top:16px}
+.home-title{font-size:clamp(1.6rem,3.6vw,2.4rem);max-width:760px}
