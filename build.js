@@ -38,7 +38,12 @@ const allBooks = authors
 // Series with this many books or more are shown as one card that links to a series page
 const MIN_SERIES = 3;
 const seriesMeta = JSON.parse(fs.readFileSync("data/series.json", "utf8"));
-const seriesOf = (b) => { const m = (b.series || "").match(/^(.+?), (?:Booklet|Book) (\d+)/); return m ? { name: m[1], num: +m[2] } : null; };
+const seriesOf = (b) => {
+  const t = b.series || "";
+  if (!t || /^Sequel to /.test(t)) return null;
+  const m = t.match(/^(.+?), (?:Booklet|Book) (\d+)/);
+  return m ? { name: m[1], num: +m[2] } : { name: t, num: 0 };
+};
 const seriesList = [];
 for (const a of authors) {
   const groups = new Map();
@@ -52,7 +57,7 @@ for (const a of authors) {
     if (books.length < MIN_SERIES) continue;
     books.sort((x, y) => x.num - y.num);
     const meta = seriesMeta[name] || {};
-    seriesList.push({ name, slug: meta.slug || slugify(name), intro: meta.intro || "", author: a, books, category: books[0].category, unit: /Booklet/.test(books[0].series) ? "booklets" : "books" });
+    seriesList.push({ name, slug: meta.slug || slugify(name), intro: meta.intro || "", about: meta.about || [], numbered: books.every((x) => x.num > 0), author: a, books, category: books[0].category, unit: /Booklet/.test(books[0].series) ? "booklets" : "books" });
   }
 }
 const seriesByBook = new Map(seriesList.flatMap((s) => s.books.map((b) => [b.title, s])));
@@ -282,7 +287,7 @@ for (const b of allBooks) {
   const seriesName = (b.series || "").match(/^(.+?), (?:Booklet|Book) \d+/);
   const ser = seriesByBook.get(b.title);
   const idx = ser ? ser.books.findIndex((x) => x.title === b.title) : -1;
-  const prev = ser && idx > 0 ? ser.books[idx - 1] : null, next = ser && idx < ser.books.length - 1 ? ser.books[idx + 1] : null;
+  const prev = ser && ser.numbered && idx > 0 ? ser.books[idx - 1] : null, next = ser && ser.numbered && idx < ser.books.length - 1 ? ser.books[idx + 1] : null;
   const mates = ser ? ser.books.filter((x) => x.title !== b.title) : [];
   const others = a.books.filter((x) => x.title !== b.title && !mates.some((m) => m.title === x.title)).map((x) => ({ ...x, author: a }));
   const metaBits = [b.category, b.year, (b.formats || []).join(", ")].filter(Boolean);
@@ -311,12 +316,12 @@ for (const b of allBooks) {
     <div class="book-page-cover">${cover(b, "../../", 260, true)}</div>
     <div class="book-page-info">
       <h1>${esc(b.title)}</h1>
-      ${ser ? `<p class="series">${esc(b.series.replace(/^.+?, ((?:Booklet|Book) \d+(?: of \d+)?)$/, "$1"))} in <a href="../../series/${ser.slug}/">${esc(ser.name)}</a></p>` : b.series ? `<p class="series">${esc(b.series)}</p>` : ""}
+      ${ser ? `<p class="series">${ser.numbered ? `${esc(b.series.replace(/^.+?, ((?:Booklet|Book) \d+(?: of \d+)?)$/, "$1"))} in ` : "Part of "}<a href="../../series/${ser.slug}/">${esc(ser.name)}</a></p>` : b.series ? `<p class="series">${esc(b.series)}</p>` : ""}
       <p class="by">by <a href="../../authors/${a.slug}/">${esc(a.name)}</a></p>
       ${b.long ? `<p class="about">${esc(b.long)}</p>` : b.description ? `<p class="lead">${esc(b.description)}</p>` : ""}
       ${metaBits.length ? `<p class="meta">${metaBits.map(esc).join(" &middot; ")}</p>` : ""}
       <p><a class="btn" href="${esc(b.amazon)}" rel="sponsored noopener" target="_blank">Buy on Amazon</a></p>
-      ${ser ? `<nav class="series-nav" aria-label="In this series">${prev ? `<a href="../${prev.slug}/">&larr; ${esc(prev.title)}</a>` : "<span></span>"}${next ? `<a href="../${next.slug}/">${esc(next.title)} &rarr;</a>` : "<span></span>"}</nav>` : ""}
+      ${ser && ser.numbered ? `<nav class="series-nav" aria-label="In this series">${prev ? `<a href="../${prev.slug}/">&larr; ${esc(prev.title)}</a>` : "<span></span>"}${next ? `<a href="../${next.slug}/">${esc(next.title)} &rarr;</a>` : "<span></span>"}</nav>` : ""}
     </div>
   </div>
   ${mates.length ? `<h2>More in ${esc(ser.name)}</h2>
@@ -342,7 +347,7 @@ for (const s of seriesList) {
     ld: [
       orgNode(),
       { "@type": "Person", "@id": `${aUrl}#author`, name: a.name, url: aUrl },
-      { "@type": "BookSeries", "@id": `${sUrl}#series`, name: s.name, url: sUrl, description: s.intro || undefined, author: { "@id": `${aUrl}#author` }, publisher: { "@id": abs("#publisher") }, numberOfItems: s.books.length, hasPart: s.books.map((b) => ({ "@id": `${abs(`books/${b.slug}/`)}#book` })) },
+      { "@type": "BookSeries", "@id": `${sUrl}#series`, name: s.name, url: sUrl, description: [s.intro, ...s.about].filter(Boolean).join(" ") || undefined, author: { "@id": `${aUrl}#author` }, publisher: { "@id": abs("#publisher") }, numberOfItems: s.books.length, hasPart: s.books.map((b) => ({ "@id": `${abs(`books/${b.slug}/`)}#book` })) },
       ...s.books.map((b) => ({ "@type": "Book", "@id": `${abs(`books/${b.slug}/`)}#book`, name: b.title, url: abs(`books/${b.slug}/`), author: { "@id": `${aUrl}#author` }, isPartOf: { "@id": `${sUrl}#series` } })),
       crumbs([["Home", abs()], ["Authors", abs("authors/")], [a.name, aUrl], [s.name, sUrl]]),
     ],
@@ -352,7 +357,8 @@ for (const s of seriesList) {
   <h1>${esc(s.name)}</h1>
   <p class="by">by <a href="../../authors/${a.slug}/">${esc(a.name)}</a></p>
   ${s.intro ? `<p class="lead">${esc(s.intro)}</p>` : ""}
-  <div class="book-list">${s.books.map((b) => bookCard(b, 2, false)).join("\n")}</div>
+  ${s.about.map((p) => `<p class="about">${esc(p)}</p>`).join("\n  ")}
+  <div class="book-list">${s.books.map((b) => bookCard(s.numbered ? b : { ...b, series: "" }, 2, false)).join("\n")}</div>
 </div>`,
   }));
 }

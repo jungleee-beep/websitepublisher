@@ -112,3 +112,4 @@ html{scroll-behavior:smooth}
 .series-tag{font:700 .78rem Arial,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin:0 0 .4em}
 .series-nav{display:flex;justify-content:space-between;gap:16px;margin-top:1.4em;font:600 .92rem Arial,sans-serif}
 .series-nav a{max-width:48%}
+p.about{max-width:700px}
