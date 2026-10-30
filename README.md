@@ -22,3 +22,10 @@ Output goes to `docs/`. Deploy that folder anywhere (GitHub Pages: set source to
 ## Custom domain
 
 The site is served at `www.greybridgepress.com` through GitHub Pages. The domain is set in `src/CNAME`, which the build copies to `docs/CNAME` (the build wipes `docs/`, so do not edit that copy). To change the domain, edit `src/CNAME` and rebuild.
+
+## SEO
+
+- `site.url` in `data/site.json` is the public address used for canonical links, share cards, structured data and the sitemap.
+- The build writes `docs/sitemap.xml`, `docs/robots.txt` and `docs/404.html`. New author pages are added to the sitemap automatically.
+- Share-card image: `src/images/og.jpg` (1200x630).
+- Buy buttons carry `rel="sponsored"` because the `mybook.to` links are affiliate links.
