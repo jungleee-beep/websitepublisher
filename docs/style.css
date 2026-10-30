@@ -106,3 +106,4 @@ html{scroll-behavior:smooth}
 .mini:hover span{color:var(--accent);text-decoration:underline}
 .mini .cover-img{width:110px}
 @media(max-width:640px){.book-page{grid-template-columns:1fr}.book-page-cover .cover-img,.book-page-cover .cover{width:200px}}
+.book-page-info .about{font-size:1.12rem;line-height:1.7;max-width:640px;margin:.8em 0}

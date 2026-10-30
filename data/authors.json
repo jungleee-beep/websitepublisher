@@ -23,14 +23,16 @@
         "title": "The Fare",
         "category": "Fiction",
         "amazon": "https://mybook.to/THEFARE",
-        "description": "A warm, affecting novel about the lessons learned from the back seat of a taxi. Through encounters with passengers, it explores empathy, human connection and the unexpected wisdom of ordinary journeys."
+        "description": "A warm, affecting novel about the lessons learned from the back seat of a taxi. Through encounters with passengers, it explores empathy, human connection and the unexpected wisdom of ordinary journeys.",
+        "long": "For twenty-three years London cab driver Yusuf Hasan has listened as passengers reveal what they cannot say elsewhere. Seventeen memorable journeys bring him face to face with grief, courage, love and forgiveness, including a widow, an absent brother and a bride who walks away from her wedding. His greatest challenge, however, is applying to his own life the wisdom he has offered so freely to strangers."
       },
       {
         "title": "The Empty Cab",
         "category": "Fiction",
         "amazon": "https://mybook.to/THEEMPTYCAB",
         "description": "A poignant companion to The Fare that returns to the world of taxi journeys and the lives encountered along the way. It considers absence, memory and the stories that stay with us after a ride ends.",
-        "series": "Sequel to The Fare"
+        "series": "Sequel to The Fare",
+        "long": "After twenty-three years driving a London taxi, Yusuf Hasan retires in the shadow of an irregular heart rhythm he has concealed behind a confident farewell. Without passengers, routine or the role that made him feel needed, he must confront changes in marriage, family and identity. Visits to old colleagues and a long-estranged brother in Canada turn retirement into a difficult, moving journey from listening to other people’s truths towards telling his own."
       },
       {
         "title": "Paid in Full",
@@ -68,7 +70,8 @@
         "title": "Who Runs the Mosque?",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/WhoRunsTheMosque",
-        "description": "An accessible look at leadership, responsibility and community life within the mosque. It raises important questions about governance, inclusion and the difference between serving an institution and serving its people."
+        "description": "An accessible look at leadership, responsibility and community life within the mosque. It raises important questions about governance, inclusion and the difference between serving an institution and serving its people.",
+        "long": "An investigation of how mosques and Islamic institutions in Britain are governed, funded and held accountable. Yusuf Al-Qalb examines trusteeship, property ownership, cash handling, safeguarding, the employment of imams, representation and community disputes. Alongside its critique, the book offers practical tools for reading accounts, asking questions at AGMs and strengthening transparent, trusted institutions."
       },
       {
         "title": "The Hive That Forgot How to Build",
@@ -80,7 +83,8 @@
         "title": "The Man They Could Not Stop",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/ProphetMuhammad",
-        "description": "An engaging exploration of the life, resilience and extraordinary influence of Prophet Muhammad. It reflects on how his message endured opposition and continues to shape lives and communities."
+        "description": "An engaging exploration of the life, resilience and extraordinary influence of Prophet Muhammad. It reflects on how his message endured opposition and continues to shape lives and communities.",
+        "long": "A fresh account of the life and influence of Prophet Muhammad (PBUH), viewed through the hostility and opposition of his most determined adversaries. It considers why efforts to halt his mission failed and how resilience, conviction and the power of his message changed the course of history."
       },
       {
         "title": "Still Your Heart",
@@ -194,7 +198,8 @@
         "title": "The 5 Intoxicants",
         "category": "Fiction",
         "amazon": "https://mybook.to/5INTOXICANTS",
-        "description": "A thought-provoking work of fiction examining the forces that captivate human desires and distort choices. Through its central idea of five intoxicants, it explores temptation, freedom and self-knowledge."
+        "description": "A thought-provoking work of fiction examining the forces that captivate human desires and distort choices. Through its central idea of five intoxicants, it explores temptation, freedom and self-knowledge.",
+        "long": "Beginning with an encounter in seventh-century Kufa, this reflective work identifies five forces that can cloud judgement: wealth, power, knowledge, praise and youth. Combining Islamic thought with Stoic philosophy and contemporary psychology, it explains how admirable pursuits become dangerous when they control identity and ambition. Practical reflections invite readers to reconsider success and cultivate clarity and purpose."
       },
       {
         "title": "The Lost and Found",
@@ -225,7 +230,8 @@
         "title": "The Jobs We Blamed on Machines",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/JobsweBlamed",
-        "description": "A provocative examination of automation and the changing world of work. It questions whether machines alone are responsible for lost jobs, or whether human choices play the greater role."
+        "description": "A provocative examination of automation and the changing world of work. It questions whether machines alone are responsible for lost jobs, or whether human choices play the greater role.",
+        "long": "Sage Norden challenges the corporate claim that layoffs are the inevitable result of artificial intelligence. The book investigates how automation can become a convenient explanation for cost-cutting strategies and management choices already in motion. It asks readers to separate genuine technological change from the financial incentives and decisions that determine whose jobs disappear."
       },
       {
         "title": "The Ally We Never Question",
@@ -279,13 +285,15 @@
         "title": "The Island of Second Chances",
         "category": "Fiction",
         "amazon": "https://mybook.to/IslandofSecondChances",
-        "description": "A philosophical novel set around the tantalising possibility of beginning again. It asks whether a new chance can change a life without changing the person who lives it."
+        "description": "A philosophical novel set around the tantalising possibility of beginning again. It asks whether a new chance can change a life without changing the person who lives it.",
+        "long": "Seven strangers arrive on a mysterious island, each haunted by one moment they desperately wish to change. Offered the extraordinary opportunity to revisit that decision, they must confront both the possibility of redemption and the cost of choosing differently. A philosophical, emotionally driven novel about guilt, responsibility and whether a second chance can truly remake a life."
       },
       {
         "title": "The Last Train Before Morning",
         "category": "Fiction",
         "amazon": "https://mybook.to/LastTrainBefore",
-        "description": "A mysterious, reflective journey in which travel becomes a way of confronting unfinished choices. It explores regret, possibility and the destinations people never expected to reach."
+        "description": "A mysterious, reflective journey in which travel becomes a way of confronting unfinished choices. It explores regret, possibility and the destinations people never expected to reach.",
+        "long": "After her mother’s funeral and on the eve of her wedding, forty-one-year-old Elena boards an overnight train carrying a letter she is afraid to open. Fellow passengers share experiences of grief, compromise and missed possibilities, unsettling her certainty about the life she has chosen. As dawn approaches, Elena must ask whether her safe future is genuinely hers or simply an escape from the alternatives."
       },
       {
         "title": "The Ferryman",
@@ -309,7 +317,8 @@
         "title": "The Library of Unwritten Lives",
         "category": "Fiction",
         "amazon": "https://mybook.to/UnwrittenLives",
-        "description": "A speculative novel about stories never lived and the choices that create them. It invites readers to consider the alternate selves that remain just beyond reach."
+        "description": "A speculative novel about stories never lived and the choices that create them. It invites readers to consider the alternate selves that remain just beyond reach.",
+        "long": "Owen Meilor, a struggling writer whose marriage and ambitions have unravelled, discovers an impossible library containing truthful books about individual lives. His own volume records everything until the present, after which its pages are blank. Reading the lives of strangers forces Owen to reconsider failure, regret and the frightening freedom of a future that has not yet been written."
       },
       {
         "title": "The Man Who Collected Tomorrows",
@@ -333,7 +342,8 @@
         "title": "The Castle at the End of the Road",
         "category": "Fiction",
         "amazon": "https://mybook.to/Castleendofroad",
-        "description": "A standalone literary novel with an atmosphere of mystery and philosophical inquiry. It follows the pull of an enigmatic destination and the personal questions raised along the way."
+        "description": "A standalone literary novel with an atmosphere of mystery and philosophical inquiry. It follows the pull of an enigmatic destination and the personal questions raised along the way.",
+        "long": "Exhausted by a lifetime of solving everyone else’s problems, a successful fifty-year-old buys a remote castle hotel in the Scottish Highlands, hoping to become unnecessary for once. The manager, his wife and an unpredictable stream of guests challenge his habit of rescuing others. A humane, reflective novel about marriage, ageing, boundaries and learning that being loved is not the same as being useful."
       },
       {
         "title": "The Garden Across the Street",
@@ -351,13 +361,15 @@
         "title": "The Uncollected",
         "category": "Fiction",
         "amazon": "https://mybook.to/Uncollected",
-        "description": "When Tess inherits her grandmother Edie’s Scottish alterations shop, a long-buried mystery emerges from the seams of a wedding dress. A moving literary novel about family secrets, memory and what we carry forward."
+        "description": "When Tess inherits her grandmother Edie’s Scottish alterations shop, a long-buried mystery emerges from the seams of a wedding dress. A moving literary novel about family secrets, memory and what we carry forward.",
+        "long": "After a career setback, Tess Marsh inherits her grandmother’s alterations shop in a small village on a Scottish loch and plans to close it quickly. Returning forty uncollected garments reveals intimate stories of the community and unexpected truths about her grandmother. A mysterious forty-first ticket leads Tess towards an old family secret and a new understanding of home, belonging and second chances."
       },
       {
         "title": "The Other Chair",
         "category": "Fiction",
         "amazon": "https://mybook.to/TheOtherChair",
-        "description": "An introspective literary novel that uses the presence, or absence, of another person to explore connection and identity. A story interested in the silences that shape a life."
+        "description": "An introspective literary novel that uses the presence, or absence, of another person to explore connection and identity. A story interested in the silences that shape a life.",
+        "long": "Newcastle psychologist Clare Ashby is skilled at helping patients with grief, fear and strained relationships, but one session unsettles a secret she has kept for eleven years. As professional boundaries blur, Clare travels every Thursday to a room overlooking the North Sea to confront a painful memory of her own sister. An intimate novel about the limits of advice, unresolved guilt and the burden carried by those who care for others."
       }
     ]
   },
@@ -375,7 +387,8 @@
         "title": "Still Standing: Keep Your Job",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/StillStandingAI",
-        "description": "A pragmatic guide to adapting at work as artificial intelligence transforms employment. It focuses on resilience, relevant skills and protecting professional value amid technological change."
+        "description": "A pragmatic guide to adapting at work as artificial intelligence transforms employment. It focuses on resilience, relevant skills and protecting professional value amid technological change.",
+        "long": "A practical guide for experienced professionals who fear that artificial intelligence may make their skills obsolete. James Whitfield shows how to assess workplace changes, strengthen professional value, use AI without abandoning judgement and build networks before a crisis arises. Actionable steps help readers choose when to adapt, negotiate or move on rather than allowing anxiety to dictate their careers."
       }
     ]
   },
@@ -394,21 +407,24 @@
         "category": "Fiction",
         "amazon": "https://mybook.to/WeightofLight",
         "description": "A literary exploration of grief, hope and the paradoxes of human connection. Its central tension lies in how even moments of beauty can carry emotional weight.",
-        "series": "The Meridian Sequence, Book 1"
+        "series": "The Meridian Sequence, Book 1",
+        "long": "When astronomer Dr Lena Kasra detects an impossible pulse repeating every 4.7 seconds, she joins the survey ship Meridian to trace its source. On board, Captain Yuna Shin and a crew shaped by personal loss face the strains of trust and discovery. The first Meridian Sequence novel blends scientifically grounded first-contact mystery with intimate questions about grief and the human cost of reaching across 27.8 light-years."
       },
       {
         "title": "All the Distance Between",
         "category": "Fiction",
         "amazon": "https://mybook.to/DistanceBetween",
         "description": "An emotionally observant novel about separation and the ties that endure across it. It considers what distance does to memory, relationships and the things left unsaid.",
-        "series": "The Meridian Sequence, Book 2"
+        "series": "The Meridian Sequence, Book 2",
+        "long": "Years after the first signal from 61 Virginis, Lena Kasra faces the daunting delay of a conversation measured in decades rather than minutes. Joined by a xenolinguist and new crew members, she discovers that communication with another intelligence is less like translating words and more like negotiating understanding. Book two of the Meridian Sequence explores waiting, sacrifice, grief and the possibility that some distances cannot be eliminated."
       },
       {
         "title": "The Ordinary Infinite",
         "category": "Fiction",
         "amazon": "https://mybook.to/ORDINARYINFINITE",
         "description": "A literary novel that finds extraordinary significance in seemingly ordinary experience. It explores the intersections of time, intimacy and the hidden depth of everyday life.",
-        "series": "The Meridian Sequence, Book 3"
+        "series": "The Meridian Sequence, Book 3",
+        "long": "In the closing volume of the Meridian Sequence, scientist Lena Kasra and the crew of Meridian II finally approach an encounter with the surviving consciousness of an ancient civilisation. The long journey brings unresolved questions of sacrifice, grief and belonging to the forefront. This reflective science-fiction finale asks whether the greatest barrier in first contact is distance in space or the difficulty of understanding another mind."
       },
       {
         "title": "Almost",
@@ -489,7 +505,8 @@
         "title": "The First Year",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/TheFirstYear",
-        "description": "A practical, reassuring companion to the first year of Muslim life and spiritual growth. It explores the habits, questions and everyday decisions that help faith become a lasting part of life."
+        "description": "A practical, reassuring companion to the first year of Muslim life and spiritual growth. It explores the habits, questions and everyday decisions that help faith become a lasting part of life.",
+        "long": "Following the shahada, new Muslims face a year of practical, emotional and spiritual adjustments that introductory guides seldom address. Adam Yusuf discusses learning to pray, navigating conflicting advice, explaining conversion to family, separating religion from culture, encountering the mosque community and experiencing a first Ramadan. The book reassures readers that uncertainty, slow progress and honest questions can all be part of building a lasting Muslim life."
       }
     ]
   },
@@ -509,7 +526,8 @@
         "title": "The Field of Karbala",
         "category": "Non-fiction",
         "amazon": "https://mybook.to/FieldsofKarbala",
-        "description": "A reflection on Karbala as a defining event of sacrifice, conscience and resistance to injustice. It considers the enduring moral and spiritual meanings of Imam Husayn’s stand."
+        "description": "A reflection on Karbala as a defining event of sacrifice, conscience and resistance to injustice. It considers the enduring moral and spiritual meanings of Imam Husayn’s stand.",
+        "long": "This historical account reconstructs the political crises leading to the death of Husayn ibn Ali at Karbala in 680 CE. From succession disputes and the rise of the Umayyads to the promises of Kufa, the battle and Zaynab’s testimony, it distinguishes early evidence from later devotional traditions. It asks what Karbala reveals about conscience, obedience, political power and the moral significance of refusing unjust authority."
       },
       {
         "title": "Daughters of Revelation",
