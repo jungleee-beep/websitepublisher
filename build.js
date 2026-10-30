@@ -234,7 +234,7 @@ for (const b of allBooks) {
   const metaBits = [b.category, b.year, (b.formats || []).join(", ")].filter(Boolean);
   write(`books/${b.slug}/index.html`, page({
     title: `${b.title} by ${a.name} - ${site.name}`,
-    desc: clip(`${b.title} by ${a.name}${b.category ? ` (${b.category.toLowerCase()})` : ""}. ${b.description || ""} Buy on Amazon.`, 158),
+    desc: clip(`${b.title} by ${a.name}${b.category ? ` (${b.category.toLowerCase()})` : ""}. ${b.long || b.description || ""} Buy on Amazon.`, 158),
     depth: 2,
     nav: "",
     path: `books/${b.slug}/`,
@@ -245,7 +245,7 @@ for (const b of allBooks) {
       {
         "@type": "Book", "@id": `${bUrl}#book`, name: b.title, url: bUrl,
         author: { "@id": `${aUrl}#author` }, publisher: { "@id": abs("#publisher") }, inLanguage: "en-GB",
-        genre: b.category || undefined, description: b.description || undefined, sameAs: [b.amazon],
+        genre: b.category || undefined, description: b.long || b.description || undefined, sameAs: [b.amazon],
         image: hasCover ? abs(coverFile(b)) : undefined,
         ...(seriesName ? { isPartOf: { "@type": "BookSeries", name: seriesName[1] } } : {}),
       },
@@ -259,7 +259,7 @@ for (const b of allBooks) {
       <h1>${esc(b.title)}</h1>
       ${b.series ? `<p class="series">${esc(b.series)}</p>` : ""}
       <p class="by">by <a href="../../authors/${a.slug}/">${esc(a.name)}</a></p>
-      ${b.description ? `<p class="lead">${esc(b.description)}</p>` : ""}
+      ${b.long ? `<p class="about">${esc(b.long)}</p>` : b.description ? `<p class="lead">${esc(b.description)}</p>` : ""}
       ${metaBits.length ? `<p class="meta">${metaBits.map(esc).join(" &middot; ")}</p>` : ""}
       <p><a class="btn" href="${esc(b.amazon)}" rel="sponsored noopener" target="_blank">Buy on Amazon</a></p>
     </div>
