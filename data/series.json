@@ -10,5 +10,15 @@
   "Dr Claire Shaw series": {
     "slug": "dr-claire-shaw",
     "intro": "A psychological mystery series by Anna Wray, set in West Yorkshire and following Dr Claire Shaw, where clinical observation meets hidden truths. Three books so far."
+  },
+  "The Living Shia Tradition": {
+    "slug": "living-shia-tradition",
+    "intro": "A wide-ranging collection by Dr. Saiyed Ali Al-Razavi exploring Twelver Shia Islam as a living faith, a historical tradition, and a contemporary way of life.",
+    "about": [
+      "Bringing together accessible guides, historical studies, devotional resources, family guidance, and analysis of modern challenges, the series introduces readers to the beliefs, practices, institutions, memories, and questions that continue to shape Shia Muslim communities around the world.",
+      "The books in this collection examine subjects as varied as raising Shia children in Western societies, understanding the beliefs and daily practices of Twelver Shia Islam, discovering the meaning and structure of popular supplications, tracing the history of azadari from Karbala to the present day, explaining Shia identity to a wider audience, and considering the future of religious leadership in the Shia world.",
+      "Written for both Shia and non-Shia readers, The Living Shia Tradition combines clarity, depth, and contemporary relevance. Each title stands independently and may be read in any order, while together they offer a richer understanding of how the legacy of the Ahl al-Bayt continues to inform worship, identity, family life, scholarship, community, and public thought.",
+      "This series is for readers seeking not only to learn what Shia Muslims believe, but also to understand how those beliefs are remembered, practised, transmitted, and lived today."
+    ]
   }
 }
