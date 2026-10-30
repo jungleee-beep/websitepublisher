@@ -107,3 +107,8 @@ html{scroll-behavior:smooth}
 .mini .cover-img{width:110px}
 @media(max-width:640px){.book-page{grid-template-columns:1fr}.book-page-cover .cover-img,.book-page-cover .cover{width:200px}}
 .book-page-info .about{font-size:1.12rem;line-height:1.7;max-width:640px;margin:.8em 0}
+.cover-stack{position:relative;width:130px;height:200px}
+.cover-stack img{position:absolute;width:96px;height:144px;object-fit:cover;left:calc(var(--i) * 17px);top:calc(52px - var(--i) * 26px);z-index:calc(3 - var(--i));border-radius:3px 6px 6px 3px;box-shadow:2px 2px 8px rgba(0,0,0,.3)}
+.series-tag{font:700 .78rem Arial,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin:0 0 .4em}
+.series-nav{display:flex;justify-content:space-between;gap:16px;margin-top:1.4em;font:600 .92rem Arial,sans-serif}
+.series-nav a{max-width:48%}

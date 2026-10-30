@@ -35,6 +35,37 @@ const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|
 const allBooks = authors
   .flatMap((a) => a.books.map((b) => ({ ...b, author: a, slug: slugify(b.title) })));
 
+// Series with this many books or more are shown as one card that links to a series page
+const MIN_SERIES = 3;
+const seriesMeta = JSON.parse(fs.readFileSync("data/series.json", "utf8"));
+const seriesOf = (b) => { const m = (b.series || "").match(/^(.+?), (?:Booklet|Book) (\d+)/); return m ? { name: m[1], num: +m[2] } : null; };
+const seriesList = [];
+for (const a of authors) {
+  const groups = new Map();
+  for (const b of a.books) {
+    const s = seriesOf(b);
+    if (!s) continue;
+    if (!groups.has(s.name)) groups.set(s.name, []);
+    groups.get(s.name).push({ ...b, author: a, slug: slugify(b.title), num: s.num });
+  }
+  for (const [name, books] of groups) {
+    if (books.length < MIN_SERIES) continue;
+    books.sort((x, y) => x.num - y.num);
+    const meta = seriesMeta[name] || {};
+    seriesList.push({ name, slug: meta.slug || slugify(name), intro: meta.intro || "", author: a, books, category: books[0].category, unit: /Booklet/.test(books[0].series) ? "booklets" : "books" });
+  }
+}
+const seriesByBook = new Map(seriesList.flatMap((s) => s.books.map((b) => [b.title, s])));
+// Replace a collapsed series by one entry at the position of its first book
+const groupItems = (books) => {
+  const seen = new Set(), out = [];
+  for (const b of books) {
+    const s = seriesByBook.get(b.title);
+    if (!s) out.push({ book: b });
+    else if (!seen.has(s.slug)) { seen.add(s.slug); out.push({ series: s }); }
+  }
+  return out;
+};
 const catSlug = (c) => slugify(c || "other");
 const genreOf = (a) => {
   const cats = [...new Set(a.books.map((b) => b.category).filter(Boolean))];
@@ -127,6 +158,25 @@ function cover(book, root, w = 130, eager = false) {
 </div>`;
 }
 
+function seriesCard(s, depth, showAuthor) {
+  const root = "../".repeat(depth);
+  const href = `${root}series/${s.slug}/`;
+  const covers = s.books.filter((b) => fs.existsSync(path.join("src", coverFile(b)))).slice(0, 3);
+  const stack = covers.length
+    ? `<div class="cover-stack">${covers.map((b, i) => `<img src="${root}${coverFile(b)}" width="96" height="144" loading="lazy" alt="" style="--i:${i}">`).join("")}</div>`
+    : `<div class="cover" style="--c:${s.author.color}" role="img" aria-label="${esc(s.name)}"><span class="cover-title">${esc(s.name)}</span></div>`;
+  return `<article class="book series-card" id="series-${s.slug}" data-cat="${catSlug(s.category)}">
+  <a class="cover-link" href="${href}" tabindex="-1" aria-hidden="true">${stack}</a>
+  <div class="book-info">
+    <p class="series-tag">Series &middot; ${s.books.length} ${s.unit}</p>
+    <h3><a href="${href}">${esc(s.name)}</a></h3>
+    ${showAuthor ? `<p class="by">by <a href="${root}authors/${s.author.slug}/">${esc(s.author.name)}</a></p>` : ""}
+    ${s.intro ? `<p>${esc(s.intro)}</p>` : ""}
+    <p class="meta">${esc(s.category)}</p>
+    <a class="btn" href="${href}">View the series</a>
+  </div>
+</article>`;
+}
 function bookCard(book, depth, showAuthor) {
   const root = "../".repeat(depth);
   const page = `${root}books/${slugify(book.title)}/`;
@@ -219,7 +269,7 @@ for (const a of authors) {
   </div>
   <div class="bio">${a.bio.map((p) => `<p>${esc(p)}</p>`).join("")}${contact}${(site.newsletterAuthors || []).includes(a.slug) ? NEWSLETTER : ""}${links ? `<p class="small">${links}</p>` : ""}</div>
   <h2>Books by ${esc(a.name)}</h2>
-  <div class="book-list">${a.books.map((b) => bookCard({ ...b, author: a }, 2, false)).join("\n")}</div>
+  <div class="book-list">${groupItems(a.books.map((b) => ({ ...b, author: a }))).map((it) => (it.series ? seriesCard(it.series, 2, false) : bookCard(it.book, 2, false))).join("\n")}</div>
 </div>`,
   }));
 }
@@ -230,7 +280,11 @@ for (const b of allBooks) {
   const a = b.author, aUrl = abs(`authors/${a.slug}/`), bUrl = abs(`books/${b.slug}/`);
   const hasCover = fs.existsSync(path.join("src", coverFile(b)));
   const seriesName = (b.series || "").match(/^(.+?), (?:Booklet|Book) \d+/);
-  const others = a.books.filter((x) => x.title !== b.title).map((x) => ({ ...x, author: a }));
+  const ser = seriesByBook.get(b.title);
+  const idx = ser ? ser.books.findIndex((x) => x.title === b.title) : -1;
+  const prev = ser && idx > 0 ? ser.books[idx - 1] : null, next = ser && idx < ser.books.length - 1 ? ser.books[idx + 1] : null;
+  const mates = ser ? ser.books.filter((x) => x.title !== b.title) : [];
+  const others = a.books.filter((x) => x.title !== b.title && !mates.some((m) => m.title === x.title)).map((x) => ({ ...x, author: a }));
   const metaBits = [b.category, b.year, (b.formats || []).join(", ")].filter(Boolean);
   write(`books/${b.slug}/index.html`, page({
     title: `${b.title} by ${a.name} - ${site.name}`,
@@ -247,7 +301,7 @@ for (const b of allBooks) {
         author: { "@id": `${aUrl}#author` }, publisher: { "@id": abs("#publisher") }, inLanguage: "en-GB",
         genre: b.category || undefined, description: b.long || b.description || undefined, sameAs: [b.amazon],
         image: hasCover ? abs(coverFile(b)) : undefined,
-        ...(seriesName ? { isPartOf: { "@type": "BookSeries", name: seriesName[1] } } : {}),
+        ...(ser ? { isPartOf: { "@type": "BookSeries", name: ser.name, url: abs(`series/${ser.slug}/`) } } : seriesName ? { isPartOf: { "@type": "BookSeries", name: seriesName[1] } } : {}),
       },
       crumbs([["Home", abs()], ["Authors", abs("authors/")], [a.name, aUrl], [b.title, bUrl]]),
     ],
@@ -257,15 +311,48 @@ for (const b of allBooks) {
     <div class="book-page-cover">${cover(b, "../../", 260, true)}</div>
     <div class="book-page-info">
       <h1>${esc(b.title)}</h1>
-      ${b.series ? `<p class="series">${esc(b.series)}</p>` : ""}
+      ${ser ? `<p class="series">${esc(b.series.replace(/^.+?, ((?:Booklet|Book) \d+(?: of \d+)?)$/, "$1"))} in <a href="../../series/${ser.slug}/">${esc(ser.name)}</a></p>` : b.series ? `<p class="series">${esc(b.series)}</p>` : ""}
       <p class="by">by <a href="../../authors/${a.slug}/">${esc(a.name)}</a></p>
       ${b.long ? `<p class="about">${esc(b.long)}</p>` : b.description ? `<p class="lead">${esc(b.description)}</p>` : ""}
       ${metaBits.length ? `<p class="meta">${metaBits.map(esc).join(" &middot; ")}</p>` : ""}
       <p><a class="btn" href="${esc(b.amazon)}" rel="sponsored noopener" target="_blank">Buy on Amazon</a></p>
+      ${ser ? `<nav class="series-nav" aria-label="In this series">${prev ? `<a href="../${prev.slug}/">&larr; ${esc(prev.title)}</a>` : "<span></span>"}${next ? `<a href="../${next.slug}/">${esc(next.title)} &rarr;</a>` : "<span></span>"}</nav>` : ""}
     </div>
   </div>
+  ${mates.length ? `<h2>More in ${esc(ser.name)}</h2>
+  <div class="mini-books">${mates.map((o) => `<a class="mini" href="../../books/${slugify(o.title)}/">${cover(o, "../../", 110)}<span>${esc(o.title)}</span></a>`).join("")}</div>
+  <p><a href="../../series/${ser.slug}/">See the whole series &rarr;</a></p>` : ""}
   ${others.length ? `<h2>More by ${esc(a.name)}</h2>
   <div class="mini-books">${others.map((o) => `<a class="mini" href="../../books/${slugify(o.title)}/">${cover(o, "../../", 110)}<span>${esc(o.title)}</span></a>`).join("")}</div>` : ""}
+</div>`,
+  }));
+}
+
+// One page per collapsed series (/series/<name>/): intro plus every book in order
+for (const s of seriesList) {
+  const a = s.author, aUrl = abs(`authors/${a.slug}/`), sUrl = abs(`series/${s.slug}/`);
+  const first = s.books.find((b) => fs.existsSync(path.join("src", coverFile(b))));
+  write(`series/${s.slug}/index.html`, page({
+    title: `${s.name} by ${a.name} - ${site.name}`,
+    desc: clip(`${s.name} by ${a.name}: ${s.books.length} ${s.unit}. ${s.intro}`, 158),
+    depth: 2,
+    nav: "",
+    path: `series/${s.slug}/`,
+    ...(first ? { image: { url: abs(coverFile(first)), alt: `${s.name} by ${a.name}` }, card: "summary" } : {}),
+    ld: [
+      orgNode(),
+      { "@type": "Person", "@id": `${aUrl}#author`, name: a.name, url: aUrl },
+      { "@type": "BookSeries", "@id": `${sUrl}#series`, name: s.name, url: sUrl, description: s.intro || undefined, author: { "@id": `${aUrl}#author` }, publisher: { "@id": abs("#publisher") }, numberOfItems: s.books.length, hasPart: s.books.map((b) => ({ "@id": `${abs(`books/${b.slug}/`)}#book` })) },
+      ...s.books.map((b) => ({ "@type": "Book", "@id": `${abs(`books/${b.slug}/`)}#book`, name: b.title, url: abs(`books/${b.slug}/`), author: { "@id": `${aUrl}#author` }, isPartOf: { "@id": `${sUrl}#series` } })),
+      crumbs([["Home", abs()], ["Authors", abs("authors/")], [a.name, aUrl], [s.name, sUrl]]),
+    ],
+    body: `<div class="wrap section">
+  <p class="crumb"><a href="../../">&larr; All books</a> &middot; <a href="../../authors/${a.slug}/">${esc(a.name)}</a></p>
+  <p class="series-tag">Series &middot; ${s.books.length} ${s.unit}</p>
+  <h1>${esc(s.name)}</h1>
+  <p class="by">by <a href="../../authors/${a.slug}/">${esc(a.name)}</a></p>
+  ${s.intro ? `<p class="lead">${esc(s.intro)}</p>` : ""}
+  <div class="book-list">${s.books.map((b) => bookCard(b, 2, false)).join("\n")}</div>
 </div>`,
   }));
 }
@@ -285,7 +372,7 @@ write("index.html", page({
     <button type="button" data-f="all" aria-pressed="true">All (${allBooks.length})</button>
     ${cats.map(([c, n]) => `<button type="button" data-f="${catSlug(c)}" aria-pressed="false">${c} (${n})</button>`).join("\n    ")}
   </div>
-  <div class="book-list">${allBooks.map((b) => bookCard(b, 0, true)).join("\n")}</div>
+  <div class="book-list">${groupItems(allBooks).map((it) => (it.series ? seriesCard(it.series, 0, true) : bookCard(it.book, 0, true))).join("\n")}</div>
 </div>
 <script>
 (function () {
@@ -401,7 +488,7 @@ write("404.html", page({
 }));
 
 // Sitemap and robots.txt (the redirect page /books/ and the 404 page are left out on purpose)
-const sitePaths = ["", "authors/", ...authors.map((a) => `authors/${a.slug}/`), ...allBooks.map((b) => `books/${b.slug}/`), "for-authors/", "about/", "contact/"];
+const sitePaths = ["", "authors/", ...authors.map((a) => `authors/${a.slug}/`), ...allBooks.map((b) => `books/${b.slug}/`), ...seriesList.map((s) => `series/${s.slug}/`), "for-authors/", "about/", "contact/"];
 fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitePaths.map((p) => `  <url><loc>${abs(p)}</loc></url>`).join("\n")}
