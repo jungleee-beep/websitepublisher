@@ -52,7 +52,7 @@ function write(rel, html) {
   fs.writeFileSync(file, html);
 }
 
-function page({ title, desc, depth, nav, body, path: pagePath = "", ld, noindex = false, root: rootOverride }) {
+function page({ title, desc, depth, nav, body, path: pagePath = "", ld, noindex = false, root: rootOverride, image, card = "summary_large_image" }) {
   const root = rootOverride || (depth === 0 ? "./" : "../".repeat(depth));
   const description = desc || site.tagline + " " + site.subtitle;
   const url = abs(pagePath);
@@ -75,14 +75,14 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : `<link rel="canonical" 
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${url}">
-<meta property="og:image" content="${abs("images/og.jpg")}">
-<meta property="og:image:width" content="1200">
+<meta property="og:image" content="${image ? image.url : abs("images/og.jpg")}">
+${image ? "" : `<meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="${esc(site.name)}: ${esc(site.tagline)}">
-<meta name="twitter:card" content="summary_large_image">
+`}<meta property="og:image:alt" content="${esc(image ? image.alt : site.name + ": " + site.tagline)}">
+<meta name="twitter:card" content="${card}">
 <meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(description)}">
-<meta name="twitter:image" content="${abs("images/og.jpg")}">
+<meta name="twitter:image" content="${image ? image.url : abs("images/og.jpg")}">
 <link rel="icon" type="image/png" href="${root}images/favicon.png">
 <link rel="stylesheet" href="${root}style.css">
 ${ld ? jsonld(ld) + "\n" : ""}</head>
@@ -117,9 +117,9 @@ ${body}
 }
 
 const coverFile = (book) => `covers/${slugify(book.title)}.jpg`;
-function cover(book, root) {
+function cover(book, root, w = 130, eager = false) {
   if (fs.existsSync(path.join("src", coverFile(book)))) {
-    return `<img class="cover-img" src="${root}${coverFile(book)}" width="130" height="195" loading="lazy" alt="Cover of ${esc(book.title)} by ${esc(book.author.name)}">`;
+    return `<img class="cover-img" src="${root}${coverFile(book)}" width="${w}" height="${Math.round(w * 1.5)}"${eager ? "" : ' loading="lazy"'} alt="Cover of ${esc(book.title)} by ${esc(book.author.name)}">`;
   }
   return `<div class="cover" style="--c:${book.author.color}" role="img" aria-label="Cover placeholder for ${esc(book.title)}">
   <span class="cover-title">${esc(book.title)}</span>
@@ -129,10 +129,11 @@ function cover(book, root) {
 
 function bookCard(book, depth, showAuthor) {
   const root = "../".repeat(depth);
+  const page = `${root}books/${slugify(book.title)}/`;
   return `<article class="book" id="${slugify(book.title)}" data-cat="${catSlug(book.category)}">
-  ${cover(book, root)}
+  <a class="cover-link" href="${page}" tabindex="-1" aria-hidden="true">${cover(book, root)}</a>
   <div class="book-info">
-    <h3>${esc(book.title)}</h3>
+    <h3><a href="${page}">${esc(book.title)}</a></h3>
     ${book.series ? `<p class="series">${esc(book.series)}</p>` : ""}
     ${showAuthor ? `<p class="by">by <a href="${root}authors/${book.author.slug}/">${esc(book.author.name)}</a></p>` : ""}
     ${book.description ? `<p>${esc(book.description)}</p>` : ""}
@@ -194,7 +195,7 @@ for (const a of authors) {
   const sameAs = Object.entries(a.links || {}).filter(([k]) => k !== "email").map(([, v]) => v);
   const personNode = { "@type": "Person", "@id": `${aUrl}#author`, name: a.name, url: aUrl, description: a.bio.join(" ") || undefined, ...(sameAs.length ? { sameAs } : {}) };
   const bookNodes = a.books.map((b) => ({
-    "@type": "Book", "@id": `${aUrl}#${slugify(b.title)}`, name: b.title, url: `${aUrl}#${slugify(b.title)}`,
+    "@type": "Book", "@id": `${abs(`books/${slugify(b.title)}/`)}#book`, name: b.title, url: abs(`books/${slugify(b.title)}/`),
     author: { "@id": `${aUrl}#author` }, publisher: { "@id": abs("#publisher") }, inLanguage: "en-GB",
     genre: b.category || undefined, description: b.description || undefined, sameAs: [b.amazon],
     image: fs.existsSync(path.join("src", "covers", `${slugify(b.title)}.jpg`)) ? abs(`covers/${slugify(b.title)}.jpg`) : undefined,
@@ -219,6 +220,52 @@ for (const a of authors) {
   <div class="bio">${a.bio.map((p) => `<p>${esc(p)}</p>`).join("")}${contact}${(site.newsletterAuthors || []).includes(a.slug) ? NEWSLETTER : ""}${links ? `<p class="small">${links}</p>` : ""}</div>
   <h2>Books by ${esc(a.name)}</h2>
   <div class="book-list">${a.books.map((b) => bookCard({ ...b, author: a }, 2, false)).join("\n")}</div>
+</div>`,
+  }));
+}
+
+// One page per book (/books/<title>/), so each title can be found and shared on its own
+const clip = (t, n) => (t.length <= n ? t : t.slice(0, n - 1).replace(/\s+\S*$/, "") + "\u2026");
+for (const b of allBooks) {
+  const a = b.author, aUrl = abs(`authors/${a.slug}/`), bUrl = abs(`books/${b.slug}/`);
+  const hasCover = fs.existsSync(path.join("src", coverFile(b)));
+  const seriesName = (b.series || "").match(/^(.+?), (?:Booklet|Book) \d+/);
+  const others = a.books.filter((x) => x.title !== b.title).map((x) => ({ ...x, author: a }));
+  const metaBits = [b.category, b.year, (b.formats || []).join(", ")].filter(Boolean);
+  write(`books/${b.slug}/index.html`, page({
+    title: `${b.title} by ${a.name} - ${site.name}`,
+    desc: clip(`${b.title} by ${a.name}${b.category ? ` (${b.category.toLowerCase()})` : ""}. ${b.description || ""} Buy on Amazon.`, 158),
+    depth: 2,
+    nav: "",
+    path: `books/${b.slug}/`,
+    ...(hasCover ? { image: { url: abs(coverFile(b)), alt: `Cover of ${b.title} by ${a.name}` }, card: "summary" } : {}),
+    ld: [
+      orgNode(),
+      { "@type": "Person", "@id": `${aUrl}#author`, name: a.name, url: aUrl },
+      {
+        "@type": "Book", "@id": `${bUrl}#book`, name: b.title, url: bUrl,
+        author: { "@id": `${aUrl}#author` }, publisher: { "@id": abs("#publisher") }, inLanguage: "en-GB",
+        genre: b.category || undefined, description: b.description || undefined, sameAs: [b.amazon],
+        image: hasCover ? abs(coverFile(b)) : undefined,
+        ...(seriesName ? { isPartOf: { "@type": "BookSeries", name: seriesName[1] } } : {}),
+      },
+      crumbs([["Home", abs()], ["Authors", abs("authors/")], [a.name, aUrl], [b.title, bUrl]]),
+    ],
+    body: `<div class="wrap section">
+  <p class="crumb"><a href="../../">&larr; All books</a> &middot; <a href="../../authors/${a.slug}/">${esc(a.name)}</a></p>
+  <div class="book-page">
+    <div class="book-page-cover">${cover(b, "../../", 260, true)}</div>
+    <div class="book-page-info">
+      <h1>${esc(b.title)}</h1>
+      ${b.series ? `<p class="series">${esc(b.series)}</p>` : ""}
+      <p class="by">by <a href="../../authors/${a.slug}/">${esc(a.name)}</a></p>
+      ${b.description ? `<p class="lead">${esc(b.description)}</p>` : ""}
+      ${metaBits.length ? `<p class="meta">${metaBits.map(esc).join(" &middot; ")}</p>` : ""}
+      <p><a class="btn" href="${esc(b.amazon)}" rel="sponsored noopener" target="_blank">Buy on Amazon</a></p>
+    </div>
+  </div>
+  ${others.length ? `<h2>More by ${esc(a.name)}</h2>
+  <div class="mini-books">${others.map((o) => `<a class="mini" href="../../books/${slugify(o.title)}/">${cover(o, "../../", 110)}<span>${esc(o.title)}</span></a>`).join("")}</div>` : ""}
 </div>`,
   }));
 }
@@ -354,7 +401,7 @@ write("404.html", page({
 }));
 
 // Sitemap and robots.txt (the redirect page /books/ and the 404 page are left out on purpose)
-const sitePaths = ["", "authors/", ...authors.map((a) => `authors/${a.slug}/`), "for-authors/", "about/", "contact/"];
+const sitePaths = ["", "authors/", ...authors.map((a) => `authors/${a.slug}/`), ...allBooks.map((b) => `books/${b.slug}/`), "for-authors/", "about/", "contact/"];
 fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitePaths.map((p) => `  <url><loc>${abs(p)}</loc></url>`).join("\n")}
