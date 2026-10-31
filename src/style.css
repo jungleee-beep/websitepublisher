@@ -113,3 +113,8 @@ html{scroll-behavior:smooth}
 .series-nav{display:flex;justify-content:space-between;gap:16px;margin-top:1.4em;font:600 .92rem Arial,sans-serif}
 .series-nav a{max-width:48%}
 p.about{max-width:700px}
+/* Phones: the series cover stack must fit the 96px cover column, so it stacks straight down, not diagonally */
+@media(max-width:520px){
+.cover-stack{width:96px;height:176px}
+.cover-stack img{left:0;top:calc((2 - var(--i)) * 16px)}
+}
