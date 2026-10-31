@@ -109,33 +109,42 @@
   },
   "The Island of Second Chances": {
     "description": "A philosophical novel set around the tantalising possibility of beginning again. It asks whether a new chance can change a life without changing the person who lives it.",
-    "long": "Seven strangers arrive on a mysterious island, each haunted by one moment they desperately wish to change. Offered the extraordinary opportunity to revisit that decision, they must confront both the possibility of redemption and the cost of choosing differently. A philosophical, emotionally driven novel about guilt, responsibility and whether a second chance can truly remake a life."
+    "long": "Seven strangers arrive on a mysterious island, each haunted by one moment they desperately wish to change. Offered the extraordinary opportunity to revisit that decision, they must confront both the possibility of redemption and the cost of choosing differently. A philosophical, emotionally driven novel about guilt, responsibility and whether a second chance can truly remake a life.",
+    "series": "The Roads Not Taken"
   },
   "The Last Train Before Morning": {
     "description": "A mysterious, reflective journey in which travel becomes a way of confronting unfinished choices. It explores regret, possibility and the destinations people never expected to reach.",
-    "long": "After her mother’s funeral and on the eve of her wedding, forty-one-year-old Elena boards an overnight train carrying a letter she is afraid to open. Fellow passengers share experiences of grief, compromise and missed possibilities, unsettling her certainty about the life she has chosen. As dawn approaches, Elena must ask whether her safe future is genuinely hers or simply an escape from the alternatives."
+    "long": "After her mother’s funeral and on the eve of her wedding, forty-one-year-old Elena boards an overnight train carrying a letter she is afraid to open. Fellow passengers share experiences of grief, compromise and missed possibilities, unsettling her certainty about the life she has chosen. As dawn approaches, Elena must ask whether her safe future is genuinely hers or simply an escape from the alternatives.",
+    "series": "The Roads Not Taken"
   },
   "The Ferryman": {
-    "description": "A metaphysical tale built around passage, transition and the questions people carry across thresholds. It considers what must be faced before anyone can truly move on."
+    "description": "A metaphysical tale built around passage, transition and the questions people carry across thresholds. It considers what must be faced before anyone can truly move on.",
+    "series": "The Roads Not Taken"
   },
   "The Gardener of Forgotten Dreams": {
-    "description": "A lyrical fantasy about neglected ambitions and the dreams people set aside. It imagines what might happen when forgotten possibilities are given the chance to grow again."
+    "description": "A lyrical fantasy about neglected ambitions and the dreams people set aside. It imagines what might happen when forgotten possibilities are given the chance to grow again.",
+    "series": "The Roads Not Taken"
   },
   "The Shop That Sold Lost Things": {
-    "description": "A whimsical, philosophical novel centred on the emotional value of things people lose. It explores memory, longing and the unexpected cost of getting something back."
+    "description": "A whimsical, philosophical novel centred on the emotional value of things people lose. It explores memory, longing and the unexpected cost of getting something back.",
+    "series": "The Roads Not Taken"
   },
   "The Library of Unwritten Lives": {
     "description": "A speculative novel about stories never lived and the choices that create them. It invites readers to consider the alternate selves that remain just beyond reach.",
-    "long": "Owen Meilor, a struggling writer whose marriage and ambitions have unravelled, discovers an impossible library containing truthful books about individual lives. His own volume records everything until the present, after which its pages are blank. Reading the lives of strangers forces Owen to reconsider failure, regret and the frightening freedom of a future that has not yet been written."
+    "long": "Owen Meilor, a struggling writer whose marriage and ambitions have unravelled, discovers an impossible library containing truthful books about individual lives. His own volume records everything until the present, after which its pages are blank. Reading the lives of strangers forces Owen to reconsider failure, regret and the frightening freedom of a future that has not yet been written.",
+    "series": "The Roads Not Taken"
   },
   "The Man Who Collected Tomorrows": {
-    "description": "An imaginative story about the allure of possible futures. It explores the tension between wanting to know what comes next and learning to live in the present."
+    "description": "An imaginative story about the allure of possible futures. It explores the tension between wanting to know what comes next and learning to live in the present.",
+    "series": "The Roads Not Taken"
   },
   "The Man Who Gave Away His Name": {
-    "description": "A philosophical tale about identity, belonging and what remains when the labels defining us disappear. It questions how much of a person can be surrendered without losing the self."
+    "description": "A philosophical tale about identity, belonging and what remains when the labels defining us disappear. It questions how much of a person can be surrendered without losing the self.",
+    "series": "The Roads Not Taken"
   },
   "The House With Seven Doors": {
-    "description": "A metaphysical novel using the mystery of seven doors to explore different possibilities and decisions. Each threshold suggests a new way of thinking about the life we choose."
+    "description": "A metaphysical novel using the mystery of seven doors to explore different possibilities and decisions. Each threshold suggests a new way of thinking about the life we choose.",
+    "series": "The Roads Not Taken"
   },
   "The Castle at the End of the Road": {
     "description": "A standalone literary novel with an atmosphere of mystery and philosophical inquiry. It follows the pull of an enigmatic destination and the personal questions raised along the way.",
@@ -145,7 +154,8 @@
     "description": "A quietly resonant standalone novel about the lives we observe and the stories we assume. It finds emotional meaning in proximity, memory and unexpected connection."
   },
   "The Clockmaker Who Stopped Time": {
-    "description": "A thought-provoking fantasy about time, control and the desire to hold on to fleeting moments. It asks whether stopping change would preserve life or diminish it."
+    "description": "A thought-provoking fantasy about time, control and the desire to hold on to fleeting moments. It asks whether stopping change would preserve life or diminish it.",
+    "series": "The Roads Not Taken"
   },
   "The Uncollected": {
     "description": "When Tess inherits her grandmother Edie’s Scottish alterations shop, a long-buried mystery emerges from the seams of a wedding dress. A moving literary novel about family secrets, memory and what we carry forward.",
