@@ -258,5 +258,13 @@
   "What the Patient Knew": {
     "description": "In this Dr Claire Shaw mystery, knowledge can be as dangerous as concealment. A psychologically driven story about secrets, perception and the consequences of what a patient reveals.",
     "series": "Dr Claire Shaw series, Book 3"
+  },
+  "The Last Appointment": {
+    "description": "A Dr Claire Shaw novel.",
+    "series": "Dr Claire Shaw series, Book 4"
+  },
+  "The Patient Upstairs": {
+    "description": "A Dr Claire Shaw novel.",
+    "series": "Dr Claire Shaw series, Book 5"
   }
 }

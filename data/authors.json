@@ -474,7 +474,7 @@
     "color": "#5a4fa0",
     "tagline": "",
     "bio": [
-      "Anna Wray is the author of the Dr Claire Shaw novels: The Patient Who Never Lied (Book One), The Good Husband (Book Two) and What the Patient Knew (Book Three)."
+      "Anna Wray is the author of the Dr Claire Shaw novels: The Patient Who Never Lied (Book One), The Good Husband (Book Two), What the Patient Knew (Book Three), The Last Appointment (Book Four) and The Patient Upstairs (Book Five)."
     ],
     "links": {},
     "books": [
@@ -498,6 +498,20 @@
         "amazon": "https://mybook.to/PatientKnew",
         "description": "In this Dr Claire Shaw mystery, knowledge can be as dangerous as concealment. A psychologically driven story about secrets, perception and the consequences of what a patient reveals.",
         "series": "Dr Claire Shaw series, Book 3"
+      },
+      {
+        "title": "The Last Appointment",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/LastAppointment",
+        "description": "A Dr Claire Shaw novel.",
+        "series": "Dr Claire Shaw series, Book 4"
+      },
+      {
+        "title": "The Patient Upstairs",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/PatientUpstairs",
+        "description": "A Dr Claire Shaw novel.",
+        "series": "Dr Claire Shaw series, Book 5"
       }
     ]
   },
