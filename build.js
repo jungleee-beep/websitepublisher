@@ -30,6 +30,8 @@ const abs = (p = "") => `${site.url}/${p}`;
 const jsonld = (graph) => `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c")}</script>`;
 const orgNode = () => ({ "@type": "Organization", "@id": abs("#publisher"), name: site.name, url: abs(), logo: abs("images/logo.jpg"), description: site.tagline, email: site.email });
 const crumbs = (items) => ({ "@type": "BreadcrumbList", itemListElement: items.map(([name, url], i) => ({ "@type": "ListItem", position: i + 1, name, item: url })) });
+const plain = (t) => String(t || "").replace(/\*\*/g, "").replace(/\s+/g, " ").trim();
+const paras = (t) => String(t).split(/\n{2,}/).map((p) => `<p class="about">${esc(p).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")}</p>`).join("\n      ");
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 const allBooks = authors
@@ -293,7 +295,7 @@ for (const b of allBooks) {
   const metaBits = [b.category, b.year, (b.formats || []).join(", ")].filter(Boolean);
   write(`books/${b.slug}/index.html`, page({
     title: `${b.title} by ${a.name} - ${site.name}`,
-    desc: clip(`${b.title} by ${a.name}${b.category ? ` (${b.category.toLowerCase()})` : ""}. ${b.long || b.description || ""} Buy on Amazon.`, 158),
+    desc: clip(`${b.title} by ${a.name}${b.category ? ` (${b.category.toLowerCase()})` : ""}. ${plain(b.long || b.description)} Buy on Amazon.`, 158),
     depth: 2,
     nav: "",
     path: `books/${b.slug}/`,
@@ -304,7 +306,7 @@ for (const b of allBooks) {
       {
         "@type": "Book", "@id": `${bUrl}#book`, name: b.title, url: bUrl,
         author: { "@id": `${aUrl}#author` }, publisher: { "@id": abs("#publisher") }, inLanguage: "en-GB",
-        genre: b.category || undefined, description: b.long || b.description || undefined, sameAs: [b.amazon],
+        genre: b.category || undefined, description: plain(b.long || b.description) || undefined, sameAs: [b.amazon],
         image: hasCover ? abs(coverFile(b)) : undefined,
         ...(ser ? { isPartOf: { "@type": "BookSeries", name: ser.name, url: abs(`series/${ser.slug}/`) } } : seriesName ? { isPartOf: { "@type": "BookSeries", name: seriesName[1] } } : {}),
       },
@@ -318,7 +320,7 @@ for (const b of allBooks) {
       <h1>${esc(b.title)}</h1>
       ${ser ? `<p class="series">${ser.numbered ? `${esc(b.series.replace(/^.+?, ((?:Booklet|Book) \d+(?: of \d+)?)$/, "$1"))} in ` : "Part of "}<a href="../../series/${ser.slug}/">${esc(ser.name)}</a></p>` : b.series ? `<p class="series">${esc(b.series)}</p>` : ""}
       <p class="by">by <a href="../../authors/${a.slug}/">${esc(a.name)}</a></p>
-      ${b.long ? `<p class="about">${esc(b.long)}</p>` : b.description ? `<p class="lead">${esc(b.description)}</p>` : ""}
+      ${b.long ? paras(b.long) : b.description ? `<p class="lead">${esc(b.description)}</p>` : ""}
       ${metaBits.length ? `<p class="meta">${metaBits.map(esc).join(" &middot; ")}</p>` : ""}
       <p><a class="btn" href="${esc(b.amazon)}" rel="sponsored noopener" target="_blank">Buy on Amazon</a></p>
       ${ser && ser.numbered ? `<nav class="series-nav" aria-label="In this series">${prev ? `<a href="../${prev.slug}/">&larr; ${esc(prev.title)}</a>` : "<span></span>"}${next ? `<a href="../${next.slug}/">${esc(next.title)} &rarr;</a>` : "<span></span>"}</nav>` : ""}
