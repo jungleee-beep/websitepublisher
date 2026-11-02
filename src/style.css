@@ -118,3 +118,4 @@ p.about{max-width:700px}
 .cover-stack{width:96px;height:176px}
 .cover-stack img{left:0;top:calc((2 - var(--i)) * 16px)}
 }
+@media (prefers-color-scheme:dark){.author-genre{color:color-mix(in srgb,var(--c) 50%,#fff)}}

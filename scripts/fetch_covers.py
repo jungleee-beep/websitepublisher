@@ -78,6 +78,9 @@ with ThreadPoolExecutor(6) as ex:
     results = list(ex.map(fetch, books))
 json.dump(asins, open(CACHE, "w"), indent=2)
 bad = [(s, r) for s, r in results if not r.startswith(("ok", "kept"))]
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from make_images import make_small_covers
+make_small_covers()  # 260px copies used on the cards
 print(f"{len(results) - len(bad)}/{len(results)} covers present")
 for s, r in bad:
     print("  missing:", s, "-", r)

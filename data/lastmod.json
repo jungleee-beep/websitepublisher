@@ -1,0 +1,366 @@
+{
+ "": {
+  "hash": "298d80d75b81",
+  "date": "2026-11-02"
+ },
+ "authors/": {
+  "hash": "4cdbeb07dc78",
+  "date": "2026-11-02"
+ },
+ "authors/yusuf-hasan/": {
+  "hash": "20cf2e45b093",
+  "date": "2026-11-02"
+ },
+ "authors/dr-yusuf-al-qalb/": {
+  "hash": "d8f538a4dbaa",
+  "date": "2026-11-02"
+ },
+ "authors/dr-syed-ali-akbar-rizvi/": {
+  "hash": "7a4b4c6f093f",
+  "date": "2026-11-02"
+ },
+ "authors/sage-norden-phd/": {
+  "hash": "98a096fb874d",
+  "date": "2026-11-02"
+ },
+ "authors/julian-vale/": {
+  "hash": "4158244bd9c4",
+  "date": "2026-11-02"
+ },
+ "authors/james-whitfield/": {
+  "hash": "76f74adb0e4e",
+  "date": "2026-11-02"
+ },
+ "authors/eleanor-hart/": {
+  "hash": "8571bb0adfec",
+  "date": "2026-11-02"
+ },
+ "authors/dev-malhotra/": {
+  "hash": "1b7245020695",
+  "date": "2026-11-02"
+ },
+ "authors/anna-wray/": {
+  "hash": "8e95786ac257",
+  "date": "2026-11-02"
+ },
+ "authors/adam-yusuf/": {
+  "hash": "59f3a7b60bb2",
+  "date": "2026-11-02"
+ },
+ "authors/dr-saiyed-ali-al-razavi/": {
+  "hash": "b4daa57ddda1",
+  "date": "2026-11-02"
+ },
+ "books/any-other-business/": {
+  "hash": "a1a13bc40874",
+  "date": "2026-11-02"
+ },
+ "books/the-fare/": {
+  "hash": "0c24a98362e6",
+  "date": "2026-11-02"
+ },
+ "books/the-empty-cab/": {
+  "hash": "1c31648e7ee4",
+  "date": "2026-11-02"
+ },
+ "books/paid-in-full/": {
+  "hash": "1fb1e8150732",
+  "date": "2026-11-02"
+ },
+ "books/sorry-we-re-open/": {
+  "hash": "e345e5812fe2",
+  "date": "2026-11-02"
+ },
+ "books/before-you-go/": {
+  "hash": "5661912d25b9",
+  "date": "2026-11-02"
+ },
+ "books/who-runs-the-mosque/": {
+  "hash": "4894054c5024",
+  "date": "2026-11-02"
+ },
+ "books/the-hive-that-forgot-how-to-build/": {
+  "hash": "caaa588a6718",
+  "date": "2026-11-02"
+ },
+ "books/the-man-they-could-not-stop/": {
+  "hash": "a76977af2dc4",
+  "date": "2026-11-02"
+ },
+ "books/still-your-heart/": {
+  "hash": "e972177fa920",
+  "date": "2026-11-02"
+ },
+ "books/wait-with-grace/": {
+  "hash": "8fa2ec7b9cc2",
+  "date": "2026-11-02"
+ },
+ "books/raise-your-hands/": {
+  "hash": "6baf80d0aa3e",
+  "date": "2026-11-02"
+ },
+ "books/come-back/": {
+  "hash": "fe0dc2f8b1d0",
+  "date": "2026-11-02"
+ },
+ "books/count-your-blessings/": {
+  "hash": "36e9e8025422",
+  "date": "2026-11-02"
+ },
+ "books/polish-the-mirror/": {
+  "hash": "e7bea6ad4233",
+  "date": "2026-11-02"
+ },
+ "books/pack-light/": {
+  "hash": "0cd1250390c3",
+  "date": "2026-11-02"
+ },
+ "books/enough/": {
+  "hash": "2b0d360b1642",
+  "date": "2026-11-02"
+ },
+ "books/trust-the-plan/": {
+  "hash": "7f9a09682bd8",
+  "date": "2026-11-02"
+ },
+ "books/before-you-sleep/": {
+  "hash": "774f109900a6",
+  "date": "2026-11-02"
+ },
+ "books/the-daily-heart/": {
+  "hash": "71af429ff42a",
+  "date": "2026-11-02"
+ },
+ "books/the-light-of-divine-wisdom/": {
+  "hash": "54c10e88441c",
+  "date": "2026-11-02"
+ },
+ "books/conversations-with-allah-the-al-sam/": {
+  "hash": "20cb8c824ec2",
+  "date": "2026-11-02"
+ },
+ "books/shared-light/": {
+  "hash": "1138807f67e4",
+  "date": "2026-11-02"
+ },
+ "books/the-5-intoxicants/": {
+  "hash": "83aac0718a81",
+  "date": "2026-11-02"
+ },
+ "books/the-lost-and-found/": {
+  "hash": "158665d938ac",
+  "date": "2026-11-02"
+ },
+ "books/ninety-days-more/": {
+  "hash": "673fc3b3d41c",
+  "date": "2026-11-02"
+ },
+ "books/the-jobs-we-blamed-on-machines/": {
+  "hash": "c9f9fb4a3817",
+  "date": "2026-11-02"
+ },
+ "books/the-ally-we-never-question/": {
+  "hash": "d4e56f8aea4a",
+  "date": "2026-11-02"
+ },
+ "books/the-governments-we-unmade/": {
+  "hash": "837101c364cc",
+  "date": "2026-11-02"
+ },
+ "books/the-dictators-we-love/": {
+  "hash": "352d247f69ac",
+  "date": "2026-11-02"
+ },
+ "books/the-country-that-stopped-learning/": {
+  "hash": "1211994562dc",
+  "date": "2026-11-02"
+ },
+ "books/owned/": {
+  "hash": "ad9e281ab8ef",
+  "date": "2026-11-02"
+ },
+ "books/the-comfort-tax/": {
+  "hash": "4081c24975bd",
+  "date": "2026-11-02"
+ },
+ "books/the-island-of-second-chances/": {
+  "hash": "9da57a3af1be",
+  "date": "2026-11-02"
+ },
+ "books/the-last-train-before-morning/": {
+  "hash": "20b562d0a1b2",
+  "date": "2026-11-02"
+ },
+ "books/the-ferryman/": {
+  "hash": "3b84a48b782b",
+  "date": "2026-11-02"
+ },
+ "books/the-gardener-of-forgotten-dreams/": {
+  "hash": "0f15c22e4045",
+  "date": "2026-11-02"
+ },
+ "books/the-shop-that-sold-lost-things/": {
+  "hash": "02f83693a3ed",
+  "date": "2026-11-02"
+ },
+ "books/the-library-of-unwritten-lives/": {
+  "hash": "4b5e2b4f71fe",
+  "date": "2026-11-02"
+ },
+ "books/the-man-who-collected-tomorrows/": {
+  "hash": "8810f626dcc3",
+  "date": "2026-11-02"
+ },
+ "books/the-man-who-gave-away-his-name/": {
+  "hash": "3910292fbc85",
+  "date": "2026-11-02"
+ },
+ "books/the-house-with-seven-doors/": {
+  "hash": "5c95a738191e",
+  "date": "2026-11-02"
+ },
+ "books/the-castle-at-the-end-of-the-road/": {
+  "hash": "428719037b00",
+  "date": "2026-11-02"
+ },
+ "books/the-garden-across-the-street/": {
+  "hash": "8a894ae949d9",
+  "date": "2026-11-02"
+ },
+ "books/the-clockmaker-who-stopped-time/": {
+  "hash": "df0c4453301b",
+  "date": "2026-11-02"
+ },
+ "books/the-uncollected/": {
+  "hash": "222e456a93d5",
+  "date": "2026-11-02"
+ },
+ "books/the-other-chair/": {
+  "hash": "4b67c3286b6f",
+  "date": "2026-11-02"
+ },
+ "books/still-standing-keep-your-job/": {
+  "hash": "9dd5c89172e7",
+  "date": "2026-11-02"
+ },
+ "books/weight-of-light/": {
+  "hash": "f9809accf5a6",
+  "date": "2026-11-02"
+ },
+ "books/all-the-distance-between/": {
+  "hash": "18ac266508cf",
+  "date": "2026-11-02"
+ },
+ "books/the-ordinary-infinite/": {
+  "hash": "4f600aef0f1e",
+  "date": "2026-11-02"
+ },
+ "books/almost/": {
+  "hash": "d6f5cdb11d75",
+  "date": "2026-11-02"
+ },
+ "books/estranged-by-choice/": {
+  "hash": "5b7493a62d0e",
+  "date": "2026-11-02"
+ },
+ "books/the-trouble-with-us/": {
+  "hash": "86ec8dc372f8",
+  "date": "2026-11-02"
+ },
+ "books/the-patient-who-never-lied/": {
+  "hash": "88f96b30825a",
+  "date": "2026-11-02"
+ },
+ "books/the-good-husband/": {
+  "hash": "258dd06e3795",
+  "date": "2026-11-02"
+ },
+ "books/what-the-patient-knew/": {
+  "hash": "69c361b3d2a9",
+  "date": "2026-11-02"
+ },
+ "books/the-last-appointment/": {
+  "hash": "7fa14162e889",
+  "date": "2026-11-02"
+ },
+ "books/the-patient-upstairs/": {
+  "hash": "577eea2aef60",
+  "date": "2026-11-02"
+ },
+ "books/the-first-year/": {
+  "hash": "36a7cc61be77",
+  "date": "2026-11-02"
+ },
+ "books/the-field-of-karbala/": {
+  "hash": "e615e62e66e9",
+  "date": "2026-11-02"
+ },
+ "books/daughters-of-revelation/": {
+  "hash": "950b22e6ca50",
+  "date": "2026-11-02"
+ },
+ "books/raising-shia-children-in-the-west/": {
+  "hash": "3a175af2914c",
+  "date": "2026-11-02"
+ },
+ "books/understanding-the-twelve-imams/": {
+  "hash": "223cc502ec31",
+  "date": "2026-11-02"
+ },
+ "books/the-shia-muslim-handbook/": {
+  "hash": "0e6c91caabd5",
+  "date": "2026-11-02"
+ },
+ "books/the-next-marja/": {
+  "hash": "de565e05e965",
+  "date": "2026-11-02"
+ },
+ "books/the-shia-islam-you-ve-heard-about/": {
+  "hash": "8b8a28ff6333",
+  "date": "2026-11-02"
+ },
+ "books/understanding-the-shia/": {
+  "hash": "09179fdd1b5d",
+  "date": "2026-11-02"
+ },
+ "books/tears-of-the-ummah/": {
+  "hash": "9d4e7ceaa258",
+  "date": "2026-11-02"
+ },
+ "books/whispers-to-the-divine/": {
+  "hash": "ce313dfdc29d",
+  "date": "2026-11-02"
+ },
+ "series/returning-to-allah/": {
+  "hash": "606fc342e589",
+  "date": "2026-11-02"
+ },
+ "series/roads-not-taken/": {
+  "hash": "87c368bbdc16",
+  "date": "2026-11-02"
+ },
+ "series/meridian-sequence/": {
+  "hash": "60231c9481eb",
+  "date": "2026-11-02"
+ },
+ "series/dr-claire-shaw/": {
+  "hash": "d76277aa9929",
+  "date": "2026-11-02"
+ },
+ "series/living-shia-tradition/": {
+  "hash": "0725a98a6b24",
+  "date": "2026-11-02"
+ },
+ "for-authors/": {
+  "hash": "53e1c42d1e68",
+  "date": "2026-11-02"
+ },
+ "about/": {
+  "hash": "88e0a3b65738",
+  "date": "2026-11-02"
+ },
+ "contact/": {
+  "hash": "c5cafc88f16b",
+  "date": "2026-11-02"
+ }
+}

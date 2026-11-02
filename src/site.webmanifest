@@ -1,0 +1,21 @@
+{
+  "name": "Greybridge Press",
+  "short_name": "Greybridge",
+  "description": "Independent publisher of fiction and non-fiction.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#faf7f0",
+  "theme_color": "#faf7f0",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

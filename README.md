@@ -29,3 +29,11 @@ The site is served at `www.greybridgepress.com` through GitHub Pages. The domain
 - The build writes `docs/sitemap.xml`, `docs/robots.txt` and `docs/404.html`. New author pages are added to the sitemap automatically.
 - Share-card image: `src/images/og.jpg` (1200x630).
 - Buy buttons carry `rel="sponsored"` because the `mybook.to` links are affiliate links.
+
+## Images
+
+`python3 scripts/make_images.py` makes the smaller files the site uses (WebP banner, 240px footer logo, home screen icons, and 260px copies of every cover for the cards). `scripts/fetch_covers.py` also makes the small covers for any new book. Run `node build.js` afterwards.
+
+## Sitemap dates
+
+`data/lastmod.json` records a hash of each page, so the sitemap's `lastmod` date only changes on days a page's content actually changed. Commit that file with the rebuild.
