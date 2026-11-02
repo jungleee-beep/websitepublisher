@@ -1,6 +1,7 @@
 // Static site generator. No dependencies. Run: node build.js
 // Reads data/*.json and writes the finished site to docs/.
 const fs = require("fs");
+const crypto = require("crypto");
 const path = require("path");
 
 const site = JSON.parse(fs.readFileSync("data/site.json", "utf8"));
@@ -32,6 +33,9 @@ const orgNode = () => ({ "@type": "Organization", "@id": abs("#publisher"), name
 const crumbs = (items) => ({ "@type": "BreadcrumbList", itemListElement: items.map(([name, url], i) => ({ "@type": "ListItem", position: i + 1, name, item: url })) });
 const plain = (t) => String(t || "").replace(/\*\*/g, "").replace(/\s+/g, " ").trim();
 const paras = (t) => String(t).split(/\n{2,}/).map((p) => `<p class="about">${esc(p).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")}</p>`).join("\n      ");
+// Page titles: "<main> | Greybridge Press" when it fits in 60 characters, otherwise just the main part
+const titled = (main) => (main.length + 3 + site.name.length <= 60 ? `${main} | ${site.name}` : main);
+const clip = (t, n) => (t.length <= n ? t : t.slice(0, n - 1).replace(/\s+\S*$/, "") + "\u2026");
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 const allBooks = authors
@@ -122,11 +126,15 @@ ${image ? "" : `<meta property="og:image:width" content="1200">
 <meta name="twitter:description" content="${esc(description)}">
 <meta name="twitter:image" content="${image ? image.url : abs("images/og.jpg")}">
 <link rel="icon" type="image/png" href="${root}images/favicon.png">
+<link rel="apple-touch-icon" href="${root}images/apple-touch-icon.png">
+<link rel="manifest" href="${root}site.webmanifest">
+<meta name="theme-color" content="#faf7f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#171512" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="${root}style.css">
 ${ld ? jsonld(ld) + "\n" : ""}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="banner-wrap"><a class="banner-link" href="${root}"><img class="banner" src="${root}images/banner.jpg" width="1600" height="608" alt="${esc(site.name)}: ${esc(site.tagline)}"></a></div>
+<div class="banner-wrap"><a class="banner-link" href="${root}"><img class="banner" src="${root}images/banner.webp" width="1520" height="578" fetchpriority="high" decoding="async" alt="${esc(site.name)}: ${esc(site.tagline)}"></a></div>
 <header class="site-header">
   <div class="wrap bar">
     <nav aria-label="Main">
@@ -144,7 +152,7 @@ ${body}
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <img class="foot-logo" src="${root}images/logo.jpg" width="120" height="120" alt="${esc(site.name)} logo">
+    <img class="foot-logo" src="${root}images/logo-240.jpg" width="120" height="120" loading="lazy" alt="${esc(site.name)} logo">
     <p><strong>${esc(site.name)}</strong> - ${esc(site.tagline)} ${esc(site.subtitle)}</p>
     <p class="small">Books are sold by Amazon. Links on this site go to each book's Amazon page.</p>
   </div>
@@ -155,9 +163,11 @@ ${body}
 }
 
 const coverFile = (book) => `covers/${slugify(book.title)}.jpg`;
+// 260px copy for cards and thumbnails (made by scripts/make_images.py); falls back to the full cover
+const smallCoverFile = (book) => (fs.existsSync(path.join("src", "covers", "small", `${slugify(book.title)}.jpg`)) ? `covers/small/${slugify(book.title)}.jpg` : coverFile(book));
 function cover(book, root, w = 130, eager = false) {
   if (fs.existsSync(path.join("src", coverFile(book)))) {
-    return `<img class="cover-img" src="${root}${coverFile(book)}" width="${w}" height="${Math.round(w * 1.5)}"${eager ? "" : ' loading="lazy"'} alt="Cover of ${esc(book.title)} by ${esc(book.author.name)}">`;
+    return `<img class="cover-img" src="${root}${w <= 130 ? smallCoverFile(book) : coverFile(book)}" decoding="async" width="${w}" height="${Math.round(w * 1.5)}"${eager ? "" : ' loading="lazy"'} alt="Cover of ${esc(book.title)} by ${esc(book.author.name)}">`;
   }
   return `<div class="cover" style="--c:${book.author.color}" role="img" aria-label="Cover placeholder for ${esc(book.title)}">
   <span class="cover-title">${esc(book.title)}</span>
@@ -170,7 +180,7 @@ function seriesCard(s, depth, showAuthor) {
   const href = `${root}series/${s.slug}/`;
   const covers = s.books.filter((b) => fs.existsSync(path.join("src", coverFile(b)))).slice(0, 3);
   const stack = covers.length
-    ? `<div class="cover-stack">${covers.map((b, i) => `<img src="${root}${coverFile(b)}" width="96" height="144" loading="lazy" alt="" style="--i:${i}">`).join("")}</div>`
+    ? `<div class="cover-stack">${covers.map((b, i) => `<img src="${root}${smallCoverFile(b)}" width="96" height="144" loading="lazy" decoding="async" alt="" style="--i:${i}">`).join("")}</div>`
     : `<div class="cover" style="--c:${s.author.color}" role="img" aria-label="${esc(s.name)}"><span class="cover-title">${esc(s.name)}</span></div>`;
   return `<article class="book series-card" id="series-${s.slug}" data-cat="${catSlug(s.category)}">
   <a class="cover-link" href="${href}" tabindex="-1" aria-hidden="true">${stack}</a>
@@ -229,8 +239,8 @@ const cats = ["Fiction", "Non-fiction"].map((c) => [c, allBooks.filter((b) => b.
 write("authors/index.html", page({
   path: "authors/",
   ld: [orgNode(), crumbs([["Home", abs()], ["Authors", abs("authors/")]])],
-  title: `Authors - ${site.name}`,
-  desc: "Meet the authors published by " + site.name,
+  title: titled("Our authors"),
+  desc: `Meet the ${authors.length} authors published by ${site.name}, writing fiction and non-fiction from mysteries and science fiction to Islamic guides. Browse their books.`,
   depth: 1,
   nav: "authors/",
   body: `<div class="wrap section">
@@ -260,8 +270,18 @@ for (const a of authors) {
   write(`authors/${a.slug}/index.html`, page({
     path: `authors/${a.slug}/`,
     ld: [orgNode(), personNode, ...bookNodes, crumbs([["Home", abs()], ["Authors", abs("authors/")], [a.name, aUrl]])],
-    title: `${a.name} - ${site.name}`,
-    desc: `${a.name}: ${a.tagline || nBooks(a.books.length) + " published by " + site.name}`,
+    title: titled(a.name),
+    desc: (() => {
+      const names = groupItems(a.books.map((b) => ({ ...b, author: a }))).map((it) => (it.series ? (/^The /.test(it.series.name) ? it.series.name : `the ${it.series.name}`) : it.book.title)).filter((n) => n.length <= 44).slice(0, 3);
+      // use as many example titles as fit in 158 characters, so the sentence is never cut off
+      if (a.books.length === 1) return clip(`${a.name} is the author of ${a.books[0].title}. Read the description and buy it on Amazon.`, 158);
+      for (let k = names.length; k >= 0; k--) {
+        const ex = names.slice(0, k);
+        const list = ex.length > 1 ? `${ex.slice(0, -1).join(", ")} and ${ex[ex.length - 1]}` : ex[0] || "";
+        const text = `${a.name} writes ${genreOf(a).toLowerCase()}. Browse ${nBooks(a.books.length)}${list ? `, including ${list}` : ""}, and buy on Amazon.`;
+        if (text.length <= 158 || k === 0) return clip(text, 158);
+      }
+    })(),
     depth: 2,
     nav: "authors/",
     body: `<div class="wrap section">
@@ -282,7 +302,6 @@ for (const a of authors) {
 }
 
 // One page per book (/books/<title>/), so each title can be found and shared on its own
-const clip = (t, n) => (t.length <= n ? t : t.slice(0, n - 1).replace(/\s+\S*$/, "") + "\u2026");
 for (const b of allBooks) {
   const a = b.author, aUrl = abs(`authors/${a.slug}/`), bUrl = abs(`books/${b.slug}/`);
   const hasCover = fs.existsSync(path.join("src", coverFile(b)));
@@ -294,7 +313,7 @@ for (const b of allBooks) {
   const others = a.books.filter((x) => x.title !== b.title && !mates.some((m) => m.title === x.title)).map((x) => ({ ...x, author: a }));
   const metaBits = [b.category, b.year, (b.formats || []).join(", ")].filter(Boolean);
   write(`books/${b.slug}/index.html`, page({
-    title: `${b.title} by ${a.name} - ${site.name}`,
+    title: titled(`${b.title} by ${a.name.replace(/^Dr\.? /, "")}`),
     desc: clip(`${b.title} by ${a.name}${b.category ? ` (${b.category.toLowerCase()})` : ""}. ${plain(b.long || b.description)} Buy on Amazon.`, 158),
     depth: 2,
     nav: "",
@@ -340,7 +359,7 @@ for (const s of seriesList) {
   const a = s.author, aUrl = abs(`authors/${a.slug}/`), sUrl = abs(`series/${s.slug}/`);
   const first = s.books.find((b) => fs.existsSync(path.join("src", coverFile(b))));
   write(`series/${s.slug}/index.html`, page({
-    title: `${s.name} by ${a.name} - ${site.name}`,
+    title: titled(`${s.name} by ${a.name.replace(/^Dr\.? /, "")}`),
     desc: clip(`${s.name} by ${a.name}: ${s.books.length} ${s.unit}. ${s.intro}`, 158),
     depth: 2,
     nav: "",
@@ -360,6 +379,7 @@ for (const s of seriesList) {
   <p class="by">by <a href="../../authors/${a.slug}/">${esc(a.name)}</a></p>
   ${s.intro ? `<p class="lead">${esc(s.intro)}</p>` : ""}
   ${s.about.map((p) => `<p class="about">${esc(p)}</p>`).join("\n  ")}
+  <h2 class="sr-only">Books in this series</h2>
   <div class="book-list">${s.books.map((b) => bookCard(s.numbered ? b : { ...b, series: "" }, 2, false)).join("\n")}</div>
 </div>`,
   }));
@@ -368,7 +388,7 @@ for (const s of seriesList) {
 // Landing page: the books catalogue (also the first tab in the nav)
 const landingHeading = "Independent publisher of fiction and non-fiction by new authors";
 write("index.html", page({
-  title: `${site.name} | Independent Publisher of Fiction and Non-Fiction`,
+  title: `${site.name} | Fiction and Non-Fiction Publisher`,
   desc: `${site.name} is an independent publisher of fiction and non-fiction by new authors. Browse ${allBooks.length} books by ${authors.length} authors, then buy on Amazon.`,
   depth: 0,
   nav: "",
@@ -376,6 +396,7 @@ write("index.html", page({
   ld: [orgNode(), { "@type": "WebSite", "@id": abs("#website"), url: abs(), name: site.name, inLanguage: "en-GB", publisher: { "@id": abs("#publisher") } }],
   body: `<div class="wrap section">
   <h1 class="home-title">${landingHeading}</h1>
+  <h2 class="sr-only">All books</h2>
   <div class="filters" role="group" aria-label="Filter by category">
     <button type="button" data-f="all" aria-pressed="true">All (${allBooks.length})</button>
     ${cats.map(([c, n]) => `<button type="button" data-f="${catSlug(c)}" aria-pressed="false">${c} (${n})</button>`).join("\n    ")}
@@ -422,7 +443,7 @@ const services = [
   ["Ongoing support", "A real person to ask when your rankings drop or your next book is ready."],
 ];
 write("for-authors/index.html", page({
-  title: `For authors - ${site.name}`,
+  title: titled("Publish with us: for authors"),
   desc: "How we help authors publish on Amazon KDP: editing, cover design, formatting, launch support and a team behind you.",
   path: "for-authors/",
   ld: [orgNode(), crumbs([["Home", abs()], ["For authors", abs("for-authors/")]])],
@@ -450,7 +471,7 @@ write("for-authors/index.html", page({
 
 // About
 write("about/index.html", page({
-  title: `About - ${site.name}`,
+  title: titled("About us"),
   desc: "About Greybridge Press, a small independent press that helps authors publish on Amazon KDP and keep creative control.",
   path: "about/",
   ld: [orgNode(), crumbs([["Home", abs()], ["About", abs("about/")]])],
@@ -467,7 +488,7 @@ write("about/index.html", page({
 
 // Contact
 write("contact/index.html", page({
-  title: `Contact - ${site.name}`,
+  title: titled("Contact us"),
   desc: "Contact Greybridge Press with questions, author submissions or press enquiries.",
   path: "contact/",
   ld: [orgNode(), crumbs([["Home", abs()], ["Contact", abs("contact/")]])],
@@ -482,7 +503,7 @@ write("contact/index.html", page({
 
 // GitHub Pages serves 404.html for any address that does not exist. Root-absolute links so it works at any depth.
 write("404.html", page({
-  title: `Page not found - ${site.name}`,
+  title: titled("Page not found"),
   desc: "This page could not be found.",
   depth: 0,
   root: "/",
@@ -497,14 +518,27 @@ write("404.html", page({
 
 // Sitemap and robots.txt (the redirect page /books/ and the 404 page are left out on purpose)
 const sitePaths = ["", "authors/", ...authors.map((a) => `authors/${a.slug}/`), ...allBooks.map((b) => `books/${b.slug}/`), ...seriesList.map((s) => `series/${s.slug}/`), "for-authors/", "about/", "contact/"];
+// lastmod = the day a page's built content last changed (hash kept in data/lastmod.json)
+const lastmodFile = "data/lastmod.json";
+const prevMod = fs.existsSync(lastmodFile) ? JSON.parse(fs.readFileSync(lastmodFile, "utf8")) : {};
+const today = new Date().toISOString().slice(0, 10);
+const lastmod = {}, nextMod = {};
+for (const p of sitePaths) {
+  const hash = crypto.createHash("sha1").update(fs.readFileSync(path.join(OUT, p, "index.html"))).digest("hex").slice(0, 12);
+  const prev = prevMod[p];
+  nextMod[p] = prev && prev.hash === hash ? prev : { hash, date: today };
+  lastmod[p] = nextMod[p].date;
+}
+fs.writeFileSync(lastmodFile, JSON.stringify(nextMod, null, 1) + "\n");
 fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitePaths.map((p) => `  <url><loc>${abs(p)}</loc></url>`).join("\n")}
+${sitePaths.map((p) => `  <url><loc>${abs(p)}</loc><lastmod>${lastmod[p]}</lastmod></url>`).join("\n")}
 </urlset>
 `);
 fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${abs("sitemap.xml")}\n`);
 
 fs.copyFileSync("src/style.css", path.join(OUT, "style.css"));
+fs.copyFileSync("src/site.webmanifest", path.join(OUT, "site.webmanifest"));
 fs.cpSync("src/images", path.join(OUT, "images"), { recursive: true });
 if (fs.existsSync("src/covers")) fs.cpSync("src/covers", path.join(OUT, "covers"), { recursive: true });
 // GitHub Pages custom domain: the CNAME file must live in the published folder
