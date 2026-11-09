@@ -1,11 +1,11 @@
 {
  "": {
-  "hash": "298d80d75b81",
-  "date": "2026-11-02"
+  "hash": "b6913ee8dcbe",
+  "date": "2026-11-09"
  },
  "authors/": {
-  "hash": "4cdbeb07dc78",
-  "date": "2026-11-02"
+  "hash": "37bf0dac9c04",
+  "date": "2026-11-09"
  },
  "authors/yusuf-hasan/": {
   "hash": "20cf2e45b093",
@@ -40,8 +40,8 @@
   "date": "2026-11-02"
  },
  "authors/anna-wray/": {
-  "hash": "8e95786ac257",
-  "date": "2026-11-02"
+  "hash": "465eda289a79",
+  "date": "2026-11-09"
  },
  "authors/adam-yusuf/": {
   "hash": "59f3a7b60bb2",
@@ -268,24 +268,32 @@
   "date": "2026-11-02"
  },
  "books/the-patient-who-never-lied/": {
-  "hash": "88f96b30825a",
-  "date": "2026-11-02"
+  "hash": "4241bfe26665",
+  "date": "2026-11-09"
  },
  "books/the-good-husband/": {
-  "hash": "258dd06e3795",
-  "date": "2026-11-02"
+  "hash": "7ec5cfda70f2",
+  "date": "2026-11-09"
  },
  "books/what-the-patient-knew/": {
-  "hash": "69c361b3d2a9",
-  "date": "2026-11-02"
+  "hash": "c9d9de881c95",
+  "date": "2026-11-09"
  },
  "books/the-last-appointment/": {
-  "hash": "7fa14162e889",
-  "date": "2026-11-02"
+  "hash": "aa25f94d8fc4",
+  "date": "2026-11-09"
  },
  "books/the-patient-upstairs/": {
-  "hash": "577eea2aef60",
-  "date": "2026-11-02"
+  "hash": "80ba3b1c2ca2",
+  "date": "2026-11-09"
+ },
+ "books/the-doctor-in-the-chair/": {
+  "hash": "79a9ce39462d",
+  "date": "2026-11-09"
+ },
+ "books/the-woman-in-room-seven/": {
+  "hash": "5408e2683350",
+  "date": "2026-11-09"
  },
  "books/the-first-year/": {
   "hash": "36a7cc61be77",
@@ -344,8 +352,8 @@
   "date": "2026-11-02"
  },
  "series/dr-claire-shaw/": {
-  "hash": "d76277aa9929",
-  "date": "2026-11-02"
+  "hash": "781c0b2dce07",
+  "date": "2026-11-09"
  },
  "series/living-shia-tradition/": {
   "hash": "0725a98a6b24",
