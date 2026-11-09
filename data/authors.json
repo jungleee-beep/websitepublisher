@@ -474,7 +474,7 @@
     "color": "#5a4fa0",
     "tagline": "",
     "bio": [
-      "Anna Wray is the author of the Dr Claire Shaw novels: The Patient Who Never Lied (Book One), The Good Husband (Book Two), What the Patient Knew (Book Three), The Last Appointment (Book Four) and The Patient Upstairs (Book Five)."
+      "Anna Wray is the author of the Dr Claire Shaw novels: The Patient Who Never Lied (Book One), The Good Husband (Book Two), What the Patient Knew (Book Three), The Last Appointment (Book Four), The Patient Upstairs (Book Five), The Doctor in the Chair (Book Six) and The Woman in Room Seven (Book Seven)."
     ],
     "links": {},
     "books": [
@@ -514,6 +514,20 @@
         "description": "A chilling psychological thriller about surveillance, betrayal and the terrifying price of misplaced trust.",
         "series": "Dr Claire Shaw series, Book 5",
         "long": "She thought everything said in her consulting room was confidential.\n\nThen Dr Claire Shaw agrees to treat the mysterious man living upstairs.\n\nLewis Garnett is a reclusive former sound engineer who hears things other people miss.\n\nSoon, he begins revealing secrets about Claire's patients that he should never have known.\n\nAs a troubled marriage unravels, Claire realises someone has been listening.\n\n**A chilling psychological thriller about surveillance, betrayal and the terrifying price of misplaced trust.**"
+      },
+      {
+        "title": "The Doctor in the Chair",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/Doctorinthechair",
+        "description": "A Dr Claire Shaw novel.",
+        "series": "Dr Claire Shaw series, Book 6"
+      },
+      {
+        "title": "The Woman in Room Seven",
+        "category": "Fiction",
+        "amazon": "https://mybook.to/room7",
+        "description": "A Dr Claire Shaw novel.",
+        "series": "Dr Claire Shaw series, Book 7"
       }
     ]
   },
